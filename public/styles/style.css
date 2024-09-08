@@ -241,7 +241,7 @@ section {
 }
 
 .about-col-2 p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .tab-titles {
@@ -250,7 +250,7 @@ section {
 }
 
 .tab-titles p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
@@ -282,7 +282,7 @@ section {
 
 .tab-contents ul li span {
     color: var(--my-color);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .tab-contents {
@@ -306,7 +306,7 @@ section {
 .arrow {
     display: inline-block;
     transition: transform 0.3s ease;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-right: 10px;
 }
 
@@ -325,27 +325,27 @@ section {
 .skill-highlight {
     font-weight: normal;
     color: #008080;
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
     margin: 0;
 }
 
 .skill-description {
     color: #ababab;
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
     margin-top: 10px;
     margin-left: 40px;
 }
 
 #experience {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #education {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #education i {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* -----------------------------------------------------------Portfolio-----------------------------------------------------------*/
@@ -355,7 +355,7 @@ section {
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
@@ -391,12 +391,12 @@ section {
     flex-direction: column;
     padding: 0 20px;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     transition: 0.4s;
 }
 
 .layer h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin-bottom: 20px;
 }
