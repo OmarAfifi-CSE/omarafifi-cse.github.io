@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = 3004;
+const port = 3007;
 
 // Set EJS as the templating engine
 app.set('view engine', 'ejs');
