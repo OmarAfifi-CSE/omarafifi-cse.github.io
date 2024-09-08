@@ -91,12 +91,10 @@ nav {
     font-size: 2.5rem;
     font-weight: 500;
 }
-.logo span{
-    font-weight: 500;
-}
 
 .logo span {
     color: var(--my-color);
+    font-weight: 500;
     /*text-shadow: 0 0 10px #8f6955;*/
 }
 
@@ -798,10 +796,10 @@ nav .fa-regular.fa-circle-xmark,
         flex-basis: 100%;
     }
     .contact a {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .contact i {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .copyright {
         font-size: 0.8rem;
