@@ -23,12 +23,12 @@ To view the website, follow these steps:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/omar-afifi-portfolio.git
+   git clone https://github.com/OmarAfifi-CSE/omar-afifi.git
 Navigate to the Project Directory
 
 bash
 Copy code
-cd omar-afifi-portfolio
+cd omar-afifi
 Open the index.html File Simply open index.html in your web browser to view the site.
 
 ## How to Use
@@ -37,16 +37,12 @@ Open the index.html File Simply open index.html in your web browser to view the 
 - **Add New Projects**: Modify the portfolio section in the HTML to include your new projects.
 - **Update Contact Information**: Adjust contact details as needed.
 
-## Contact
-
+## Get In Touch
 For inquiries or collaboration, please contact me:
 
-- **Email**: [omarafifi.cse@gmail.com](mailto:omarafifi.cse@gmail.com)
-- **WhatsApp**: [Contact me on WhatsApp](https://wa.me/your-number)
-- **LinkedIn**: [Omar Afifi](https://www.linkedin.com/in/omarafifi)
-- **Facebook**: [Omar Afifi](https://www.facebook.com/omarafifi)
-- **GitHub**: [OmarAfifi-CSE](https://github.com/OmarAfifi-CSE)
-- **CV**: [Download CV](link-to-cv)
+[![Email](https://img.shields.io/badge/-Email-1690DF?logo=gmail&logoColor=white)](mailto:omarafifi.cse@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/-WhatsApp-25D366?logo=whatsapp&logoColor=white)](https://wa.me/201154403740)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/omarafifi-cse/)
 
 ## Development Setup
 
