@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins,sans-serif';
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     box-sizing: border-box;
     max-width: 100%;
 }
@@ -89,7 +89,10 @@ nav {
 .logo {
     color: white;
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 500;
+}
+.logo span{
+    font-weight: 500;
 }
 
 .logo span {
@@ -107,7 +110,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.4rem;
-    font-weight: 550;
+    font-weight: 500;
     position: relative;
     transition: 0.3s;
 }
@@ -183,20 +186,22 @@ section {
 
 .content h1 {
     font-size: clamp(1rem, 1rem + 5vw, 3rem);
+    font-weight: 500;
 }
 
 .content h1 span {
     color: var(--my-color);
+    font-weight: 500;
     /*text-shadow: 0 0 10px var(--my-color);*/
 }
 
 .content .typewriter {
     font-size: clamp(1rem, 1rem + 5vw, 3rem);
-    font-weight: 600;
 }
 
 .content .typewriter-text {
     color: var(--my-color);
+    font-weight: 500;
     /* text-shadow: 0 0 10px var(--my-color); */
 }
 
@@ -235,22 +240,22 @@ section {
 }
 
 .sub-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 600;
     color: white;
 }
 
 .about-col-2 p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .tab-titles {
     display: flex;
-    margin: 20px 0 40px;
+    margin: 20px 0 20px;
 }
 
 .tab-titles p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -277,12 +282,12 @@ section {
 
 .tab-contents ul li {
     list-style: none;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .tab-contents ul li span {
     color: var(--my-color);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 .tab-contents {
@@ -306,7 +311,7 @@ section {
 .arrow {
     display: inline-block;
     transition: transform 0.3s ease;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-right: 10px;
 }
 
@@ -324,8 +329,8 @@ section {
 /* Styles for specific content text */
 .skill-highlight {
     font-weight: normal;
-    color: #008080;
-    font-size: 1.5rem !important;
+    color: #008080 !important;
+    font-size: 1.4rem !important;
     margin: 0;
 }
 
@@ -391,12 +396,12 @@ section {
     flex-direction: column;
     padding: 0 20px;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     transition: 0.4s;
 }
 
 .layer h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 20px;
 }
@@ -405,7 +410,7 @@ section {
     margin-top: 20px;
     color: var(--my-color);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 60px;
     background-color: #fff;
     width: 60px;
@@ -702,14 +707,14 @@ nav .fa-regular.fa-circle-xmark,
         cursor: pointer;
     }
     .content h1 {
-        font-size: clamp(1rem, 1rem + 5vw, 2rem);
+        font-size: clamp(1rem, 1rem + 5vw, 1.9rem);
     }
     .content .typewriter {
-        font-size: clamp(1rem, 1rem + 5vw, 2rem);
+        font-size: clamp(1rem, 1rem + 5vw, 1.9rem);
     }
-
+    /* -----------------------------------------------------------About-----------------------------------------------------------*/
     .sub-title {
-        font-size: 40px;
+        font-size: 2rem;
     }
 
     .about-col-1,
@@ -725,34 +730,80 @@ nav .fa-regular.fa-circle-xmark,
         font-size: 14px;
     }
 
+    .about-col-2 p {
+        font-size: 1rem;
+    }
+
     .tab-links {
-        font-size: 16px;
+        font-size: 1.2rem !important;
         margin-right: 20px;
     }
 
-    .layer {
-        font-size: 1.1rem;
+    .tab-contents ul li span {
+        font-size: 1.2rem;
+    }
+
+    .arrow {
+        font-size: 1.2rem;
+        margin-right: 5px;
+    }
+
+    .skill-highlight {
+        font-size: 1.2rem !important;
     }
     
-    .layer h3 {
+    .skill-description {
+        font-size: 1.1rem !important;
+    }
+
+    #experience {
         font-size: 1.2rem;
     }
     
-    .layer a {
-        font-size: 0.9rem;
+    #education {
+        font-size: 1.2rem;
+    }
+    
+    #education i {
+        font-size: 1.2rem;
     }
 
+    /* -----------------------------------------------------------Portfolio-----------------------------------------------------------*/
+    .work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    }
+
+    .layer {
+        font-size: 0.9rem;
+    }
+    
+    .layer h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .layer a {
+        margin-top: 10px;
+        font-size: 1rem;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* -----------------------------------------------------------Contact-----------------------------------------------------------*/
     .contact-left,
     .contact-right {
         flex-basis: 100%;
     }
     .contact a {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .contact i {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .copyright {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
