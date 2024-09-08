@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Omar Afifi</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-container" id="home">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                    Omar <span>Afifi</span>
+                </div>
+                <ul id="sidemenu">
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#">Home</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a
+                            href="#portfolio">Portfolio</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact">Contact</a>
+                    </li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
+            </div>
+            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
+                <input type="color" id="colorPicker" value="#2636ae">
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="images/Omar.webp" alt="Omar">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="100">Hi, I'm
+                    <span>Omar Afifi</span>
+                </h1>
+                <br>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="100">
+                    <span class="typewriter-text"></span><label for="">|</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------------About------------------------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1" data-aos="fade-right" data-aos-duration="2000">
+                    <img src="images/Omar-2.webp">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title" data-aos="zoom-in" data-aos-duration="1800">About Me</h1>
+                    <p data-aos="fade-left" data-aos-duration="2100">Dedicated and motivated
+                        Undergraduate Computer & Systems Engineer with a passion for technology and problem-solving.
+                        Seeking
+                        opportunities to gain practical experience and contribute to innovative projects while
+                        continuing my
+                        education.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')" data-aos="fade-up"
+                            data-aos-duration="1800">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')" data-aos="fade-up"
+                            data-aos-duration="2100">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')" data-aos="fade-up" data-aos-duration="2400">
+                            Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1800">
+                                    <span class="arrow">&#9654;</span><span>Programming Languages</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-highlight">&diams; C | C++ | Java | JavaFX | JavaScript | Node.js |
+                                        Python</p>
+                                    <p class="skill-description">Developed various software applications using these
+                                        languages.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="2100">
+                                    <span class="arrow">&#9654;</span><span>Web Development</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-highlight">&diams; Frontend Development</p>
+                                    <p class="skill-description">Built responsive websites and web applications.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="2400">
+                                    <span class="arrow">&#9654;</span><span>Mobile Development</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-highlight">&diams; Flutter</p>
+                                    <p class="skill-description">Created cross-platform mobile apps.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="2700">
+                                    <span class="arrow">&#9654;</span><span>Embedded Systems & IoT</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-highlight">&diams; Internet of Things (IoT)</p>
+                                    <p class="skill-description">Developed smart monitoring systems.</p>
+                                    <br>
+                                    <p class="skill-highlight">&diams; Arduino</p>
+                                    <p class="skill-description">Programmed various Arduino projects.</p>
+                                    <br>
+                                    <p class="skill-highlight">&diams; Embedded Systems</p>
+                                    <p class="skill-description">Worked with microcontrollers like ESP32.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="3000">
+                                    <span class="arrow">&#9654;</span><span>Hardware Design</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-highlight">&diams; Printed Circuit Board (PCB) Design</p>
+                                    <p class="skill-description">Designed custom PCBs.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" data-aos="fade-left" data-aos-duration="3000">
+                                    <span class="arrow">&#9654;</span><span>Product Development</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <p class="skill-description">Led development from idea to prototype.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2024 Current</span><br>Software Engineer Intern at ZagSystems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022 <i class="fa-solid fa-arrow-right"></i> 2027</span><br>Faculty of
+                                    Engineering, ZagazigUniversity.<br>Department of Computer & Systems Engineering
+                                    (CSE).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------Portfolio------------------------------------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">My Work</h1>
+            <div class="work-list">
+                <div class="work" data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="images/Omar-Z-Garden.webp">
+                    <div class="layer">
+                        <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
+                        <p>A smart irrigation system developed with ZagSystems. Key features include real-time
+                            monitoring, automated watering, and data visualization—powered by sustainable energy. A
+                            cornerstone of my learning in IoT and Embedded Systems.</p>
+                        <a href="/z-garden" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="images/Portfolio.webp">
+                    <div class="layer">
+                        <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
+                        <p>A professional portfolio showcasing my expertise in web development, featuring responsive
+                            designs, modern technologies, and innovative digital solutions to create seamless web
+                            experiences.</p>
+                        <a href="/omar-portfolio" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work" data-aos="zoom-in" data-aos-duration="2500">
+                    <img src="images/Digging-Jim.webp">
+                    <div class="layer">
+                        <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
+                        <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging Jim
+                            combines intuitive controls with dynamic graphics, demonstrating my skills in game
+                            development and JavaFX.</p>
+                        <a href="/digging-jim" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <!-- Hidden Work Items -->
+                <div class="work-list hidden-content">
+                    <div class="work">
+                        <img src="images/Omar-Z-Garden.jpg">
+                        <div class="layer">
+                            <h3>Flutter App</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, doloremque praesentium
+                                hic,
+                                blanditiis adipisci id vel nihil numquam mollitia beatae eos minima et at dolores
+                                dolorum.
+                                Rem esse sunt debitis.</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn" id="see-more-btn">See more</a>
+        </div>
+    </div>
+    <!-------------------------------------------------Contact------------------------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">Contact me</h1>
+                    <p class="contact email" data-aos="fade-right" data-aos-duration="1500">
+                        <a href="mailto:omarafifi.cse@gmail.com" target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact via Email
+                        </a>
+                    </p>
+                    <p class="contact whatsapp" data-aos="fade-right" data-aos-duration="1800">
+                        <a href="https://wa.me/201154403740" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Contact on WhatsApp
+                        </a>
+                    </p>
+
+                    <div class="social-icons" data-aos="zoom-in" data-aos-duration="2000">
+                        <a href="https://www.linkedin.com/in/omarafifi-cse/" target="_blank" data-aos="fade-up"
+                            data-aos-duration="1800"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/OmarAfifi.CSE" target="_blank" data-aos="fade-up" data-aos-duration="2100"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/OmarAfifi-CSE" target="_blank" data-aos="fade-up" data-aos-duration="2100"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="images/Omar Abdelsalam Resume.pdf" class="btn btn2" download data-aos="fade-up"
+                        data-aos-duration="2100">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required data-aos="fade-left"
+                            data-aos-duration="1500">
+                        <input type="email" name="Email" placeholder="Your Email" required data-aos="fade-left"
+                            data-aos-duration="1800">
+                        <textarea name="Message" rows="6" placeholder="Your Message" required data-aos="fade-left"
+                            data-aos-duration="2100"></textarea>
+                        <button type="submit" class="btn btn2" data-aos="fade-up"
+                            data-aos-duration="2100">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <footer class="copyright">
+            <p>&copy; 2024 All rights reserved. Developed by Omar Afifi.</p>
+        </footer>
+    </div>
+
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
