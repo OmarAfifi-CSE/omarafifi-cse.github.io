@@ -146,8 +146,8 @@ section {
 }
 
 .main-container .image {
-    width: 30vw;
-    height: 30vw;
+    width: 33vw;
+    height: 33vw;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 50px var(--my-color);
@@ -648,8 +648,8 @@ nav .fa-regular.fa-circle-xmark,
     }
 
     .main-container .image {
-        width: 70vw;
-        height: 70vw;
+        width: 80vw;
+        height: 80vw;
     }
 
     .main-container .content {
