@@ -438,7 +438,7 @@ section {
     margin: 0;
     max-height: 0;
     opacity: 0;
-    transition: max-height 1s ease-out, opacity 1s ease-out;
+    transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 /* When content is revealed */
@@ -457,12 +457,12 @@ section {
     text-decoration: none;
     color: white;
     font-size: 20px;
-    display: none;/*-----------Change in future------------*/
-    transition: 0.3s;
+    /*display: none;/*-----------Change in future------------*/
+    transition: background-color 0.3s ease-in-out, transform 1.5s ease-in-out !important
 }
 
 .btn:hover {
-    background: var(--my-color);
+    background-color: var(--my-color);
 }
 
 /* -----------------------------------------------------------Contact-----------------------------------------------------------*/

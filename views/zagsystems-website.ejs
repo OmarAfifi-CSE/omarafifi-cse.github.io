@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles/zagsystems-website.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+    <title>Omar Afifi</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                    Omar <span>Afifi</span>
+                </div>
+                <ul id="sidemenu">
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/"
+                            target="_blank">Home</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
+                            target="_blank">About</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
+                            target="_blank">Portfolio</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact">Contact</a>
+                    </li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
+            </div>
+            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
+                <input type="color" id="colorPicker" value="#2636ae">
+            </div>
+        </nav>
+    </header>
+
+    <!-------------------------------------------------omar-portfolio------------------------------------------------->
+    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="zoom-in"
+        data-aos-duration="1500">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="11000">
+                <video autoplay muted loop class="w-100 omar">
+                    <source src="images/zagsystems-website/ZagSystems.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-1.webp" class="w-100">
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-2.webp" class="w-100 setproductwidth">
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-3.webp" class="w-100">
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-4.webp" class="w-100">
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-5.webp" class="w-100">
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/zagsystems-website/ZagSystems-6.webp" class="w-100">
+                <div class="carousel-caption"></div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"><img
+                    src="images/zagsystems-website/ZagSystems.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1"><img
+                    src="images/zagsystems-website/ZagSystems-1.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2"><img
+                    src="images/zagsystems-website/ZagSystems-2.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3"><img
+                    src="images/zagsystems-website/ZagSystems-3.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4"><img
+                    src="images/zagsystems-website/ZagSystems-4.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="5"><img
+                    src="images/zagsystems-website/ZagSystems-5.webp" /></button>
+            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="6"><img
+                    src="images/zagsystems-website/ZagSystems-6.webp" /></button>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="project-title">
+        <h1 data-aos="fade-right" data-aos-duration="1500">ZagSystems Website</h1>
+        <h2 data-aos="fade-left" data-aos-duration="1500">🌐 Web Development 🌐</h2>
+    </div>
+
+
+    <div class="body-container">
+        <div class="project-overview">
+            <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
+            <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">As part of the ZagSystems
+                project, I contributed to the development of a comprehensive website. My role included designing and
+                building a services section with four detailed pages and creating four product pages. I also played a
+                key role in ensuring consistent headers across all pages, enhancing the site's cohesiveness and user
+                experience.
+            </p>
+        </div>
+        <div class="project-features">
+            <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
+            <ol class="features" data-aos="fade-right" data-aos-duration="1500">
+                <li>🌐 <strong>Service Pages:</strong> - Detailed pages with 'Learn More' functionality for a
+                    comprehensive overview.</li>
+                <li>🛠️ <strong>Product Pages:</strong> - Informative and engaging layouts for various products.</li>
+                <li>🖥️ <strong>Consistent Headers:</strong> - Unified design across pages for seamless navigation.</li>
+                <li>📱 <strong>Responsive Design:</strong> - Optimized for various devices to ensure accessibility.</li>
+                <li>🔗 <strong>User-Friendly Navigation:</strong> - Easy access to key information throughout the site.
+                </li>
+                <li>🌟 <strong>Enhanced User Experience:</strong> - Focused on providing a smooth and engaging user
+                    journey.</li>
+            </ol>
+        </div>
+    </div>
+    <div class="video-container" data-aos="zoom-in" data-aos-duration="1500">
+        <video autoplay muted loop class="w-100 omar">
+            <source src="images/zagsystems-website/ZagSystems-1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="learning-experience">
+        <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
+        <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience and an
+            opportunity to develop practical skills in:
+        </p>
+        <ul>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>Web Development</strong></li>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>HTML, CSS, JavaScript</strong></li>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>User Experience Design</strong></li>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>Responsive Layouts</strong></li>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>Content Management</strong></li>
+            <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
+        </ul>
+        <p data-aos="fade-right" data-aos-duration="1500">As a student, I’m proud of the progress I've made with this
+            project and excited about continuing to advance my skills in web development. Each challenge has been a
+            valuable opportunity to grow and innovate. 🚀</p>
+    </div>
+
+    <!-------------------------------------------------Contact------------------------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">Contact me</h1>
+                    <p class="contact email" data-aos="fade-right" data-aos-duration="1500">
+                        <a href="mailto:omarafifi.cse@gmail.com" target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact via Email
+                        </a>
+                    </p>
+                    <p class="contact whatsapp" data-aos="fade-right" data-aos-duration="1800">
+                        <a href="https://wa.me/201154403740" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Contact on WhatsApp
+                        </a>
+                    </p>
+
+                    <div class="social-icons" data-aos="zoom-in" data-aos-duration="2000">
+                        <a href="https://www.linkedin.com/in/omarafifi-cse/" target="_blank" data-aos="fade-up"
+                            data-aos-duration="1800"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/OmarAfifi.CSE" target="_blank" data-aos="fade-up"
+                            data-aos-duration="2100"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/OmarAfifi-CSE" target="_blank" data-aos="fade-up"
+                            data-aos-duration="2100"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="images/Omar Abdelsalam Resume.pdf" class="btn btn2" download data-aos="fade-up"
+                        data-aos-duration="2100">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required data-aos="fade-left"
+                            data-aos-duration="1500">
+                        <input type="email" name="Email" placeholder="Your Email" required data-aos="fade-left"
+                            data-aos-duration="1800">
+                        <textarea name="Message" rows="6" placeholder="Your Message" required data-aos="fade-left"
+                            data-aos-duration="2100"></textarea>
+                        <button type="submit" class="btn btn2" data-aos="fade-up"
+                            data-aos-duration="2100">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <footer class="copyright">
+            <p>&copy; 2024 All rights reserved. Developed by Omar Afifi.</p>
+        </footer>
+    </div>
+    <!-------------------------------------------------Bootstrap------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -31,6 +31,9 @@ app.get('/omar-portfolio', (req, res) => {
 app.get('/digging-jim', (req, res) => {
     res.render('digging-jim');
 });
+app.get('/zagsystems-website', (req, res) => {
+    res.render('zagsystems-website');
+});
 
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on http://localhost:${port}`);
