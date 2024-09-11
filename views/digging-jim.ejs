@@ -13,37 +13,39 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="images/favicon_io/site.webmanifest">
     <title>Omar Afifi</title>
+    <link rel="preload" href="images/Logo.webp" as="image">
+    <link rel="preload" href="images/digging-jim/Digging Jim.mp4" as="media">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                    Omar <span>Afifi</span>
-                </div>
-                <ul id="sidemenu">
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/"
-                            target="_blank" aria-label="Home">Home</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
-                            target="_blank" aria-label="About">About</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
-                            target="_blank" aria-label="Portfolio">Portfolio</a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact" aria-label="Contact">Contact</a>
-                    </li>
-                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="images/Logo.webp" alt="logo">
+                Omar <span>Afifi</span>
             </div>
-            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
-                <input type="color" id="colorPicker" aria-label="Color-Picker" value="#2636ae">
-            </div>
-        </nav>
-    </header>
+            <ul id="sidemenu">
+                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
+                        aria-label="Home">Home</a></li>
+                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
+                        target="_blank" aria-label="About">About</a></li>
+                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
+                        target="_blank" aria-label="Portfolio">Portfolio</a>
+                </li>
+                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
+                        aria-label="Contact">Contact</a>
+                </li>
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
+        </div>
+        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
+            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#2636ae">
+        </div>
+    </nav>
 
     <!-------------------------------------------------digging-jim------------------------------------------------->
-    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="zoom-in"
+    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
         data-aos-duration="1500">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="39000">
@@ -78,15 +80,15 @@
             <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2"><img
                     src="images/digging-jim/Digging-Jim-2.webp" alt="Digging-Jim-2" /></button>
             <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3"><img
-                    src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3"/></button>
+                    src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3" /></button>
         </div>
     </div>
     <br>
     <br>
     <br>
     <div class="project-title">
-        <h1 data-aos="fade-right" data-aos-duration="1500">Digging Jim</h1>
-        <h2 data-aos="fade-left" data-aos-duration="1500">🎮Dig Deep - Collect More🎮</h2>
+        <h1 data-aos="fade-in" data-aos-duration="1500">Digging Jim</h1>
+        <h2 data-aos="fade-in" data-aos-duration="1500">🎮Dig Deep - Collect More🎮</h2>
     </div>
 
 
@@ -196,10 +198,10 @@
                 </div>
             </div>
         </div>
-        <footer class="copyright">
-            <p>&copy; 2024 All rights reserved. Developed by Omar Afifi.</p>
-        </footer>
     </div>
+    <footer class="copyright">
+        <p>&copy; 2024 All rights reserved. Developed by Omar Afifi.</p>
+    </footer>
     <!-------------------------------------------------Bootstrap------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <!-------------------------------------------------Script------------------------------------------------->
