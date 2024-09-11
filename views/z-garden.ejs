@@ -19,11 +19,15 @@
     <link rel="preload" href="images/z-garden/Blynk-Mobile-2.webp" as="image">
     <link rel="preload" href="images/z-garden/Blynk-Mobile-1.webp" as="image">
     <link rel="preload" href="images/z-garden/Blynk-Web.webp" as="image">
-    <link rel="preload" href="images/z-garden/Irrigation Project.webp" as="image">   
+    <link rel="preload" href="images/z-garden/Irrigation Project.webp" as="image">
     <link rel="preload" href="images/z-garden/PCB.webp" as="image">
     <link rel="preload" href="images/z-garden/Schematic.webp" as="image">
     <link rel="preload" href="images/z-garden/Z-Garden.webp" as="image">
     <link rel="preload" href="images/z-garden/Z-Garden-2.webp" as="image">
+
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+
 </head>
 
 <body>
@@ -36,8 +40,8 @@
             <ul id="sidemenu">
                 <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
                         aria-label="Home">Home</a></li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
-                        target="_blank" aria-label="About">About</a></li>
+                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about" target="_blank"
+                        aria-label="About">About</a></li>
                 <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
                         target="_blank" aria-label="Portfolio">Portfolio</a>
                 </li>
@@ -177,7 +181,7 @@
     <div class="video-container" data-aos="zoom-in" data-aos-duration="1500">
         <iframe src="https://www.youtube.com/embed/aryU3QW7BWI" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            allowfullscreen loading="lazy"></iframe>
     </div>
 
     <div class="learning-experience">
@@ -256,7 +260,7 @@
     <script>
         AOS.init({ offset: 0 });
     </script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
