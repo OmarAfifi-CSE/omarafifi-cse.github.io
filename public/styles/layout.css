@@ -164,12 +164,12 @@ nav ul li a:hover {
 .carousel-inner img, .carousel-inner video {
     margin: 30px;
     margin-bottom: 15px;
-    transform: translateX(-50%);
+    transform: translateX(-52%);
     box-shadow: 0px 0 20px 3px var(--my-color);
     border-radius: 30px;
     width: 100% !important;
     text-align: center;
-    max-width: 965px;
+    max-width: 977px;
     height: 550px;
 }
 .w-100.video-margin {
