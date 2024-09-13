@@ -99,9 +99,7 @@ input[type="color"]::-webkit-color-swatch {
 
 input[type="color"]:hover {
     transform: scale(1.1);
-    color: var(--my-color);
     /* border: 0px solid var(--my-color); */
-    background-color: transparent;
     font-weight: 700;
     box-shadow: 0 0 40px var(--my-color);
 }
