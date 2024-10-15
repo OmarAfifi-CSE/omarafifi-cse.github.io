@@ -14,7 +14,7 @@ function closemenu() {
 }
 
 //Google Sheet (Contact Me)
-const scriptURL = 'https://script.google.com/macros/s/AKfycbweMWCMh9HJl5Py1Q2pO1vTBvI6iNeLSSEmCdHJpWE6_xGpRIq4l-Iq1971SHAkb9aBog/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx6Iy37SouYu_YjHu0gdn-CnQ7thOhj3rnX8KFspXF2e2PWXEY9rsINdN90A7fdoztDHA/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")
 form.addEventListener('submit', e => {
