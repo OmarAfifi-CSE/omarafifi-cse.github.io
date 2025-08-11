@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Omar Afifi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="images/Logo.webp" alt="logo">
+                    Omar <span>Afifi</span>
+                </div>
+                <ul id="sidemenu">
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
+                            aria-label="Home">Home</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
+                            target="_blank" aria-label="About">About</a></li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
+                            target="_blank" aria-label="Portfolio">Portfolio</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
+                            aria-label="Contact">Contact</a>
+                    </li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
+            </div>
+            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
+                <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
+            </div>
+        </nav>
+    </header>
+
+    <div id="projects">
+            <div class="container">
+                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">Projects</h1>
+                <div class="work-list">
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1500" data-aos-mirror="true">
+                        <img src="images/Z-Garden.webp" alt="Z-Garden">
+                        <div class="layer">
+                            <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
+                            <p>A smart irrigation system developed with ZagSystems. Key features include real-time
+                                monitoring, automated watering, and data visualization—powered by sustainable energy. A
+                                cornerstone of my learning in IoT and Embedded Systems.</p>
+                            <a href="/z-garden" aria-label="z-garden" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2000" data-aos-mirror="true">
+                        <img src="images/Portfolio.webp" alt="Portfolio">
+                        <div class="layer">
+                            <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
+                            <p>A professional portfolio showcasing my expertise in web development, featuring responsive
+                                designs, modern technologies, and innovative digital solutions to create seamless web
+                                experiences.</p>
+                            <a href="/omar-portfolio" aria-label="omar-portfolio" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2500" data-aos-mirror="true">
+                        <img src="images/Digging-Jim.webp" alt="Digging Jim">
+                        <div class="layer">
+                            <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
+                            <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging Jim
+                                combines intuitive controls with dynamic graphics, demonstrating my skills in game
+                                development and JavaFX.</p>
+                            <a href="/digging-jim" aria-label="digging-jim" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <!-- 2nd row -->
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2500" data-aos-mirror="true">
+                        <img src="images/ZagSystems.webp" alt="ZagSystems-website">
+                        <div class="layer">
+                            <h3>ZagSystems Website<br>🌐Web Development🌐</h3>
+                            <p>Developed a services section with four detailed pages and created four product pages.
+                                Designed consistent headers for a seamless user experience across the site.</p>
+                            <a href="/zagsystems-website" aria-label="zagsystems-website" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-------------------------------------------------Contact - footer------------------------------------------------->
+    <%- include('partials/contact-footer') %>
+        <!-------------------------------------------------Script------------------------------------------------->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({ offset: 0 });
+        </script>
+        <script src="js/layout.js"></script>
+</body>
+
+</html>

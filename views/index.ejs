@@ -78,8 +78,8 @@
                             aria-label="">Home</a></li>
                     <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about"
                             aria-label="">About</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#portfolio"
-                            aria-label="">Portfolio</a>
+                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#projects"
+                            aria-label="">Projects</a>
                     </li>
                     <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
                             aria-label="">Contact</a>
@@ -221,12 +221,12 @@
                 </div>
             </div>
         </div>
-        <!-------------------------------------------------Portfolio------------------------------------------------->
-        <div id="portfolio">
+        <!-------------------------------------------------Projects------------------------------------------------->
+        <div id="projects">
             <div class="container">
-                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">My Work</h1>
+                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1500">Projects</h1>
                 <div class="work-list">
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1500" data-aos-mirror="true">
                         <img src="images/Z-Garden.webp" alt="Z-Garden">
                         <div class="layer">
                             <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
@@ -237,7 +237,7 @@
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
-                    <div class="work" data-aos="zoom-in" data-aos-duration="2000">
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2000" data-aos-mirror="true">
                         <img src="images/Portfolio.webp" alt="Portfolio">
                         <div class="layer">
                             <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
@@ -248,7 +248,7 @@
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
-                    <div class="work" data-aos="zoom-in" data-aos-duration="2500">
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2500" data-aos-mirror="true">
                         <img src="images/Digging-Jim.webp" alt="Digging Jim">
                         <div class="layer">
                             <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
@@ -259,28 +259,12 @@
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
-                    <!-- Hidden Work Items -->
-                    <div class="work-list hidden-content">
-                        <div class="work">
-                            <img src="images/ZagSystems.webp" alt="ZagSystems-website">
-                            <div class="layer">
-                                <h3>ZagSystems Website<br>🌐Web Development🌐</h3>
-                                <p>Developed a services section with four detailed pages and created four product pages.
-                                    Designed consistent headers for a seamless user experience across the site.</p>
-                                <a href="/zagsystems-website" aria-label="zagsystems-website" target="_blank"><i
-                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <a href="#" class="btn" id="see-more-btn" aria-label="see-more-btn" data-aos="flip-right"
-                    data-aos-duration="2000">See more</a>
+                <a href="/projects-page" target="_blank" class="btn">View All Projects</a>
             </div>
         </div>
         <!-------------------------------------------------Contact - footer------------------------------------------------->
         <%- include('partials/contact-footer') %>
-
-
             <!-------------------------------------------------Script------------------------------------------------->
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
             <script>

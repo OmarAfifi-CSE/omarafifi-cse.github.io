@@ -42,7 +42,7 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
-#portfolio{
+#projects{
     background-image: url('/images/backgrounds/Background-2.webp');
     background-size: cover;
     background-position: start;
@@ -231,6 +231,7 @@ section {
 
 .content h1 span {
     color: var(--my-color);
+    font-size: clamp(1rem, 1rem + 5vw, 3rem);
     font-weight: 500;
     /*text-shadow: 0 0 10px var(--my-color);*/
 }
@@ -394,39 +395,53 @@ section {
     font-size: 1.3rem;
 }
 
-/* -----------------------------------------------------------Portfolio-----------------------------------------------------------*/
-#portfolio {
+/* -----------------------------------------------------------Projects-----------------------------------------------------------*/
+#projects {
     padding: 50px 0;
     padding-top: 80px;
 }
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     grid-gap: 40px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
+@media (min-width: 768px) {
+    .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .work-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .work {
+    aspect-ratio: 7 / 8;
     position: relative;
     overflow: hidden;
-    transition: 0.4s;
     border: 3px solid var(--my-color);
     box-shadow: 0 0 20px var(--my-color);
     border-radius: 15px;
+    transition: max-height 0.8s ease, opacity 0.5s ease, margin-top 0.6s ease, transform 0.4s ease;
 }
 
 .work img {
     width: 100%;
     border-radius: 10px;
     display: block;
-    transition: 0.4s;
+    height: 100%;
+    object-fit: cover;
 }
 
 .layer {
     width: 100%;
-    height: 0;
+    height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), var(--my-color));
     border-radius: 10px;
     position: absolute;
@@ -440,13 +455,20 @@ section {
     padding: 0 20px;
     text-align: center;
     font-size: 1.2rem;
-    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 .layer h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+}
+
+.layer p {
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 .layer a {
@@ -464,33 +486,37 @@ section {
 }
 
 .layer a:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .work:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .work:hover img {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .work:hover .layer {
-    height: 100%;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.hidden-content {
-    margin: 0;
+.work.hidden {
     max-height: 0;
     opacity: 0;
-    transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+    margin-top: 0;
+    border-width: 0;
+    overflow: hidden;
 }
 
-/* When content is revealed */
-.hidden-content.show {
+.work.hidden.show {
     max-height: 1000px;
     opacity: 1;
+    margin-top: 40px;
+    border-width: 3px;
 }
+
 
 .btn {
     display: block;
@@ -648,7 +674,7 @@ nav .fa-regular.fa-circle-xmark,
         background-image: url('/images/backgrounds/Background-Mobile-1.webp');
         background-attachment: scroll;
     }
-    #portfolio{
+    #projects{
         background-image: url('/images/backgrounds/Background-Mobile-1.webp');
         background-attachment: scroll;
     }
@@ -739,15 +765,13 @@ nav .fa-regular.fa-circle-xmark,
         cursor: pointer;
     }
     .content h1 {
-        font-size: clamp(1rem, 1rem + 5vw, 3rem);
+        font-size: clamp(1rem, 1rem + 5vw, 1rem);
     }
     .content .typewriter {
-        font-size: clamp(1rem, 1rem + 5vw, 3rem);
+        font-size: clamp(1rem, 1rem + 5vw, 1rem);
     }
     /* -----------------------------------------------------------About-----------------------------------------------------------*/
-    .sub-title {
-        font-size: 3rem;
-    }
+    
 
     .about-col-1,
     .about-col-2 {
@@ -800,7 +824,7 @@ nav .fa-regular.fa-circle-xmark,
         font-size: 1.5rem;
     }
 
-    /* -----------------------------------------------------------Portfolio-----------------------------------------------------------*/
+    /* -----------------------------------------------------------Projects-----------------------------------------------------------*/
     .work-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -868,7 +892,7 @@ nav .fa-regular.fa-circle-xmark,
         background-image: url('/images/backgrounds/Background-Mobile-1.webp');
         background-attachment: scroll;
     }
-    #portfolio{
+    #projects{
         background-image: url('/images/backgrounds/Background-Mobile-1.webp');
         background-attachment: scroll;
     }
@@ -1008,7 +1032,7 @@ nav .fa-regular.fa-circle-xmark,
         font-size: 1.2rem;
     }
 
-    /* -----------------------------------------------------------Portfolio-----------------------------------------------------------*/
+    /* -----------------------------------------------------------Projects-----------------------------------------------------------*/
     .work-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1020,8 +1044,12 @@ nav .fa-regular.fa-circle-xmark,
     }
     
     .layer h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 5px;
+    }
+    .layer p {
+        font-size: 1rem;
+        line-height: 1.2;
     }
     
     .layer a {

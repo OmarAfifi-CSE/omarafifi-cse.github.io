@@ -17,11 +17,14 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.redirect('/#about');
 });
-app.get('/portfolio', (req, res) => {
-    res.redirect('/#portfolio');
+app.get('/projects', (req, res) => {
+    res.redirect('/#projects');
 });
 
 // Serve the My Work page
+app.get('/projects-page', (req, res) => {
+    res.render('projects-page');
+});
 app.get('/z-garden', (req, res) => {
     res.render('z-garden');
 });

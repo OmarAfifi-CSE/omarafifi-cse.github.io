@@ -2,8 +2,7 @@
 //typewriter effect
 const texts = [
     "Software Engineer",
-    "Developer",
-    "Designer"
+    "Flutter Developer"
 ]
 
 let speed = 100;
@@ -50,10 +49,10 @@ function opentab(tabname) {
 
 //Script to handle collapsible sections with arrows (Skills)
 document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', function() {
+    header.addEventListener('click', function () {
         const content = this.nextElementSibling;
         const isActive = this.classList.toggle('active');
-        
+
         if (isActive) {
             // Set max-height to the scrollHeight of the content
             content.style.maxHeight = content.scrollHeight + 'px';
@@ -63,13 +62,3 @@ document.querySelectorAll('.collapsible-header').forEach(header => {
         }
     });
 });
-
-
-//See more (My Work)
-document.getElementById('see-more-btn').addEventListener('click', function(event) {
-    event.preventDefault();
-    const hiddenContent = document.querySelector('.hidden-content');
-    hiddenContent.classList.add('show'); // Add the class to trigger the transition
-    this.style.display = 'none'; // Hide the "See More" button after clicking
-});
-
