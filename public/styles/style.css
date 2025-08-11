@@ -373,14 +373,13 @@ section {
     font-weight: normal;
     color: #008080 !important;
     font-size: 1.4rem !important;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .skill-description {
     color: #ababab;
     font-size: 1.3rem !important;
-    margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 25px;
 }
 
 #experience {
