@@ -8,41 +8,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                    <img src="images/Logo.webp" alt="logo">
-                    Omar <span>Afifi</span>
-                </div>
-                <ul id="sidemenu">
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
-                            aria-label="Home">Home</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
-                            target="_blank" aria-label="About">About</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
-                            target="_blank" aria-label="Portfolio">Portfolio</a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
-                            aria-label="Contact">Contact</a>
-                    </li>
-                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
-            </div>
-            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
-                <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
-            </div>
-        </nav>
-    </header>
-
-    <div id="projects">
+    <header><%- include('partials/header') %></header>
+    <main>
+        <div id="projects">
             <div class="container">
-                <h1 class="sub-title" style="text-align: center;" data-aos="fade-down" data-aos-duration="1500">Projects</h1>
+                <h1 class="sub-title" style="text-align: center;" data-aos="fade-down" data-aos-duration="1500">Projects
+                </h1>
                 <div class="work-list">
                     <div class="work" data-aos="zoom-in" data-aos-duration="1500" data-aos-mirror="true">
                         <img src="images/Z-Garden.webp" alt="Z-Garden">
@@ -91,15 +67,18 @@
                 </div>
             </div>
         </div>
-
-    <!-------------------------------------------------Contact - footer------------------------------------------------->
-    <%- include('partials/contact-footer') %>
-        <!-------------------------------------------------Script------------------------------------------------->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({ offset: 0 });
-        </script>
-        <script src="js/layout.js"></script>
+        <%- include('partials/contact') %>
+    </main>
+    <!------------------------------------------------footer------------------------------------------------->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 0 });
+    </script>
+    <script src="js/layout.js"></script>
 </body>
 
 </html>
