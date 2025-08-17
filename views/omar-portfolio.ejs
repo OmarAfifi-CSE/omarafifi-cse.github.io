@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
+
+    <link rel="stylesheet" href="/styles/common.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
@@ -28,136 +29,149 @@
         <%- include('partials/header') %>
     </header>
     <!-------------------------------------------------omar-portfolio------------------------------------------------->
-    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
-        data-aos-duration="1500">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="16080">
-                <video autoplay muted loop class="w-100 video-margin" aria-label="video">
-                    <source src="images/omar-portfolio/omar-portfolio-1.mp4" alt="omar-portfolio" type="video/mp4">
-                </video>
+    <main>
+        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
+            data-aos-duration="1500">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="16080">
+                    <video autoplay muted loop class="w-100 video-margin" aria-label="video">
+                        <source src="images/omar-portfolio/omar-portfolio-1.mp4" alt="omar-portfolio" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/omar-portfolio/omar-portfolio-home.webp" alt="omar-portfolio-home" class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/omar-portfolio/omar-portfolio-about.webp" alt="omar-portfolio-about" class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/omar-portfolio/omar-portfolio-mywork.webp" alt="omar-portfolio-mywork"
+                        class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/omar-portfolio/omar-portfolio-contact.webp" alt="omar-portfolio-contact"
+                        class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/omar-portfolio/omar-portfolio-home.webp" alt="omar-portfolio-home" class="w-100">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/omar-portfolio/omar-portfolio-about.webp" alt="omar-portfolio-about" class="w-100">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/omar-portfolio/omar-portfolio-mywork.webp" alt="omar-portfolio-mywork" class="w-100">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/omar-portfolio/omar-portfolio-contact.webp" alt="omar-portfolio-contact" class="w-100">
-                <div class="carousel-caption"></div>
+            <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
+                    aria-label="Swap"><img src="images/Portfolio.webp" alt="omar-portfolio" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
+                        src="images/omar-portfolio/omar-portfolio-home.webp" alt="omar-portfolio-home" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
+                        src="images/omar-portfolio/omar-portfolio-about.webp" alt="omar-portfolio-about" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
+                        src="images/omar-portfolio/omar-portfolio-mywork.webp" alt="omar-portfolio-mywork" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
+                        src="images/omar-portfolio/omar-portfolio-contact.webp" alt="omar-portfolio-contact" /></button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-        <div class="carousel-indicators">
-            <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
-                aria-label="Swap"><img src="images/Portfolio.webp" alt="omar-portfolio" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
-                    src="images/omar-portfolio/omar-portfolio-home.webp" alt="omar-portfolio-home" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
-                    src="images/omar-portfolio/omar-portfolio-about.webp" alt="omar-portfolio-about" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
-                    src="images/omar-portfolio/omar-portfolio-mywork.webp" alt="omar-portfolio-mywork" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
-                    src="images/omar-portfolio/omar-portfolio-contact.webp" alt="omar-portfolio-contact" /></button>
+        <br>
+        <br>
+        <br>
+        <div class="project-title">
+            <h1 data-aos="fade-in" data-aos-duration="1500">Omar Afifi</h1>
+            <h2 data-aos="fade-in" data-aos-duration="1500">🌐 Portfolio Website 🌐</h2>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="project-title">
-        <h1 data-aos="fade-in" data-aos-duration="1500">Omar Afifi</h1>
-        <h2 data-aos="fade-in" data-aos-duration="1500">🌐 Portfolio Website 🌐</h2>
-    </div>
 
 
-    <div class="body-container">
-        <div class="project-overview">
-            <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
-            <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to my portfolio website,
-                a comprehensive showcase of my work and skills in various domains.
-                This portfolio highlights my expertise in technology, software development, and project management.
-                Explore my projects, learn about my journey, and see how I’ve applied my skills to create innovative
-                solutions.
-                <br>
-                <br>
-                As an undergraduate student this site is a testament to my journey, showcasing the skills and projects
-                I’ve developed.
-                <br>
-                Here, you'll find
-                detailed insights into my work, including software development, IoT applications, and embedded systems.
-                <br>
-                My goal is to connect with industry professionals and potential employers and secure good opportunities
-                with leading companies where I can contribute and grow further, grow, and advance my career.
+        <div class="body-container">
+            <div class="project-overview">
+                <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
+                <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to my portfolio
+                    website,
+                    a comprehensive showcase of my work and skills in various domains.
+                    This portfolio highlights my expertise in technology, software development, and project management.
+                    Explore my projects, learn about my journey, and see how I’ve applied my skills to create innovative
+                    solutions.
+                    <br>
+                    <br>
+                    As an undergraduate student this site is a testament to my journey, showcasing the skills and
+                    projects
+                    I’ve developed.
+                    <br>
+                    Here, you'll find
+                    detailed insights into my work, including software development, IoT applications, and embedded
+                    systems.
+                    <br>
+                    My goal is to connect with industry professionals and potential employers and secure good
+                    opportunities
+                    with leading companies where I can contribute and grow further, grow, and advance my career.
+                </p>
+            </div>
+            <div class="project-features">
+                <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
+                <ol class="features" data-aos="fade-right" data-aos-duration="1500">
+                    <li>💻 <strong>Technology Showcase:</strong> - Highlights various technologies and tools I’ve worked
+                        with.</li>
+                    <li>🛠️ <strong>Project Portfolio:</strong> - Detailed information about my key projects and
+                        contributions.</li>
+                    <li>📈 <strong>Skills Overview:</strong> - Insights into my technical and soft skills.</li>
+                    <li>🖥️ <strong>Interactive Demos:</strong> - Live demonstrations of select projects and
+                        applications.
+                    </li>
+                    <li>📊 <strong>Data Visualization:</strong> - Visual representations of key metrics and
+                        achievements.
+                    </li>
+                    <li>🌐 <strong>Responsive Design:</strong> - Accessible and functional across all devices.</li>
+                    <li>🔗 <strong>Networking Opportunities:</strong> - Links to my professional profiles and contact
+                        information.</li>
+                    <li>🔒 <strong>Secure and Reliable:</strong> - Ensures your data and interactions are protected.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
+            <video autoplay muted loop class="w-100 video-margin">
+                <source src="images/omar-portfolio/omar-portfolio-1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="learning-experience">
+            <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
+            <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience
+                and an
+                opportunity to develop practical skills in:
             </p>
+            <ul>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Web Development</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>HTML, CSS, JavaScript</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Node.js</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Responsive Design</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Web Performance Optimization</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
+            </ul>
+            <p data-aos="fade-right" data-aos-duration="1500">As a student, I’m proud of the progress I've made with
+                this
+                project and excited about continuing to advance my skills in web development. Each challenge has been a
+                valuable opportunity to grow and innovate. 🚀</p>
         </div>
-        <div class="project-features">
-            <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
-            <ol class="features" data-aos="fade-right" data-aos-duration="1500">
-                <li>💻 <strong>Technology Showcase:</strong> - Highlights various technologies and tools I’ve worked
-                    with.</li>
-                <li>🛠️ <strong>Project Portfolio:</strong> - Detailed information about my key projects and
-                    contributions.</li>
-                <li>📈 <strong>Skills Overview:</strong> - Insights into my technical and soft skills.</li>
-                <li>🖥️ <strong>Interactive Demos:</strong> - Live demonstrations of select projects and applications.
-                </li>
-                <li>📊 <strong>Data Visualization:</strong> - Visual representations of key metrics and achievements.
-                </li>
-                <li>🌐 <strong>Responsive Design:</strong> - Accessible and functional across all devices.</li>
-                <li>🔗 <strong>Networking Opportunities:</strong> - Links to my professional profiles and contact
-                    information.</li>
-                <li>🔒 <strong>Secure and Reliable:</strong> - Ensures your data and interactions are protected.</li>
-            </ol>
-        </div>
-    </div>
-    <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
-        <video autoplay muted loop class="w-100 video-margin">
-            <source src="images/omar-portfolio/omar-portfolio-1.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="learning-experience">
-        <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
-        <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience and an
-            opportunity to develop practical skills in:
-        </p>
-        <ul>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Web Development</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>HTML, CSS, JavaScript</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Node.js</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Responsive Design</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Web Performance Optimization</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
-        </ul>
-        <p data-aos="fade-right" data-aos-duration="1500">As a student, I’m proud of the progress I've made with this
-            project and excited about continuing to advance my skills in web development. Each challenge has been a
-            valuable opportunity to grow and innovate. 🚀</p>
-    </div>
-
-    <!-------------------------------------------------Contact - footer------------------------------------------------->
-    <%- include('partials/contact-footer') %>
-
-
-        <!-------------------------------------------------Bootstrap------------------------------------------------->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-        <!-------------------------------------------------Script------------------------------------------------->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({ offset: 0 });
-        </script>
-        <script src="js/layout.js"></script>
+        <%- include('partials/contact') %>
+    </main>
+    <!-------------------------------------------------footer------------------------------------------------->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    <!-------------------------------------------------Bootstrap------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 0 });
+    </script>
+    <script src="js/layout.js"></script>
 </body>
 
 </html>
