@@ -65,258 +65,260 @@
 </head>
 
 <body>
-    <div id="Home">
-        <nav>
-            <div class="nav-container" id="home">
-                <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                    <img src="images/Logo.webp" alt="Logo">
-                    Omar <span>Afifi</span>
-                </div>
+    <header><%- include('partials/header') %></header>
+    <main>
+        <div id="Home">
 
-                <ul id="sidemenu">
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#"
-                            aria-label="">Home</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about"
-                            aria-label="">About</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#projects"
-                            aria-label="">Projects</a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#contact"
-                            aria-label="">Contact</a>
-                    </li>
-                    <li><i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i></li>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1000"></i>
-            </div>
-            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="400">
-                <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
-            </div>
-        </nav>
 
-        <section>
-            <div class="main-container">
-                <div class="image" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="100">
-                    <img src="images/Omar.webp" alt="Personal Image">
+            <section>
+                <div class="main-container">
+                    <div class="image" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="100">
+                        <img src="images/Omar.webp" alt="Personal Image">
+                    </div>
+                    <div class="content">
+                        <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">Hi, I'm
+                            <span>Omar Afifi</span>
+                        </h1>
+                        <br>
+                        <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                            <span class="typewriter-text"></span><label for="">|</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="content">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">Hi, I'm
-                        <span>Omar Afifi</span>
+            </section>
+        </div>
+        <!-------------------------------------------------About------------------------------------------------->
+        <div id="Background">
+            <div id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="about-col-1" data-aos="fade-right" data-aos-duration="1000">
+                            <img src="images/Omar-2.webp" alt="Personal Photo" loading="lazy">
+                        </div>
+                        <div class="about-col-2">
+                            <h1 class="sub-title" data-aos="zoom-in" data-aos-duration="1000">About Me</h1>
+                            <p data-aos="fade-left" data-aos-duration="1000">Computer & Systems Engineering student who
+                                translates theory into practice by building a diverse project portfolio,
+                                from full-stack mobile and web applications, Java desktop tools to hardware-integrated
+                                IoT
+                                systems, currently specializing in cross-platform mobile development as a Flutter
+                                Developer.
+                            </p>
+
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')" data-aos="fade-up"
+                                    data-aos-duration="1000" data-aos-delay="100">Skills</p>
+                                <p class="tab-links" onclick="opentab('experience')" data-aos="fade-up"
+                                    data-aos-duration="1000" data-aos-delay="200">Experience</p>
+                                <p class="tab-links" onclick="opentab('education')" data-aos="fade-up"
+                                    data-aos-duration="1000" data-aos-delay="300">
+                                    Education</p>
+                            </div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="100">
+                                            <span class="arrow">&#9654;</span><span>Programming Languages</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Dart | Flutter | Java | JavaFX | C | C++
+                                                |
+                                                SQL | JavaScript | Node.js | Python</p>
+                                            <p class="skill-description">Developed various software applications using
+                                                these
+                                                languages.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="200">
+                                            <span class="arrow">&#9654;</span><span>Web Development</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Frontend Development (HTML | CSS |
+                                                JavaScript | Node.js)</p>
+                                            <p class="skill-description">Built responsive websites and web applications.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="250">
+                                            <span class="arrow">&#9654;</span><span>Mobile Development</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Dart | Flutter</p>
+                                            <p class="skill-description">Created cross-platform mobile apps.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="300">
+                                            <span class="arrow">&#9654;</span><span>Embedded Systems & IoT</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Internet of Things (IoT)</p>
+                                            <p class="skill-description">Developed smart monitoring systems.</p>
+                                            <br>
+                                            <p class="skill-highlight">&#x25C6; Arduino</p>
+                                            <p class="skill-description">Programmed various Arduino projects.</p>
+                                            <br>
+                                            <p class="skill-highlight">&#x25C6; Embedded Systems</p>
+                                            <p class="skill-description">Worked with microcontrollers like ESP32.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="350">
+                                            <span class="arrow">&#9654;</span><span>Hardware Design</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Printed Circuit Board (PCB) Design</p>
+                                            <p class="skill-description">Designed custom PCBs.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
+                                            data-aos-delay="400">
+                                            <span class="arrow">&#9654;</span><span>Product Development</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-description">Led development from idea to prototype.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-contents" id="experience">
+                                <ul>
+                                    <li>
+                                        <div class="collapsible-header">
+                                            <span class="arrow">&#9654;</span><span>Flutter Developer Trainee |
+                                                DEPI | Jun 2025 - Present</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Selected for a competitive, intensive
+                                                6-month training program focused on advanced cross-platform development,
+                                                fully
+                                                sponsored by the Ministry of Communications and Information Technology
+                                                (MCIT).</p>
+                                            <p class="skill-highlight">&#x25C6; Undergoing 200+ hours of intensive,
+                                                mastering core and advanced Flutter principles, including Dart
+                                                fundamentals,
+                                                advanced state management, UI/UX basics, backend integration with
+                                                Firebase, and version control with Git/GitHub.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header">
+                                            <span class="arrow">&#9654;</span><span>Software Engineer Intern |
+                                                ZagSystems | Jun 2024 - Sep 2024</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Engineered the Z-Garden smart irrigation
+                                                system using IoT technology, covering the full lifecycle from initial
+                                                concept and
+                                                prototyping with Arduino and ESP32 to final implementation.</p>
+                                            <p class="skill-highlight">&#x25C6; Expanded the company's digital presence
+                                                by developing and integrating a new "Services" section, featuring four
+                                                dedicated pages, and a "Partners" section on the corporate website.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li>
+                                        <div class="collapsible-header">
+                                            <span class="arrow">&#9654;</span><span>Bachelor of Engineering |
+                                                Zagazig University | Sep 2022 - Jun 2027</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <p class="skill-highlight">&#x25C6; Major: Computer and Systems Engineering.
+                                            </p>
+                                            <p class="skill-highlight">&#x25C6; Overall Grade: Very Good.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------Projects------------------------------------------------->
+            <div id="projects">
+                <div class="container">
+                    <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Projects
                     </h1>
-                    <br>
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-                        <span class="typewriter-text"></span><label for="">|</label>
+                    <div class="work-list">
+                        <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                            <img src="images/Z-Garden.webp" alt="Z-Garden" loading="lazy">
+                            <div class="layer">
+                                <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
+                                <p>A smart irrigation system developed with ZagSystems. Key features include real-time
+                                    monitoring, automated watering, and data visualization—powered by sustainable
+                                    energy. A
+                                    cornerstone of my learning in IoT and Embedded Systems.</p>
+                                <a href="/z-garden" aria-label="z-garden" target="_blank"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                            <img src="images/FinFlow.webp" alt="FinFlow" loading="lazy">
+                            <div class="layer">
+                                <h3>FinFlow<br>📱 Cross-Platform Finance Tracker 🖥️</h3>
+                                <p>A cross-platform finance tracker that helps users manage their expenses and income
+                                    effectively. Built with Flutter, it offers a seamless experience on 4 different platforms:
+                                    iOS, Android, Web, and Desktop.</p>
+                                <a href="/finflow" aria-label="finflow" target="_blank"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                            <img src="images/Portfolio.webp" alt="Portfolio" loading="lazy">
+                            <div class="layer">
+                                <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
+                                <p>A professional portfolio showcasing my expertise in web development, featuring
+                                    responsive
+                                    designs, modern technologies, and innovative digital solutions to create seamless
+                                    web
+                                    experiences.</p>
+                                <a href="/omar-portfolio" aria-label="omar-portfolio" target="_blank"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                            <img src="images/Digging-Jim.webp" alt="Digging Jim" loading="lazy">
+                            <div class="layer">
+                                <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
+                                <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging
+                                    Jim
+                                    combines intuitive controls with dynamic graphics, demonstrating my skills in game
+                                    development and JavaFX.</p>
+                                <a href="/digging-jim" aria-label="digging-jim" target="_blank"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="flip-right" data-aos-duration="1000" data-aos-delay="100">
+                        <a href="/projects-page" target="_blank" class="btn">View All Projects</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-    <!-------------------------------------------------About------------------------------------------------->
-    <div id="Background">
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="about-col-1" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="images/Omar-2.webp" alt="Personal Photo" loading="lazy">
-                    </div>
-                    <div class="about-col-2">
-                        <h1 class="sub-title" data-aos="zoom-in" data-aos-duration="1000">About Me</h1>
-                        <p data-aos="fade-left" data-aos-duration="1000">Computer & Systems Engineering student who
-                            translates theory into practice by building a diverse project portfolio,
-                            from full-stack mobile and web applications, Java desktop tools to hardware-integrated IoT
-                            systems, currently specializing in cross-platform mobile development as a Flutter Developer.
-                        </p>
-
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')" data-aos="fade-up"
-                                data-aos-duration="1000" data-aos-delay="100">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')" data-aos="fade-up"
-                                data-aos-duration="1000" data-aos-delay="200">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')" data-aos="fade-up"
-                                data-aos-duration="1000" data-aos-delay="300">
-                                Education</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="100">
-                                        <span class="arrow">&#9654;</span><span>Programming Languages</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Dart | Flutter | Java | JavaFX | C | C++ |
-                                            SQL | JavaScript | Node.js | Python</p>
-                                        <p class="skill-description">Developed various software applications using these
-                                            languages.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="200">
-                                        <span class="arrow">&#9654;</span><span>Web Development</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Frontend Development (HTML | CSS |
-                                            JavaScript | Node.js)</p>
-                                        <p class="skill-description">Built responsive websites and web applications.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="250">
-                                        <span class="arrow">&#9654;</span><span>Mobile Development</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Dart | Flutter</p>
-                                        <p class="skill-description">Created cross-platform mobile apps.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="300">
-                                        <span class="arrow">&#9654;</span><span>Embedded Systems & IoT</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Internet of Things (IoT)</p>
-                                        <p class="skill-description">Developed smart monitoring systems.</p>
-                                        <br>
-                                        <p class="skill-highlight">&#x25C6; Arduino</p>
-                                        <p class="skill-description">Programmed various Arduino projects.</p>
-                                        <br>
-                                        <p class="skill-highlight">&#x25C6; Embedded Systems</p>
-                                        <p class="skill-description">Worked with microcontrollers like ESP32.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="350">
-                                        <span class="arrow">&#9654;</span><span>Hardware Design</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Printed Circuit Board (PCB) Design</p>
-                                        <p class="skill-description">Designed custom PCBs.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header" data-aos="fade-left" data-aos-duration="1000"
-                                        data-aos-delay="400">
-                                        <span class="arrow">&#9654;</span><span>Product Development</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-description">Led development from idea to prototype.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li>
-                                    <div class="collapsible-header">
-                                        <span class="arrow">&#9654;</span><span>Flutter Developer Trainee |
-                                            DEPI | Jun 2025 - Present</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Selected for a competitive, intensive
-                                            6-month training program focused on advanced cross-platform development,
-                                            fully
-                                            sponsored by the Ministry of Communications and Information Technology
-                                            (MCIT).</p>
-                                        <p class="skill-highlight">&#x25C6; Undergoing 200+ hours of intensive,
-                                            mastering core and advanced Flutter principles, including Dart
-                                            fundamentals,
-                                            advanced state management, UI/UX basics, backend integration with
-                                            Firebase, and version control with Git/GitHub.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header">
-                                        <span class="arrow">&#9654;</span><span>Software Engineer Intern |
-                                            ZagSystems | Jun 2024 - Sep 2024</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Engineered the Z-Garden smart irrigation
-                                            system using IoT technology, covering the full lifecycle from initial
-                                            concept and
-                                            prototyping with Arduino and ESP32 to final implementation.</p>
-                                        <p class="skill-highlight">&#x25C6; Expanded the company's digital presence
-                                            by developing and integrating a new "Services" section, featuring four
-                                            dedicated pages, and a "Partners" section on the corporate website.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li>
-                                    <div class="collapsible-header">
-                                        <span class="arrow">&#9654;</span><span>Bachelor of Engineering |
-                                            Zagazig University | Sep 2022 - Jun 2027</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <p class="skill-highlight">&#x25C6; Major: Computer and Systems Engineering.
-                                        </p>
-                                        <p class="skill-highlight">&#x25C6; Overall Grade: Very Good.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-------------------------------------------------Projects------------------------------------------------->
-        <div id="projects">
-            <div class="container">
-                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Projects</h1>
-                <div class="work-list">
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                        <img src="images/Z-Garden.webp" alt="Z-Garden" loading="lazy">
-                        <div class="layer">
-                            <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
-                            <p>A smart irrigation system developed with ZagSystems. Key features include real-time
-                                monitoring, automated watering, and data visualization—powered by sustainable energy. A
-                                cornerstone of my learning in IoT and Embedded Systems.</p>
-                            <a href="/z-garden" aria-label="z-garden" target="_blank"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-                        <img src="images/Portfolio.webp" alt="Portfolio" loading="lazy">
-                        <div class="layer">
-                            <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
-                            <p>A professional portfolio showcasing my expertise in web development, featuring responsive
-                                designs, modern technologies, and innovative digital solutions to create seamless web
-                                experiences.</p>
-                            <a href="/omar-portfolio" aria-label="omar-portfolio" target="_blank"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-                        <img src="images/Digging-Jim.webp" alt="Digging Jim" loading="lazy">
-                        <div class="layer">
-                            <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
-                            <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging Jim
-                                combines intuitive controls with dynamic graphics, demonstrating my skills in game
-                                development and JavaFX.</p>
-                            <a href="/digging-jim" aria-label="digging-jim" target="_blank"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos="flip-right" data-aos-duration="1000" data-aos-delay="100">
-                    <a href="/projects-page" target="_blank" class="btn">View All Projects</a>
-                </div>
-            </div>
-        </div>
-        <!-------------------------------------------------Contact - footer------------------------------------------------->
-        <%- include('partials/contact-footer') %>
-            <!-------------------------------------------------Script------------------------------------------------->
-            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-            <script>
-                AOS.init({once: true, offset: 0 });
-            </script>
-            <script src="js/layout.js"></script>
-            <script src="js/index.js"></script>
+            <%- include('partials/contact-footer') %>
+    </main>
+    <!-------------------------------------------------Contact - footer------------------------------------------------->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 0 });
+    </script>
+    <script src="js/layout.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

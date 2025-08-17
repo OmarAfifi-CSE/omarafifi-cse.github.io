@@ -28,6 +28,9 @@ app.get('/projects-page', (req, res) => {
 app.get('/z-garden', (req, res) => {
     res.render('z-garden');
 });
+app.get('/finflow', (req, res) => {
+    res.render('finflow');
+});
 app.get('/omar-portfolio', (req, res) => {
     res.render('omar-portfolio');
 });

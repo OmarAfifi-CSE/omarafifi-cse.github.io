@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
@@ -22,33 +25,8 @@
 
 <body>
     <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                    <img src="images/Logo.webp" alt="logo">
-                    Omar <span>Afifi</span>
-                </div>
-                <ul id="sidemenu">
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
-                            aria-label="Home">Home</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about"
-                            target="_blank" aria-label="About">About</a></li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
-                            target="_blank" aria-label="Portfolio">Portfolio</a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
-                            aria-label="Contact">Contact</a>
-                    </li>
-                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
-            </div>
-            <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
-                <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
-            </div>
-        </nav>
+        <%- include('partials/header') %>
     </header>
-
     <!-------------------------------------------------omar-portfolio------------------------------------------------->
     <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
         data-aos-duration="1500">
