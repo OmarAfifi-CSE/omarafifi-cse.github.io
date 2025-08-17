@@ -14,45 +14,18 @@
         display: block;
     }
 
+    .video-container video {
+        max-width: 400px;
+    }
+
 }
 
-
-/* Tech Stack Section Styling */
-.tech-stack {
-    margin-top: 50px; /* Adds space above the section */
-}
-
-.tech-stack h2, .try-it-live h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--main-color); /* Uses the theme color from the color picker */
-    margin-bottom: 20px;
-}
-
-.tech-stack p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.tech-stack ul {
-    list-style: none; /* Removes default bullet points */
-    padding-left: 0;
-}
-
-.tech-stack ul li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    padding-left: 35px; /* Makes room for the custom icon */
-    position: relative;
-}
-
-.tech-stack ul li::before {
-    content: '🛠️'; /* Using an emoji as a bullet point */
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: 2px;
+.video-container video {
+    box-shadow: 0px 0 20px 3px var(--my-color);
+    border-radius: 30px;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
 }
 
 /* "Try It Live" Call-to-Action Section */
@@ -60,7 +33,7 @@
     text-align: center;
     padding: 60px 20px;
     margin: 60px auto;
-    background-color: #f4f7fc; /* A light, clean background */
+    background-color: #282829;
     border-radius: 20px;
     max-width: 1000px;
     width: 90%;
@@ -69,13 +42,13 @@
 .try-it-live h2 {
     font-size: 2.2rem;
     font-weight: 600;
-    color: var(--main-color); /* Uses your theme color */
+    color: var(--main-color);
     margin-bottom: 20px;
 }
 
 .try-it-live p {
     font-size: 1.2rem;
-    color: #555;
+    color: #9b9b9b;
     margin-bottom: 30px;
 }
 
@@ -83,20 +56,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between buttons */
-    flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .live-buttons .btn {
     font-size: 1rem;
     font-weight: bold;
     padding: 12px 28px;
-    border-radius: 50px; /* Pill-shaped buttons */
+    border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: inline-flex; /* Helps align icon and text */
+    display: inline-flex;
     align-items: center;
 }
 
@@ -106,21 +79,6 @@
 }
 
 .live-buttons .btn i {
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 1.1rem;
-}
-
-/* Specific fix for the two icons in one button */
-.live-buttons .btn .fa-android {
-    margin-left: -2px; /* Pulls the second icon closer */
     margin-right: 10px;
-}
-
-/* Dark Theme Adjustments */
-body.dark-theme .try-it-live {
-    background-color: #2a2a30; /* A darker background for dark mode */
-}
-
-body.dark-theme .try-it-live p {
-    color: #ccc;
+    font-size: 1.1rem;
 }
