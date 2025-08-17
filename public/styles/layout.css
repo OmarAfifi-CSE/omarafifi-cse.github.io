@@ -112,6 +112,54 @@ body {
     flex-direction: column;
     text-align: center;
     font-size: 1.5rem;
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.1), rgba(31, 53, 255, 0.05));
+    border: 2px solid var(--my-color);
+    border-radius: 25px;
+    padding: 40px 30px;
+    margin: 30px auto;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(31, 53, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(31, 53, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.project-title h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--my-color), #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    text-shadow: 0 0 30px rgba(31, 53, 255, 0.5);
+}
+
+.project-title h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    opacity: 0.9;
+    letter-spacing: 1px;
 }
 
 .body-container {
@@ -119,18 +167,131 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    margin: 20px 200px;
+    margin: 50px 200px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(31, 53, 255, 0.05));
+    border: 1px solid rgba(31, 53, 255, 0.3);
+    border-radius: 20px;
+    padding: 50px;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(31, 53, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.body-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.project-overview h1,
+.project-features h2 {
+    color: var(--my-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(31, 53, 255, 0.4);
+    position: relative;
+    display: inline-block;
+}
+
+.project-overview h1::after,
+.project-features h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--my-color), transparent);
+    border-radius: 2px;
+}
+
+.project-overview {
+    margin-bottom: 50px;
+}
+
+.project-features {
+    margin-top: 30px;
 }
 
 .overview-description {
-    color: #ababab;
+    color: #d1d1d1;
     font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid var(--my-color);
+    border-radius: 0 15px 15px 0;
+    box-shadow: inset 0 0 20px rgba(31, 53, 255, 0.1);
+    position: relative;
+}
+
+.overview-description strong {
+    color: var(--my-color);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(31, 53, 255, 0.3);
 }
 
 .features {
-    color: #ababab;
-    margin-left: 50px;
+    color: #c5c5c5;
+    margin-left: 0px;
     font-size: 1.3rem;
+    line-height: 1.8;
+    list-style: none;
+    counter-reset: feature-counter;
+}
+
+.features li {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.08), rgba(0, 0, 0, 0.3));
+    border: 1px solid rgba(31, 53, 255, 0.2);
+    border-radius: 15px;
+    position: relative;
+    counter-increment: feature-counter;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.features li:hover {
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.15), rgba(0, 0, 0, 0.4));
+    border-color: var(--my-color);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(31, 53, 255, 0.2);
+}
+
+.features li::before {
+    content: counter(feature-counter, decimal-leading-zero);
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background: var(--my-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(31, 53, 255, 0.4);
 }
 
 .features strong {
@@ -168,30 +329,100 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    margin: 20px 200px;
-    border-bottom: 2px solid var(--my-color);
-    margin-bottom: 40px;
+    margin: 60px 200px;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(31, 53, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid var(--my-color);
+    border-radius: 20px;
+    padding: 40px 50px;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
 .learning-experience h2 {
-    color: #49cc4e;
-    border-bottom: 2px solid #49cc4e;
-    padding-bottom: 10px;
+    color: var(--my-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(31, 53, 255, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.learning-experience h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--my-color), transparent);
+    border-radius: 2px;
 }
 
 .learning-experience p {
     font-size: 1.4rem;
     padding-top: 10px;
+    padding-bottom: 20px;
+    color: #d1d1d1;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 .learning-experience ul {
     margin: 0;
     font-size: 1.2rem;
-    padding-left: 20px;
+    padding-left: 0px;
+    list-style: none;
+    counter-reset: learning-counter;
 }
 
 .learning-experience ul li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--my-color);
+    border-radius: 12px;
+    position: relative;
+    counter-increment: learning-counter;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    color: #d1d1d1;
+    line-height: 1.7;
+}
+
+.learning-experience ul li:hover {
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.08), rgba(0, 0, 0, 0.5));
+    border-color: rgba(31, 53, 255, 0.3);
+    border-left-color: var(--my-color);
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.learning-experience ul li::before {
+    content: "→";
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--my-color);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(31, 53, 255, 0.3);
 }
 
 .learning-experience ul li strong {
@@ -289,36 +520,31 @@ body {
     }
 
     /*---------------------------------------------------------projects---------------------------------------------*/
+    .project-title {
+        margin: 20px 30px;
+        padding: 30px 20px;
+    }
+    
+    .project-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-title h2 {
+        font-size: 1.5rem;
+    }
+
     .body-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 40px 50px;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 2.8rem;
-    }
-
-    p {
-        font-size: 2rem !important;
-    }
-
-    ol li {
-        font-size: 1.8rem;
-    }
-
-    ul li {
-        font-size: 1.8rem;
+        padding: 30px;
     }
 
     .learning-experience {
-        margin: 20px 50px;
+        margin: 40px 50px;
+        padding: 30px;
     }
 }
 
@@ -387,42 +613,61 @@ body {
     }
 
     /*------------------------------------------------------------projects-----------------------------------------------------------*/
+    .project-title {
+        margin: 20px 20px;
+        padding: 25px 15px;
+    }
+    
+    .project-title h1 {
+        font-size: 2rem;
+    }
+    
+    .project-title h2 {
+        font-size: 1.2rem;
+    }
+
     .body-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 20px 20px;
+        padding: 25px 20px;
     }
 
-    h1 {
+    .project-overview h1,
+    .project-features h2 {
         font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1.3rem !important;
-    }
-
-    ol li {
-        font-size: 1.1rem;
-    }
-
-    ul li {
-        font-size: 1.1rem;
     }
 
     .learning-experience {
         margin: 20px 20px;
+        padding: 25px 20px;
+    }
+    
+    .learning-experience h2 {
+        font-size: 1.5rem;
+    }
+
+    .features li::before,
+    .learning-experience ul li::before {
+        width: 25px;
+        height: 25px;
+        left: -12px;
+        font-size: 1rem;
+    }
+
+    .features li,
+    .learning-experience ul li {
+        padding: 12px 20px;
+        margin-left: 15px;
     }
 
     /* -----------------------------------------------------------Overview-----------------------------------------------------------*/
     .overview-description {
         color: #ababab;
         font-size: 1.2rem;
+        text-align: left !important;
     }
 
     /* -----------------------------------------------------------Features-----------------------------------------------------------*/
@@ -435,6 +680,7 @@ body {
     /* -----------------------------------------------------------Learning Experience------------------------------------------------*/
     .learning-experience p {
         font-size: 1.2rem;
+        text-align: left !important;
     }
 
     .learning-experience ul {
