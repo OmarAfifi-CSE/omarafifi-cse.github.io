@@ -17,6 +17,7 @@
     <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/z-garden.css">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
@@ -34,224 +35,211 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                <img src="images/Logo.webp" alt="logo">
-                Omar <span>Afifi</span>
-            </div>
-            <ul id="sidemenu">
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
-                        aria-label="Home">Home</a></li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about" target="_blank"
-                        aria-label="About">About</a></li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
-                        target="_blank" aria-label="Portfolio">Portfolio</a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
-                        aria-label="Contact">Contact</a>
-                </li>
-                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
-        </div>
-        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
-            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
-        </div>
-    </nav>
-
+    <header><%- include('partials/header') %></header>
     <!-------------------------------------------------Z-garden------------------------------------------------->
-    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
-        data-aos-duration="1500">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="2000">
-                <img src="images/z-garden/Z-Garden-wide.webp" alt="Z-Garden-wide" class="w-100 max-width-1200">
-                <div class="carousel-caption"></div>
+    <main>
+        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
+            data-aos-duration="1500">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="images/z-garden/Z-Garden-wide.webp" alt="Z-Garden-wide" class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Blynk-Web.webp" alt="Blynk-Web" class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Blynk-Mobile-1.webp" alt="Blynk-Mobile-1" class="w-100 blynk-mobile">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Blynk-Mobile-2.webp" alt="Blynk-Mobile-2" class="w-100 blynk-mobile">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Irrigation Project.webp" alt="Irrigation Project"
+                        class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Schematic.webp" alt="Schematic" class="w-100 schematic">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/PCB.webp" alt="PCB" class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+
+
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Z-Garden.webp" alt="Z-Garden" class="w-100 z-garden">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Z-Garden-2.webp" alt="Z-Garden-2" class="w-100 z-garden">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/z-garden/Omar-Z-Garden.webp" alt="Z-Garden" class="w-100 omar">
+                    <div class="carousel-caption"></div>
+                </div>
+
+
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Blynk-Web.webp" alt="Blynk-Web" class="w-100 max-width-1200">
-                <div class="carousel-caption"></div>
+
+            <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
+                    aria-label="Swap"><img src="images/z-garden/Z-Garden-wide.webp" alt="Z-Garden-wide" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
+                        src="images/z-garden/Blynk-Web.webp" alt="Blynk-Web" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
+                        src="images/z-garden/Blynk-Mobile-1.webp" alt="Blynk-Mobile-1" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
+                        src="images/z-garden/Blynk-Mobile-2.webp" alt="Blynk-Mobile-2" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
+                        src="images/z-garden/Irrigation Project.webp" alt="Irrigation Project" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="5" aria-label="Swap"><img
+                        src="images/z-garden/Schematic.webp" alt="Schematic" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="6" aria-label="Swap"><img
+                        src="images/z-garden/PCB.webp" alt="PCB" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="7" aria-label="Swap"><img
+                        src="images/z-garden/Z-Garden.webp" alt="Z-Garden" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="8" aria-label="Swap"><img
+                        src="images/z-garden/Z-Garden-2.webp" alt="Z-Garden-2" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="9" aria-label="Swap"><img
+                        src="images/z-garden/Omar-Z-Garden.webp" alt="Z-Garden" /></button>
+
+
             </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Blynk-Mobile-1.webp" alt="Blynk-Mobile-1" class="w-100 blynk-mobile">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Blynk-Mobile-2.webp" alt="Blynk-Mobile-2" class="w-100 blynk-mobile">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Irrigation Project.webp" alt="Irrigation Project"
-                    class="w-100 max-width-1200">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Schematic.webp" alt="Schematic" class="w-100 schematic">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/PCB.webp" alt="PCB" class="w-100 max-width-1200">
-                <div class="carousel-caption"></div>
-            </div>
-
-
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Z-Garden.webp" alt="Z-Garden" class="w-100 z-garden">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Z-Garden-2.webp" alt="Z-Garden-2" class="w-100 z-garden">
-                <div class="carousel-caption"></div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/z-garden/Omar-Z-Garden.webp" alt="Z-Garden" class="w-100 omar">
-                <div class="carousel-caption"></div>
-            </div>
-
-
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="project-title">
+            <h1 data-aos="fade-in" data-aos-duration="1600">Z-Garden</h1>
+            <h2 data-aos="fade-in" data-aos-duration="1700">🌱Smart Irrigation Project🌱</h2>
         </div>
 
-        <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
 
-        <div class="carousel-indicators">
-            <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
-                aria-label="Swap"><img src="images/z-garden/Z-Garden-wide.webp" alt="Z-Garden-wide" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
-                    src="images/z-garden/Blynk-Web.webp" alt="Blynk-Web" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
-                    src="images/z-garden/Blynk-Mobile-1.webp" alt="Blynk-Mobile-1" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
-                    src="images/z-garden/Blynk-Mobile-2.webp" alt="Blynk-Mobile-2" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
-                    src="images/z-garden/Irrigation Project.webp" alt="Irrigation Project" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="5" aria-label="Swap"><img
-                    src="images/z-garden/Schematic.webp" alt="Schematic" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="6" aria-label="Swap"><img
-                    src="images/z-garden/PCB.webp" alt="PCB" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="7" aria-label="Swap"><img
-                    src="images/z-garden/Z-Garden.webp" alt="Z-Garden" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="8" aria-label="Swap"><img
-                    src="images/z-garden/Z-Garden-2.webp" alt="Z-Garden-2" /></button>
-
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="9" aria-label="Swap"><img
-                    src="images/z-garden/Omar-Z-Garden.webp" alt="Z-Garden" /></button>
-
-
+        <div class="body-container">
+            <div class="project-overview">
+                <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
+                <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to Z-Garden, an
+                    innovative solution designed to bring smart
+                    irrigation
+                    and environmental monitoring
+                    to your garden. Z-Garden leverages cutting-edge technology to create a seamless and automated system
+                    that
+                    ensures your plants receive the optimal care they need, while you enjoy peace of mind and
+                    convenience.
+                </p>
+            </div>
+            <div class="project-features">
+                <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
+                <ol class="features" data-aos="fade-right" data-aos-duration="1500">
+                    <li>🌡️<strong>Air Temperature & Humidity Monitoring</strong> - Keeps track of your garden's
+                        environment.
+                    </li>
+                    <li>🌱<strong>Soil Moisture Measurement</strong> - Ensures your plants get the right amount of
+                        water.
+                    </li>
+                    <li>💦<strong>Adjustable Soil Moisture Threshold</strong> - Automatically triggers the pump to water
+                        plants
+                        when moisture is low.</li>
+                    <li>🌡️<strong>Liquid Temperature:</strong> - Monitors water temperature.</li>
+                    <li>💧<strong>Water TDS Measurement</strong> - Maintains water quality for healthy plant growth.
+                    </li>
+                    <li>🧪<strong>Water pH Measurement</strong> - Keeps the pH levels optimal.</li>
+                    <li>🚰<strong>Water Level Monitoring</strong> - Prevents the pump from running if the tank is empty.
+                    </li>
+                    <li>🔆<strong>Powered by 18V Solar Cell, Battery, or Adapter</strong> - Reliable, sustainable, with
+                        up
+                        to
+                        20
+                        hours of battery life (tested and extendable).</li>
+                    <li>📱<strong>Data Visualization on iOS/Android/Web</strong> - Monitor your garden from anywhere.
+                    </li>
+                    <li>🖥️<strong>Local LCD Visualization</strong> - Real-time data display in your garden.</li>
+                    <li>🤖<strong>Automated Pump Control</strong> - Works when conditions are right: TDS < 400, Water
+                            temp < 50°C, sufficient water, and low soil moisture.</li>
+                    <li>🔌<strong>Dual USB Ports</strong> - Power your devices while tending to your garden.</li>
+                    <li>🔋<strong>Extended Battery Capacity</strong> - Upgradeable to 10,400 mAh for longer operation.
+                    </li>
+                    <li>🔧<strong>Modular Design</strong> - Easy maintenance and upgrades.</li>
+                    <li>📡<strong>Extendable Wi-Fi Range</strong> - Stay connected even in larger areas.</li>
+                </ol>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="project-title">
-        <h1 data-aos="fade-in" data-aos-duration="1600">Z-Garden</h1>
-        <h2 data-aos="fade-in" data-aos-duration="1700">🌱Smart Irrigation Project🌱</h2>
-    </div>
+        <div class="video-container" data-aos="zoom-in" data-aos-duration="1500">
+            <iframe src="https://www.youtube-nocookie.com/embed/aryU3QW7BWI" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy" aria-label="video"></iframe>
+        </div>
 
-
-    <div class="body-container">
-        <div class="project-overview">
-            <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
-            <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to Z-Garden, an
-                innovative solution designed to bring smart
-                irrigation
-                and environmental monitoring
-                to your garden. Z-Garden leverages cutting-edge technology to create a seamless and automated system
-                that
-                ensures your plants receive the optimal care they need, while you enjoy peace of mind and convenience.
+        <div class="learning-experience">
+            <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
+            <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience
+                and an
+                opportunity to develop practical skills in:
             </p>
+            <ul>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Embedded Systems</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Internet of Things (IoT)</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Arduino Programming</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Product Development</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Data Visualization</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Printed Circuit Board (PCB) Design</strong>
+                </li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Prototyping and Testing</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
+            </ul>
+            <p data-aos="fade-right" data-aos-duration="1500">As a student, I'm proud of how far I've come with this
+                project
+                and eager to keep pushing the boundaries of
+                what's possible in smart technology. 🌿</p>
         </div>
-        <div class="project-features">
-            <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
-            <ol class="features" data-aos="fade-right" data-aos-duration="1500">
-                <li>🌡️<strong>Air Temperature & Humidity Monitoring</strong> - Keeps track of your garden's
-                    environment.
-                </li>
-                <li>🌱<strong>Soil Moisture Measurement</strong> - Ensures your plants get the right amount of water.
-                </li>
-                <li>💦<strong>Adjustable Soil Moisture Threshold</strong> - Automatically triggers the pump to water
-                    plants
-                    when moisture is low.</li>
-                <li>🌡️<strong>Liquid Temperature:</strong> - Monitors water temperature.</li>
-                <li>💧<strong>Water TDS Measurement</strong> - Maintains water quality for healthy plant growth.</li>
-                <li>🧪<strong>Water pH Measurement</strong> - Keeps the pH levels optimal.</li>
-                <li>🚰<strong>Water Level Monitoring</strong> - Prevents the pump from running if the tank is empty.
-                </li>
-                <li>🔆<strong>Powered by 18V Solar Cell, Battery, or Adapter</strong> - Reliable, sustainable, with up
-                    to
-                    20
-                    hours of battery life (tested and extendable).</li>
-                <li>📱<strong>Data Visualization on iOS/Android/Web</strong> - Monitor your garden from anywhere.</li>
-                <li>🖥️<strong>Local LCD Visualization</strong> - Real-time data display in your garden.</li>
-                <li>🤖<strong>Automated Pump Control</strong> - Works when conditions are right: TDS < 400, Water temp <
-                        50°C, sufficient water, and low soil moisture.</li>
-                <li>🔌<strong>Dual USB Ports</strong> - Power your devices while tending to your garden.</li>
-                <li>🔋<strong>Extended Battery Capacity</strong> - Upgradeable to 10,400 mAh for longer operation.</li>
-                <li>🔧<strong>Modular Design</strong> - Easy maintenance and upgrades.</li>
-                <li>📡<strong>Extendable Wi-Fi Range</strong> - Stay connected even in larger areas.</li>
-            </ol>
-        </div>
-    </div>
-    <div class="video-container" data-aos="zoom-in" data-aos-duration="1500">
-        <iframe src="https://www.youtube-nocookie.com/embed/aryU3QW7BWI" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy" aria-label="video"></iframe>
-    </div>
-
-    <div class="learning-experience">
-        <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
-        <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience and an
-            opportunity to develop practical skills in:
-        </p>
-        <ul>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Embedded Systems</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Internet of Things (IoT)</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Arduino Programming</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Product Development</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Data Visualization</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Printed Circuit Board (PCB) Design</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Prototyping and Testing</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
-        </ul>
-        <p data-aos="fade-right" data-aos-duration="1500">As a student, I'm proud of how far I've come with this project
-            and eager to keep pushing the boundaries of
-            what's possible in smart technology. 🌿</p>
-    </div>
+        <%- include('partials/contact') %>
+    </main>
 
     <!-------------------------------------------------Contact - footer------------------------------------------------->
-    <%- include('partials/contact-footer') %>
-
-
-        <!-------------------------------------------------Bootstrap------------------------------------------------->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
-        <!-------------------------------------------------Script------------------------------------------------->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({ offset: 0 });
-        </script>
-        <script src="js/layout.js" defer></script>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    <!-------------------------------------------------Bootstrap------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
+    <!-------------------------------------------------Script------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 0 });
+    </script>
+    <script src="js/layout.js"></script>
 </body>
 
 </html>
