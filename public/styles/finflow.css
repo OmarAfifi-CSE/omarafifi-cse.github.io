@@ -14,10 +14,6 @@
         display: block;
     }
 
-    .video-container video {
-        max-width: 400px;
-    }
-
     /* Try It Live Section - Mobile */
     .try-it-live {
         padding: 40px 20px;
@@ -65,13 +61,6 @@
     }
 }
 
-.video-container video {
-    box-shadow: 0px 0 20px 3px var(--my-color);
-    border-radius: 30px;
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-}
 
 /* "Try It Live" Call-to-Action Section */
 .try-it-live {
