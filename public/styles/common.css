@@ -271,6 +271,7 @@ form .btn2 {
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    max-height: 65px;
     background: #262626;
     font-weight: 300;
     font-size: 1rem;
@@ -389,8 +390,8 @@ form .btn2 {
         font-size: 2rem;
     }
 
-    .copyright {
-        font-size: 1.5rem;
+    .copyright p{
+        font-size: 1rem !important;
     }
 }
 
@@ -500,7 +501,7 @@ form .btn2 {
         font-size: 1.2rem;
     }
 
-    .copyright {
-        font-size: 0.8rem;
+    .copyright p{
+        font-size: .8rem !important;
     }
 }
