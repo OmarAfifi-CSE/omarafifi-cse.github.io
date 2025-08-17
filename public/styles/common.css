@@ -152,117 +152,396 @@ nav .fa-regular.fa-circle-xmark,
     background-repeat: no-repeat;
     background-attachment: scroll;
     min-height: 90vh;
+    padding: 60px 0;
+    padding-top: 100px;
+    position: relative;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(31, 53, 255, 0.05));
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+#contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    animation: contactGlow 4s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+@keyframes contactGlow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+#contact .sub-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #ffffff, var(--my-color), #ffffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: contactTitleShimmer 5s ease-in-out infinite;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+@keyframes contactTitleShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .contact-left {
     margin-top: 50px;
     flex-basis: 35%;
+    position: relative;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(31, 53, 255, 0.05));
+    border: 1px solid rgba(31, 53, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.contact-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    border-radius: 25px 25px 0 0;
+    animation: contactLeftGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes contactLeftGlow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .contact-right {
     margin-top: 50px;
     flex-basis: 60%;
+    position: relative;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(31, 53, 255, 0.05));
+    border: 1px solid rgba(31, 53, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.contact-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    border-radius: 25px 25px 0 0;
+    animation: contactRightGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes contactRightGlow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .contact {
-    margin: 15px 0;
+    margin: 20px 0;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(31, 53, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.contact:hover {
+    border-color: rgba(31, 53, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(31, 53, 255, 0.1);
 }
 
 .contact a {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
 .contact i {
-    margin-right: 10px;
+    margin-right: 15px;
     font-size: 1.8rem;
+    transition: all 0.3s ease;
 }
 
 .email a {
     color: #007BFF;
 }
 
-.email a:hover {
+.email:hover a {
     color: #0056b3;
-    transform: scale(1.05);
+}
+
+.email:hover i {
+    transform: scale(1.1);
 }
 
 .whatsapp a {
     color: #25D366;
 }
 
-.whatsapp a:hover {
+.whatsapp:hover a {
     color: #128C7E;
-    transform: scale(1.05);
+}
+
+.whatsapp:hover i {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.social-icons a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .social-icons i {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
-    height: 3rem;
-    background-color: transparent;
-    border: 0.2rem solid var(--my-color);
+    width: 3.2rem;
+    height: 3.2rem;
+    background: transparent;
+    border: 2px solid var(--my-color);
     border-radius: 50%;
     color: var(--my-color);
-    margin: 5px;
+    margin: 8px;
     margin-top: 20px;
-    font-size: 1.5rem;
-    transition: 0.2s linear;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(31, 53, 255, 0.2);
 }
 
 .social-icons i:hover {
-    scale: 1.3;
-    color: black;
+    transform: scale(1.2);
+    color: #ffffff;
     background-color: var(--my-color);
-    filter: drop-shadow(0 0 10px) var(--my-color);
+    border-color: var(--my-color);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--my-color);
 }
 
 .btn.btn2 {
     display: inline-block;
-    background: var(--my-color);
-    border: none;
-    transition: 0.3s;
-    margin: 20px auto;
-    margin-bottom: 50px;
+    background: linear-gradient(135deg, var(--my-color), rgba(31, 53, 255, 0.8));
+    border: 2px solid var(--my-color);
+    border-radius: 15px;
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 25px auto;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(31, 53, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn.btn2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 15px 15px 0 0;
+    animation: btnTopGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes btnTopGlow {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.btn.btn2::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.btn.btn2:hover::after {
+    animation: btnShimmer 0.8s ease-in-out;
+}
+
+@keyframes btnShimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
 }
 
 .btn.btn2:hover {
-    background-color: hsl(233, 70%, 20%);
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.9), var(--my-color));
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(31, 53, 255, 0.4);
+    color: #ffffff;
 }
 
 .contact-right form {
     width: 100%;
+    position: relative;
 }
 
 form input,
 form textarea {
     width: 100%;
-    border: 0;
+    border: 2px solid rgba(31, 53, 255, 0.2);
     outline: none;
-    background: #262626;
-    padding: 15px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(31, 53, 255, 0.05));
+    backdrop-filter: blur(5px);
+    padding: 18px 20px;
     margin: 15px 0;
     color: #fff;
-    font-size: 20px;
-    border-radius: 6px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--my-color);
+    box-shadow: 
+        0 8px 25px rgba(31, 53, 255, 0.2),
+        0 0 20px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(31, 53, 255, 0.1));
+    transform: translateY(-2px);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Poppins', sans-serif;
 }
 
 form .btn2 {
-    padding: 14px 60px;
-    font-size: 20px;
+    padding: 18px 60px;
+    font-size: 1.3rem;
     margin-top: 20px;
     cursor: pointer;
+    border: none;
+    background: linear-gradient(135deg, var(--my-color), rgba(31, 53, 255, 0.8));
 }
 
 #msg {
     color: #61b752;
-    margin-top: -30px;
+    margin-top: 15px;
     display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    background: rgba(97, 183, 82, 0.1);
+    border: 1px solid rgba(97, 183, 82, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+#msg.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* -----------------------------------------------------------Footer-----------------------------------------------------------*/
@@ -363,31 +642,57 @@ form .btn2 {
     }
 
     /* -----------------------------------------------------------Contact Mobile-----------------------------------------------------------*/
+    #contact .sub-title {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+    
     .contact-left,
     .contact-right {
         flex-basis: 100%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .contact-left {
+        margin-bottom: 20px;
     }
 
     .contact-right {
-        margin-top: 0px;
+        margin-top: 20px;
+    }
+
+    .contact {
+        margin: 15px 0;
+        padding: 12px 18px;
     }
 
     .contact a {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 
     .contact i {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
+        margin-right: 12px;
     }
 
     .social-icons i {
-        width: 5rem;
-        height: 5rem;
-        font-size: 3rem;
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2.5rem;
+        margin: 6px;
+        border-width: 3px;
     }
 
     .btn.btn2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        padding: 20px 50px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1.6rem;
+        padding: 20px;
     }
 
     .copyright p{
@@ -474,31 +779,57 @@ form .btn2 {
     }
 
     /* -----------------------------------------------------------Contact Mobile Small-----------------------------------------------------------*/
+    #contact .sub-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
     .contact-left,
     .contact-right {
         flex-basis: 100%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .contact-left {
+        margin-bottom: 15px;
     }
 
     .contact-right {
-        margin-top: 0px;
+        margin-top: 15px;
+    }
+
+    .contact {
+        margin: 12px 0;
+        padding: 10px 15px;
     }
 
     .contact a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .contact i {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        margin-right: 10px;
     }
 
     .social-icons i {
-        width: 3rem;
-        height: 3rem;
-        font-size: 1.5rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.3rem;
+        margin: 4px;
+        border-width: 2px;
     }
 
     .btn.btn2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        padding: 15px 35px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1.1rem;
+        padding: 15px;
     }
 
     .copyright p{
