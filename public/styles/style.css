@@ -34,6 +34,41 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(31, 53, 255, 0.1));
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+#Home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    animation: heroGlow 4s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+@keyframes heroGlow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #about {
@@ -198,6 +233,8 @@ section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .main-container .image {
@@ -206,26 +243,82 @@ section {
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 50px var(--my-color);
+    position: relative;
+}
+
+.main-container .image::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(45deg, var(--my-color), transparent, var(--my-color));
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+    animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+.main-container .image::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    animation: profileShimmer 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes profileGlow {
+    0% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes profileShimmer {
+    0%, 100% {
+        opacity: 0.1;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.3;
+        transform: rotate(180deg);
+    }
 }
 
 .main-container .image img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .main-container .image:hover {
     animation: animate 1s ease-in-out 1;
 }
 
+.main-container .image:hover img {
+    transform: scale(1);
+}
+
 @keyframes animate {
     0% {
         scale: 1;
     }
-
     50% {
         scale: 1.05;
     }
-
     100% {
         scale: 1;
     }
@@ -235,28 +328,154 @@ section {
     color: white;
     width: 40%;
     min-height: 100px;
+    position: relative;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(31, 53, 255, 0.05));
+    border: 1px solid rgba(31, 53, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.main-container .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    border-radius: 25px 25px 0 0;
+    animation: contentGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes contentGlow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .content h1 {
     font-size: clamp(1rem, 1rem + 5vw, 3rem);
-    font-weight: 500;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffffff, var(--my-color), #ffffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 4s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(31, 53, 255, 0.3);
+    position: relative;
+}
+
+@keyframes textShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .content h1 span {
-    color: var(--my-color);
+    background: linear-gradient(135deg, var(--my-color), #ffffff, var(--my-color));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: clamp(1rem, 1rem + 5vw, 3rem);
-    font-weight: 500;
-    /*text-shadow: 0 0 10px var(--my-color);*/
+    font-weight: 600;
+    animation: spanShimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes spanShimmer {
+    0% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 10px rgba(31, 53, 255, 0.5));
+    }
+    100% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 20px rgba(31, 53, 255, 0.8));
+    }
 }
 
 .content .typewriter {
     font-size: clamp(1rem, 1rem + 5vw, 3rem);
+    position: relative;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(31, 53, 255, 0.1));
+    border: 1px solid rgba(31, 53, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(31, 53, 255, 0.1);
+}
+
+.content .typewriter::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(90deg, var(--my-color), transparent, var(--my-color));
+    border-radius: 15px;
+    opacity: 0;
+    z-index: -1;
+    animation: typewriterBorder 3s ease-in-out infinite;
+}
+
+@keyframes typewriterBorder {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.6;
+    }
 }
 
 .content .typewriter-text {
     color: var(--my-color);
-    font-weight: 500;
-    /* text-shadow: 0 0 10px var(--my-color); */
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--my-color), #ffffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: typewriterShimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes typewriterShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.content .typewriter label {
+    color: var(--my-color);
+    animation: cursorBlink 1s infinite;
+    margin-left: 5px;
+    font-weight: 300;
+}
+
+@keyframes cursorBlink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
 /* -----------------------------------------------------------About-----------------------------------------------------------*/
@@ -720,6 +939,13 @@ nav .fa-regular.fa-circle-xmark,
     .main-container {
         display: flex;
         flex-direction: column;
+        padding: 20px;
+    }
+
+    .main-container .content {
+        width: 90%;
+        margin-top: 30px;
+        padding: 20px;
     }
 
     .main-container .image {
@@ -728,8 +954,22 @@ nav .fa-regular.fa-circle-xmark,
         z-index: 1;
     }
 
-    .main-container .content {
-        width: 80%;
+    .main-container .image::before {
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .content .typewriter {
+        padding: 10px 15px;
+        margin-top: 15px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.2;
     }
 
     nav {
@@ -787,13 +1027,6 @@ nav .fa-regular.fa-circle-xmark,
         cursor: pointer;
     }
 
-    .content h1 {
-        font-size: clamp(1rem, 1rem + 5vw, 1rem);
-    }
-
-    .content .typewriter {
-        font-size: clamp(1rem, 1rem + 5vw, 1rem);
-    }
 
     /* -----------------------------------------------------------About-----------------------------------------------------------*/
 
@@ -1009,13 +1242,33 @@ nav .fa-regular.fa-circle-xmark,
         left: 25px;
         cursor: pointer;
     }
-
-    .content h1 {
-        font-size: clamp(1rem, 1rem + 5vw, 1.9rem);
+    .content h1{
+        font-size: 1.8rem ;
+    }
+    .content .omar-afifi{
+        font-size: 1.8rem;
     }
 
+
     .content .typewriter {
-        font-size: clamp(1rem, 1rem + 5vw, 1.9rem);
+        font-size: clamp(1rem, 1rem + 5vw, 1.5rem);
+        padding: 8px 12px;
+        margin-top: 0px;
+        height: 60px;
+    }
+
+    /* Enhanced Mobile Home Section */
+    .main-container .content {
+        width: 95%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .main-container .image::before {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
     }
 
     /* -----------------------------------------------------------About-----------------------------------------------------------*/
