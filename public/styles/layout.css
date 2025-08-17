@@ -626,104 +626,6 @@ body {
     flex-wrap: wrap;
 }
 
-.btn {
-    display: block;
-    margin: 50px auto 0;
-    width: fit-content;
-    border: 2px solid var(--my-color);
-    padding: 18px 60px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 500;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(31, 53, 255, 0.1));
-    backdrop-filter: blur(10px);
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(31, 53, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
-    border-radius: 15px 15px 0 0;
-    animation: btnGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes btnGlow {
-    0% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.btn::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(31, 53, 255, 0.1), transparent);
-    transform: rotate(45deg);
-    transition: all 0.6s ease;
-    opacity: 0;
-}
-
-.btn:hover::after {
-    animation: btnShimmer 0.8s ease-in-out;
-}
-
-@keyframes btnShimmer {
-    0% {
-        transform: translateX(-100%) translateY(-100%) rotate(45deg);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(100%) translateY(100%) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-.btn.btn2 {
-    display: inline-block;
-    background: var(--my-color);
-    border: none;
-    transition: 0.3s;
-    margin: 20px auto;
-    margin-bottom: 50px;
-}
-
-.btn.btn2:hover {
-
-    background: linear-gradient(135deg, rgba(31, 53, 255, 0.3), rgba(31, 53, 255, 0.2));
-    transform: translateY(-3px);
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(31, 53, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
 /*============================================================================================================================*/
 @media (max-width: 1000px) {
     body {
@@ -1051,7 +953,4 @@ body {
         font-size: 2rem;
     }
 
-    .btn {
-        font-size: 1.2rem;
-    }
 }

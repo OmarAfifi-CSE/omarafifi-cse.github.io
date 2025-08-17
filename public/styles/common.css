@@ -185,6 +185,7 @@ nav .fa-regular.fa-circle-xmark,
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -210,9 +211,12 @@ nav .fa-regular.fa-circle-xmark,
 }
 
 @keyframes contactTitleShimmer {
-    0%, 100% {
+
+    0%,
+    100% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
@@ -227,7 +231,7 @@ nav .fa-regular.fa-circle-xmark,
     border: 1px solid rgba(31, 53, 255, 0.2);
     border-radius: 25px;
     backdrop-filter: blur(10px);
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(31, 53, 255, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -249,6 +253,7 @@ nav .fa-regular.fa-circle-xmark,
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -263,7 +268,7 @@ nav .fa-regular.fa-circle-xmark,
     border: 1px solid rgba(31, 53, 255, 0.2);
     border-radius: 25px;
     backdrop-filter: blur(10px);
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(31, 53, 255, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -285,6 +290,7 @@ nav .fa-regular.fa-circle-xmark,
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -377,68 +383,70 @@ nav .fa-regular.fa-circle-xmark,
     color: #ffffff;
     background-color: var(--my-color);
     border-color: var(--my-color);
-    box-shadow: 
+    box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.3),
         0 0 20px var(--my-color);
 }
 
-.btn.btn2 {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--my-color), rgba(31, 53, 255, 0.8));
+.btn {
+    display: block;
+    margin: 50px auto 0;
+    width: fit-content;
     border: 2px solid var(--my-color);
+    padding: 18px 60px;
     border-radius: 15px;
-    padding: 18px 40px;
+    text-decoration: none;
+    color: white;
     font-size: 1.3rem;
     font-weight: 500;
-    color: white;
-    text-decoration: none;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin: 25px auto;
-    margin-bottom: 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(31, 53, 255, 0.1));
     backdrop-filter: blur(10px);
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(31, 53, 255, 0.2);
+        0 0 20px rgba(31, 53, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    z-index: 2;
 }
 
-.btn.btn2::before {
+.btn::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
     border-radius: 15px 15px 0 0;
-    animation: btnTopGlow 3s ease-in-out infinite alternate;
+    animation: btnGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes btnTopGlow {
+@keyframes btnGlow {
     0% {
-        opacity: 0.3;
+        opacity: 0.5;
     }
+
     100% {
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 
-.btn.btn2::after {
+.btn::after {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(31, 53, 255, 0.1), transparent);
     transform: rotate(45deg);
-    opacity: 0;
     transition: all 0.6s ease;
+    opacity: 0;
 }
 
-.btn.btn2:hover::after {
+.btn:hover::after {
     animation: btnShimmer 0.8s ease-in-out;
 }
 
@@ -447,23 +455,35 @@ nav .fa-regular.fa-circle-xmark,
         transform: translateX(-100%) translateY(-100%) rotate(45deg);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         transform: translateX(100%) translateY(100%) rotate(45deg);
         opacity: 0;
     }
 }
 
+.btn.btn2 {
+    display: inline-block;
+    background: var(--my-color);
+    border: none;
+    transition: 0.3s;
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+
 .btn.btn2:hover {
-    background: linear-gradient(135deg, rgba(31, 53, 255, 0.9), var(--my-color));
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 
+
+    background: linear-gradient(135deg, rgba(31, 53, 255, 0.3), rgba(31, 53, 255, 0.2));
+    transform: translateY(-3px);
+    box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(31, 53, 255, 0.4);
-    color: #ffffff;
+        0 0 40px rgba(31, 53, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .contact-right form {
@@ -484,7 +504,7 @@ form textarea {
     font-size: 1.2rem;
     border-radius: 15px;
     transition: all 0.3s ease;
-    box-shadow: 
+    box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     position: relative;
@@ -499,7 +519,7 @@ form textarea::placeholder {
 form input:focus,
 form textarea:focus {
     border-color: var(--my-color);
-    box-shadow: 
+    box-shadow:
         0 8px 25px rgba(31, 53, 255, 0.2),
         0 0 20px rgba(31, 53, 255, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -646,7 +666,7 @@ form .btn2 {
         font-size: 2.2rem;
         margin-bottom: 25px;
     }
-    
+
     .contact-left,
     .contact-right {
         flex-basis: 100%;
@@ -695,7 +715,7 @@ form .btn2 {
         padding: 20px;
     }
 
-    .copyright p{
+    .copyright p {
         font-size: 1rem !important;
     }
 }
@@ -783,7 +803,7 @@ form .btn2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
     }
-    
+
     .contact-left,
     .contact-right {
         flex-basis: 100%;
@@ -805,7 +825,7 @@ form .btn2 {
     }
 
     .contact a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .contact i {
@@ -826,13 +846,17 @@ form .btn2 {
         padding: 15px 35px;
     }
 
+    .btn {
+        font-size: 1.2rem;
+    }
+
     form input,
     form textarea {
         font-size: 1.1rem;
         padding: 15px;
     }
 
-    .copyright p{
+    .copyright p {
         font-size: .8rem !important;
     }
 }
