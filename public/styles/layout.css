@@ -303,25 +303,71 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    margin-bottom: 40px;
+    margin: 40px auto;
+    margin-bottom: 60px;
+    padding: 60px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(31, 53, 255, 0.05));
+    border: 1px solid rgba(31, 53, 255, 0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(31, 53, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
 }
 
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, var(--my-color), transparent);
+    animation: videoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes videoGlow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+
+
 .video-container video {
-    box-shadow: 0px 0 20px 3px var(--my-color);
-    border-radius: 30px;
-    width: 80%;
+    box-shadow: 0px 0 30px 5px rgba(31, 53, 255, 0.3);
+    border-radius: 20px;
+    width: 100%;
     max-width: 800px;
     height: auto;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.video-container video:hover {
+    box-shadow: 0px 0 40px 8px rgba(31, 53, 255, 0.4);
+    transform: scale(1.02);
 }
 
 .video-container iframe {
-    box-shadow: 0px 0 20px 3px var(--my-color);
-    border-radius: 30px;
-    width: 80%;
+    box-shadow: 0px 0 30px 5px rgba(31, 53, 255, 0.3);
+    border-radius: 20px;
+    width: 100%;
     max-width: 800px;
     height: 450px;
     border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.video-container iframe:hover {
+    box-shadow: 0px 0 40px 8px rgba(31, 53, 255, 0.4);
+    transform: scale(1.02);
 }
 
 .learning-experience {
@@ -688,16 +734,29 @@ body {
     }
 
     /* -----------------------------------------------------------video-container------------------------------------------------*/
+    .video-container {
+        margin: 30px auto;
+        margin-bottom: 40px;
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .video-container::after {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        top: -10px;
+        left: 20px;
+    }
+
     .video-container video {
-        width: 90% !important;
-        border-radius: 20px;
-        height: 182px;
+        border-radius: 15px;
+        height: 200px;
     }
 
     .video-container iframe {
-        width: 90%;
-        border-radius: 20px;
-        height: 182px;
+        border-radius: 15px;
+        height: 200px;
     }
 
     .sub-title {
