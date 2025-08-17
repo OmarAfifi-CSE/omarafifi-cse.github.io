@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
@@ -20,155 +22,140 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                <img src="images/Logo.webp" alt="logo">
-                Omar <span>Afifi</span>
-            </div>
-            <ul id="sidemenu">
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="/" target="_blank"
-                        aria-label="Home">Home</a></li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="/about" target="_blank"
-                        aria-label="About">About</a></li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="/portfolio"
-                        target="_blank" aria-label="Portfolio">Portfolio</a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact"
-                        aria-label="Contact">Contact</a>
-                </li>
-                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1500"></i>
-        </div>
-        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="400">
-            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
-        </div>
-    </nav>
-
+    <header><%- include('partials/header') %></header>
     <!-------------------------------------------------digging-jim------------------------------------------------->
-    <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
-        data-aos-duration="1500">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="39000">
-                <video controls autoplay muted loop class="w-100 video-margin" aria-label="video">
-                    <source src="images/digging-jim/Digging Jim.mp4" alt="Digging-Jim" type="video/mp4">
-                </video>
+    <main>
+        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
+            data-aos-duration="1500">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="39000">
+                    <video controls autoplay muted loop class="w-100 video-margin" aria-label="video">
+                        <source src="images/digging-jim/Digging Jim.mp4" alt="Digging-Jim" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim-1" class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/digging-jim/Digging-Jim-2.webp" alt="Digging-Jim-2" class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3" class="w-100">
+                    <div class="carousel-caption"></div>
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim-1" class="w-100">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/digging-jim/Digging-Jim-2.webp" alt="Digging-Jim-2" class="w-100">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3" class="w-100">
-                <div class="carousel-caption"></div>
+            <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
+                    aria-label="Swap"><img src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
+                        src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim-1" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
+                        src="images/digging-jim/Digging-Jim-2.webp" alt="Digging-Jim-2" /></button>
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
+                        src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3" /></button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-        <div class="carousel-indicators">
-            <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
-                aria-label="Swap"><img src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
-                    src="images/digging-jim/Digging-Jim.webp" alt="Digging-Jim-1" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
-                    src="images/digging-jim/Digging-Jim-2.webp" alt="Digging-Jim-2" /></button>
-            <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
-                    src="images/digging-jim/Digging-Jim-3.webp" alt="Digging-Jim-3" /></button>
+        <br>
+        <br>
+        <br>
+        <div class="project-title">
+            <h1 data-aos="fade-in" data-aos-duration="1500">Digging Jim</h1>
+            <h2 data-aos="fade-in" data-aos-duration="1500">🎮Dig Deep - Collect More🎮</h2>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="project-title">
-        <h1 data-aos="fade-in" data-aos-duration="1500">Digging Jim</h1>
-        <h2 data-aos="fade-in" data-aos-duration="1500">🎮Dig Deep - Collect More🎮</h2>
-    </div>
 
 
-    <div class="body-container">
-        <div class="project-overview">
-            <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
-            <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to the official showcase
-                of Digging Jim, a thrilling game developed by our dedicated team. This project highlights our collective
-                expertise in game development using Java and JavaFX. Explore our journey, learn about the challenges we
-                faced, and see how we applied our skills to bring Digging Jim to life.
-                <br>
-                <br>
-                As a team of undergraduate students, this game is a testament to our growth in programming and game
-                design, showcasing the collaborative effort and innovation we've poured into this project.
-                <br>
-            <h3>Team Members:</h3>
-            <ul class="features" data-aos="fade-right" data-aos-duration="1500">
-                <li><strong>Omar Afifi (Team Leader)</strong></li>
-                <li><strong>Ahmed Hassan</strong></li>
-                <li><strong>Amr Abdelazeem</strong></li>
-                <li><strong>Ali Emara</strong></li>
-                <li><strong>Omar Mashour</strong></li>
-            </ul>
+        <div class="body-container">
+            <div class="project-overview">
+                <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
+                <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">Welcome to the official
+                    showcase
+                    of Digging Jim, a thrilling game developed by our dedicated team. This project highlights our
+                    collective
+                    expertise in game development using Java and JavaFX. Explore our journey, learn about the challenges
+                    we
+                    faced, and see how we applied our skills to bring Digging Jim to life.
+                    <br>
+                    <br>
+                    As a team of undergraduate students, this game is a testament to our growth in programming and game
+                    design, showcasing the collaborative effort and innovation we've poured into this project.
+                    <br>
+                <h3>Team Members:</h3>
+                <ul class="features" data-aos="fade-right" data-aos-duration="1500">
+                    <li><strong>Omar Afifi (Team Leader)</strong></li>
+                    <li><strong>Ahmed Hassan</strong></li>
+                    <li><strong>Amr Abdelazeem</strong></li>
+                    <li><strong>Ali Emara</strong></li>
+                    <li><strong>Omar Mashour</strong></li>
+                </ul>
+                </p>
+            </div>
+            <div class="project-features">
+                <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
+                <ol class="features" data-aos="fade-right" data-aos-duration="1500">
+                    <li>🎮 <strong>Game Mechanics:</strong> - Engaging gameplay with puzzles, challenges, and rewards.
+                    </li>
+                    <li>📊 <strong>Performance Optimization:</strong> - Ensured smooth performance using efficient
+                        algorithms.</li>
+                    <li>🛠️ <strong>Development Stack:</strong> - Built with Java and JavaFX for robust game design and
+                        interface.</li>
+                    <li>🎨 <strong>User Interface:</strong> - Clean and responsive UI tailored for immersive gameplay.
+                    </li>
+                    <li>👥 <strong>Team Collaboration:</strong> - Developed by a strong, dedicated team of four members.
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+        <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
+            <video controls autoplay muted loop class="w-100 video-margin">
+                <source src="images/digging-jim/Digging Jim.mp4" alt="Digging-Jim" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="learning-experience">
+            <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
+            <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience
+                and an
+                opportunity to develop practical skills in:
             </p>
+            <ul>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Game Development</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Java & JavaFX</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Team Collaboration</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Performance Optimization</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Problem-Solving</strong></li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
+            </ul>
+            <p data-aos="fade-right" data-aos-duration="1500">As a team, we are proud of the progress we've made and
+                excited
+                about future opportunities to continue developing our skills. Each challenge in this
+                project has been an opportunity to grow and innovate. 🌟</p>
         </div>
-        <div class="project-features">
-            <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
-            <ol class="features" data-aos="fade-right" data-aos-duration="1500">
-                <li>🎮 <strong>Game Mechanics:</strong> - Engaging gameplay with puzzles, challenges, and rewards.</li>
-                <li>📊 <strong>Performance Optimization:</strong> - Ensured smooth performance using efficient
-                    algorithms.</li>
-                <li>🛠️ <strong>Development Stack:</strong> - Built with Java and JavaFX for robust game design and
-                    interface.</li>
-                <li>🎨 <strong>User Interface:</strong> - Clean and responsive UI tailored for immersive gameplay.</li>
-                <li>👥 <strong>Team Collaboration:</strong> - Developed by a strong, dedicated team of four members.
-                </li>
-            </ol>
+        <%- include('partials/contact') %>
+    </main>
 
-        </div>
-    </div>
-    <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
-        <video controls autoplay muted loop class="w-100 video-margin">
-            <source src="images/digging-jim/Digging Jim.mp4" alt="Digging-Jim" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="learning-experience">
-        <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
-        <p data-aos="fade-right" data-aos-duration="1500">This project has been an incredible learning experience and an
-            opportunity to develop practical skills in:
-        </p>
-        <ul>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Game Development</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Java & JavaFX</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Team Collaboration</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Performance Optimization</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>Problem-Solving</strong></li>
-            <li data-aos="fade-right" data-aos-duration="1500"><strong>And much more...</strong></li>
-        </ul>
-        <p data-aos="fade-right" data-aos-duration="1500">As a team, we are proud of the progress we've made and excited
-            about future opportunities to continue developing our skills. Each challenge in this
-            project has been an opportunity to grow and innovate. 🌟</p>
-    </div>
-
-    <!-------------------------------------------------Contact - footer------------------------------------------------->
-    <%- include('partials/contact-footer') %>
-
-    
+    <!-------------------------------------------------footer------------------------------------------------->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
     <!-------------------------------------------------Bootstrap------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <!-------------------------------------------------Script------------------------------------------------->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ offset: 0 });
+        AOS.init({ once: true, offset: 0 });
     </script>
-    <script src="js/layout.js" defer></script>
+    <script src="js/layout.js"></script>
 </body>
 
 </html>
