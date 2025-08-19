@@ -44,8 +44,9 @@
         }
     </script>
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
     <!-- Preconnect and DNS Prefetch to Optimize Loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
     <!-- Preload AOS library (Animations) -->
@@ -53,15 +54,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preload" href="/styles/style.css" as="style">
+    <link rel="stylesheet" href="/styles/style.css" defer>
     <!-- Preload Images for Better Performance -->
-    <link rel="preload" href="images/Logo.webp" as="image">
-    <link rel="preload" href="images/Omar.webp" as="image">
-    <link rel="preload" href="images/Omar-2.webp" as="image">
-    <link rel="preload" href="images/Z-Garden.webp" as="image">
-    <link rel="preload" href="images/Portfolio.webp" as="image">
-    <link rel="preload" href="images/Digging-Jim.webp" as="image">
-    <link rel="preload" href="images/ZagSystems.webp" as="image">
+    <link rel="preload" href="images/Logo.webp" as="image" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="images/Omar.webp" type="image/webp">
 </head>
 
 <body>
@@ -98,7 +95,7 @@
         <div id="Home">
             <section>
                 <div class="main-container">
-                    <div class="image" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="image">
                         <img src="images/Omar.webp" alt="Personal Image">
                     </div>
                     <div class="content">
@@ -329,8 +326,8 @@
         <script>
             AOS.init({ once: true, offset: 0 });
         </script>
-        <script src="js/layout.js"></script>
-        <script src="js/index.js"></script>
+        <script defer src="js/layout.js"></script>
+        <script defer src="js/index.js"></script>
 </body>
 
 </html>

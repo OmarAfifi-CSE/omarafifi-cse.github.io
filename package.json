@@ -14,6 +14,6 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "sitemap": "^8.0.0",
-    "sitemap-generator": "^8.5.1"
+    "sitemap-generator": "^7.5.2"
   }
 }
