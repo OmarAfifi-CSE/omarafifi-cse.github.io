@@ -6,21 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Discover the ZagSystems website project, where Omar Afifi contributed to designing and building key features including service and product pages. The site emphasizes responsive design, consistent headers, and user-friendly navigation, showcasing skills in web development and user experience. Learn more about the project and connect with Omar for additional insights.">
+    <title>Zagsystems website improvements - Omar Afifi</title>
     <link rel="canonical" href="https://omar-afifi.com/zagsystems-website" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/zagsystems-website.css">
+    <!-- Website Icon: Favicon and Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="images/favicon_io/site.webmanifest">
-    <title>Zagsystems website improvements - Omar Afifi</title>
-    <link rel="preload" href="images/Logo.webp" as="image">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
+    <!-- Bootstrap CSS -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" defer>
+    <!-- Preconnect and DNS Prefetch to Optimize Loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <!-- Preload AOS library (Animations) -->
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
+    <!-- Custom Stylesheet -->
+    <link rel="preload" href="/styles/common.css" as="style">
+    <link rel="stylesheet" href="/styles/common.css" defer>
+    <link rel="preload" href="/styles/layout.css" as="style">
+    <link rel="stylesheet" href="/styles/layout.css" defer>
+    <!-- Preload Images for Better Performance -->
+    <link rel="preload" href="images/Logo.webp" as="image" type="image/webp">
+    <link rel="preload" fetchpriority="high" href="images/zagsystems-website/ZagSystems.mp4" as="video"
+        type="video/mp4">
 </head>
 
 <body>
@@ -36,28 +51,33 @@
                     </video>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-1.webp" alt="ZagSystems" class="w-100">
+                    <img src="images/zagsystems-website/ZagSystems-1.webp" loading="lazy" alt="ZagSystems"
+                        class="w-100">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-2.webp" alt="ZagSystems-2"
+                    <img src="images/zagsystems-website/ZagSystems-2.webp" loading="lazy" alt="ZagSystems-2"
                         class="w-100 setproductwidth">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-3.webp" alt="ZagSystems-3" class="w-100">
+                    <img src="images/zagsystems-website/ZagSystems-3.webp" loading="lazy" alt="ZagSystems-3"
+                        class="w-100">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-4.webp" alt="ZagSystems-4" class="w-100">
+                    <img src="images/zagsystems-website/ZagSystems-4.webp" loading="lazy" alt="ZagSystems-4"
+                        class="w-100">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-5.webp" alt="ZagSystems-5" class="w-100">
+                    <img src="images/zagsystems-website/ZagSystems-5.webp" loading="lazy" alt="ZagSystems-5"
+                        class="w-100">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/zagsystems-website/ZagSystems-6.webp" alt="ZagSystems-6" class="w-100">
+                    <img src="images/zagsystems-website/ZagSystems-6.webp" loading="lazy" alt="ZagSystems-6"
+                        class="w-100">
                     <div class="carousel-caption"></div>
                 </div>
             </div>
@@ -73,17 +93,17 @@
                 <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
                     aria-label="Swap"><img src="images/zagsystems-website/ZagSystems.webp" alt="ZagSystems" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-1.webp" alt="ZagSystems-1" /></button>
+                        src="images/zagsystems-website/ZagSystems-1.webp" loading="lazy" alt="ZagSystems-1" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-2.webp" alt="ZagSystems-2" /></button>
+                        src="images/zagsystems-website/ZagSystems-2.webp" loading="lazy" alt="ZagSystems-2" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-3.webp" alt="ZagSystems-3" /></button>
+                        src="images/zagsystems-website/ZagSystems-3.webp" loading="lazy" alt="ZagSystems-3" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-4.webp" alt="ZagSystems-4" /></button>
+                        src="images/zagsystems-website/ZagSystems-4.webp" loading="lazy" alt="ZagSystems-4" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="5" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-5.webp" alt="ZagSystems-5" /></button>
+                        src="images/zagsystems-website/ZagSystems-5.webp" loading="lazy" alt="ZagSystems-5" /></button>
                 <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="6" aria-label="Swap"><img
-                        src="images/zagsystems-website/ZagSystems-6.webp" alt="ZagSystems-6" /></button>
+                        src="images/zagsystems-website/ZagSystems-6.webp" loading="lazy" alt="ZagSystems-6" /></button>
 
             </div>
         </div>
@@ -159,7 +179,7 @@
         <script>
             AOS.init({ once: true, offset: 0 });
         </script>
-        <script src="js/layout.js"></script>
+        <script defer src="js/layout.js"></script>
 </body>
 
 </html>

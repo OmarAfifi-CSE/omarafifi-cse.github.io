@@ -61,6 +61,9 @@
     }
 }
 
+.w-100.video-margin {
+    max-width: 500px;
+}
 
 /* "Try It Live" Call-to-Action Section */
 .try-it-live {
