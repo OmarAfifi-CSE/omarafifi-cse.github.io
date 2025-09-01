@@ -31,6 +31,9 @@ app.get('/z-garden', (req, res) => {
 app.get('/finflow', (req, res) => {
     res.render('finflow');
 });
+app.get('/wizardly', (req, res) => {
+    res.render('wizardly');
+});
 app.get('/omar-portfolio', (req, res) => {
     res.render('omar-portfolio');
 });
