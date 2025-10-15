@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Omar Afifi</title>
+    <!-- Website Icon: Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
+    <!-- Preconnect and DNS Prefetch to Optimize Loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <!-- Preload AOS library (Animations) -->
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
+    <!-- Custom Stylesheet -->
+    <link rel="preload" href="/styles/style.css" as="style">
+    <link rel="stylesheet" href="/styles/style.css" defer>
+    <!-- Preload Images for Better Performance -->
+    <link rel="preload" href="images/Logo.webp" as="image" type="image/webp">
+</head>
+
+<body>
+    <header>{% include "header.njk" %}</header>
+    <main>
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title" style="text-align: center;" data-aos="fade-down" data-aos-duration="1500">Projects
+                </h1>
+                <div class="work-list">
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1500" data-aos-mirror="true">
+                        <img src="images/Z-Garden.webp" alt="Z-Garden">
+                        <div class="layer">
+                            <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
+                            <p>A smart irrigation system developed with ZagSystems. Key features include real-time
+                                monitoring, automated watering, and data visualization—powered by sustainable energy. A
+                                cornerstone of my learning in IoT and Embedded Systems.</p>
+                            <a href="/z-garden" aria-label="z-garden"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                        <img src="images/FinFlow.webp" alt="FinFlow" loading="lazy">
+                        <div class="layer">
+                            <h3>FinFlow<br>📱 Cross-Platform Finance Tracker 🖥️</h3>
+                            <p>A cross-platform finance tracker that helps users manage their expenses and income
+                                effectively. Built with Flutter, it offers a seamless experience on 4 different
+                                platforms:
+                                iOS, Android, Web, and Desktop.</p>
+                            <a href="/finflow" aria-label="finflow"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="350">
+                        <img src="images/Wizardly.webp" alt="Wizardly App" loading="lazy">
+                        <div class="layer">
+                            <h3>Wizardly<br>🪄 Magical Weather App 🪄</h3>
+                            <p>A beautiful, dynamic weather app built with Flutter that magically transforms its UI to
+                                match the current weather conditions, creating an immersive and delightful atmospheric
+                                experience.</p>
+                            <a href="/wizardly" aria-label="Wizardly"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <!-- 2nd row -->
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2000" data-aos-mirror="true">
+                        <img src="images/Portfolio.webp" alt="Portfolio">
+                        <div class="layer">
+                            <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
+                            <p>A professional portfolio showcasing my expertise in web development, featuring responsive
+                                designs, modern technologies, and innovative digital solutions to create seamless web
+                                experiences.</p>
+                            <a href="/omar-portfolio" aria-label="omar-portfolio"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                        <img src="images/Digging-Jim.webp" alt="Digging Jim" loading="lazy">
+                        <div class="layer">
+                            <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
+                            <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging
+                                Jim
+                                combines intuitive controls with dynamic graphics, demonstrating my skills in game
+                                development and JavaFX.</p>
+                            <a href="/digging-jim" aria-label="digging-jim"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work" data-aos="zoom-in" data-aos-duration="2500" data-aos-mirror="true">
+                        <img src="images/ZagSystems.webp" alt="ZagSystems-website">
+                        <div class="layer">
+                            <h3>ZagSystems Website<br>🌐Web Development🌐</h3>
+                            <p>Developed a services section with four detailed pages and created four product pages.
+                                Designed consistent headers for a seamless user experience across the site.</p>
+                            <a href="/zagsystems-website" aria-label="zagsystems-website"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "contact.njk" %}
+    </main>
+    <!------------------------------------------------footer------------------------------------------------->
+    {% include "footer.njk" %}
+        <!-------------------------------------------------Script------------------------------------------------->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({ once: true, offset: 0 });
+        </script>
+        <script defer src="js/layout.js"></script>
+</body>
+
+</html>

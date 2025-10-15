@@ -37,7 +37,32 @@
 </head>
 
 <body>
-    <header><%- include('partials/header') %></header>
+    <header><nav id="main-navigation">
+    <div class="nav-container" id="home">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="images/Logo.webp" alt="Logo">
+            Omar <span>Afifi</span>
+        </div>
+
+        <ul id="sidemenu">
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="/" aria-label="Home">Home</a>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="/#about"
+                    aria-label="About">About</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="/#projects"
+                    aria-label="Projects">Projects</a>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#contact"
+                    aria-label="Contact">Contact</a>
+            </li>
+            <li><i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i></li>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1000"></i>
+        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="400">
+            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
+        </div>
+    </div>
+</nav></header>
     <!-------------------------------------------------digging-jim------------------------------------------------->
     <main>
         <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
@@ -153,11 +178,69 @@
                 about future opportunities to continue developing our skills. Each challenge in this
                 project has been an opportunity to grow and innovate. 🌟</p>
         </div>
-        <%- include('partials/contact') %>
+        <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Contact me
+                </h1>
+                <p class="contact email" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="mailto:omarafifi.cse@gmail.com" aria-label="mail" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact via Email
+                    </a>
+                </p>
+                <p class="contact whatsapp" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                    <a href="https://wa.me/201154403740" aria-label="whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Contact on WhatsApp
+                    </a>
+                </p>
+
+                <div class="social-icons" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                    <a href="https://www.linkedin.com/in/omarafifi-cse/" aria-label="linkedin" target="_blank"
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/OmarAfifi.CSE" aria-label="facebook" target="_blank"
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/OmarAfifi-CSE" aria-label="github" target="_blank" data-aos="fade-up"
+                        data-aos-duration="1000" data-aos-delay="600"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="images/Omar Afifi Resume.pdf" aria-label="resume" class="btn btn2" download>Download
+                        CV</a></div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="100">
+                    <input type="email" name="Email" placeholder="Your Email" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="200">
+                    <textarea name="Message" rows="6" placeholder="Your Message" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="300"></textarea>
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><button type="submit"
+                            class="btn btn2">
+                            Submit</button>
+                    </div>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
 
     <!-------------------------------------------------footer------------------------------------------------->
-    <%- include('partials/footer') %>
+    <footer class="copyright">
+    <p>&copy; <span id="year"></span> All rights reserved. Developed by Omar Afifi.</p>
+</footer>
+
+<script>
+    // Dynamically update the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
         <!-------------------------------------------------Bootstrap------------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
         <!-------------------------------------------------Script------------------------------------------------->

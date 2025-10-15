@@ -41,7 +41,7 @@
 
 <body>
     <header>
-        <%- include('partials/header') %>
+        {% include "header.njk" %}
     </header>
 
     <!-------------------------------------------------FinFlow------------------------------------------------->
@@ -212,11 +212,11 @@
                 multi-platform deployment. I'm excited to apply these skills to future projects. 🚀
             </p>
         </div>
-        <%- include('partials/contact') %>
+        {% include "contact.njk" %}
     </main>
 
     <!-------------------------------------------------footer------------------------------------------------->
-    <%- include('partials/footer') %>
+    {% include "footer.njk" %}
         <!-------------------------------------------------Bootstrap------------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
         <!-------------------------------------------------Script------------------------------------------------->

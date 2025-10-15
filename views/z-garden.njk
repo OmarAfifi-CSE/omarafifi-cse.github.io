@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <header><%- include('partials/header') %></header>
+    <header>{% include "header.njk" %}</header>
     <!-------------------------------------------------Z-garden------------------------------------------------->
     <main>
         <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
@@ -232,11 +232,11 @@
                 and eager to keep pushing the boundaries of
                 what's possible in smart technology. 🌿</p>
         </div>
-        <%- include('partials/contact') %>
+        {% include "contact.njk" %}
     </main>
 
     <!-------------------------------------------------footer------------------------------------------------->
-    <%- include('partials/footer') %>
+    {% include "footer.njk" %}
         <!-------------------------------------------------Bootstrap------------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
         <!-------------------------------------------------Script------------------------------------------------->

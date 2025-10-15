@@ -39,7 +39,7 @@
 </head>
 
 <body>
-    <header><%- include('partials/header') %></header>
+    <header>{% include "header.njk" %}</header>
     <!-------------------------------------------------ZagSystems------------------------------------------------->
     <main>
         <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel" data-aos="fade-in"
@@ -168,10 +168,10 @@
                 project and excited about continuing to advance my skills in web development. Each challenge has been a
                 valuable opportunity to grow and innovate. 🚀</p>
         </div>
-        <%- include('partials/contact') %>
+        {% include "contact.njk" %}
     </main>
     <!-------------------------------------------------footer------------------------------------------------->
-    <%- include('partials/footer') %>
+    {% include "footer.njk" %}
         <!-------------------------------------------------Bootstrap------------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
         <!-------------------------------------------------Script------------------------------------------------->

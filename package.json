@@ -15,5 +15,8 @@
     "express": "^4.19.2",
     "sitemap": "^8.0.0",
     "sitemap-generator": "^7.5.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
   }
 }

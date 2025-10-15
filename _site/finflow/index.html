@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore FinFlow, a cross-platform personal finance tracker built with Flutter and Supabase. Manage your budget on Android, iOS, Web, and Windows from a single codebase. Open-source and available to try now.">
+    <title>FinFlow: Cross-Platform Finance Tracker - Omar Afifi</title>
+    <link rel="canonical" href="https://omar-afifi.com/finflow" />
+    <!-- Website Icon: Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
+    <!-- Bootstrap CSS -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" defer>
+    <!-- Preconnect and DNS Prefetch to Optimize Loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <!-- Preload AOS library (Animations) -->
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
+    <!-- Custom Stylesheet -->
+    <link rel="preload" href="/styles/common.css" as="style">
+    <link rel="stylesheet" href="/styles/common.css" defer>
+    <link rel="preload" href="/styles/layout.css" as="style">
+    <link rel="stylesheet" href="/styles/layout.css" defer>
+    <link rel="preload" href="/styles/finflow.css" as="style">
+    <link rel="stylesheet" href="/styles/finflow.css" defer>
+    <!-- Preload Images for Better Performance -->
+    <link rel="preload" href="images/Logo.webp" as="image" type="image/webp">
+    <link rel="preload" fetchpriority="high" href="images/finflow/FinFlow-cross-platform.gif" as="image"
+        type="image/gif">
+</head>
+
+<body>
+    <header>
+        <nav id="main-navigation">
+    <div class="nav-container" id="home">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="images/Logo.webp" alt="Logo">
+            Omar <span>Afifi</span>
+        </div>
+
+        <ul id="sidemenu">
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="/" aria-label="Home">Home</a>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="/#about"
+                    aria-label="About">About</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="/#projects"
+                    aria-label="Projects">Projects</a>
+            </li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#contact"
+                    aria-label="Contact">Contact</a>
+            </li>
+            <li><i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i></li>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1000"></i>
+        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="400">
+            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
+        </div>
+    </div>
+</nav>
+    </header>
+
+    <!-------------------------------------------------FinFlow------------------------------------------------->
+    <main>
+        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="images/finflow/FinFlow-cross-platform.gif" alt="FinFlow-cross-platform"
+                        class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/finflow/FinFlow-mobile-light-mode.webp" loading="lazy"
+                        alt="FinFlow-mobile-light-mode" class="w-100 blynk-mobile">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/finflow/FinFlow-mobile-dark-mode.webp" loading="lazy"
+                        alt="FinFlow-mobile-dark-mode" class="w-100 blynk-mobile">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/finflow/FinFlow-web.webp" loading="lazy" alt="FinFlow-web"
+                        class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/finflow/FinFlow-windows.webp" loading="lazy" alt="FinFlow-windows"
+                        class="w-100 max-width-1200">
+                    <div class="carousel-caption"></div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" aria-label="btn" data-bs-target="#carouselDemo"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
+                    aria-label="Swap"><img src="images/finflow/FinFlow-cross-platform.gif"
+                        alt="FinFlow-cross-platform" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
+                        src="images/finflow/FinFlow-mobile-light-mode.webp" loading="lazy"
+                        alt="FinFlow-mobile-light-mode" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
+                        src="images/finflow/FinFlow-mobile-dark-mode.webp" loading="lazy"
+                        alt="FinFlow-mobile-dark-mode" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
+                        src="images/finflow/FinFlow-web.webp" loading="lazy" alt="FinFlow-web" /></button>
+
+                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
+                        src="images/finflow/FinFlow-windows.webp" loading="lazy" alt="FinFlow-windows" /></button>
+            </div>
+        </div>
+        <br>
+        <div class="project-title">
+            <h1 data-aos="fade-in" data-aos-duration="1600">FinFlow</h1>
+            <h2 data-aos="fade-in" data-aos-duration="1700">💸Cross-Platform Finance Tracker💸</h2>
+        </div>
+
+        <div class="body-container">
+            <div class="project-overview">
+                <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
+                <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">
+                    FinFlow is a modern, intuitive, and secure application designed to help you take full control of
+                    your
+                    financial life. The twist? This entire application is built with Flutter, delivering a slick,
+                    high-performance experience on <strong>Mobile (Android & iOS), Web, and Desktop
+                        (Windows)</strong>...
+                    all from a single codebase! The goal was to truly test the power of Flutter's cross-platform
+                    capabilities, using Supabase as a fast, open-source backend.
+                </p>
+            </div>
+            <div class="project-features">
+                <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
+                <ol class="features" data-aos="fade-right" data-aos-duration="1500">
+                    <li>📱<strong>Cross-Platform</strong> - A single codebase for a consistent experience on Android,
+                        iOS,
+                        Web, and Windows.</li>
+                    <li>🔐<strong>Secure & Complete Authentication</strong> - Safe sign-up, sign-in, and password resets
+                        powered by Supabase Auth.</li>
+                    <li>📊<strong>All-in-One Dashboard</strong> - Get an instant snapshot of your total balance, income,
+                        and expenses.</li>
+                    <li>📈<strong>Insightful Analysis</strong> - Instantly see where your money goes with a percentage
+                        breakdown of spending by category.</li>
+                    <li>🏷️<strong>Deep Categorization</strong> - Organize your spending your way with custom categories
+                        and
+                        tags for detailed tracking.</li>
+                    <li>🎨<strong>Light & Dark Modes</strong> - Beautifully crafted light and dark themes for your
+                        viewing
+                        comfort.</li>
+                    <li>🌐<strong>Smart Connectivity Monitoring</strong> - Intelligently detects your online status to
+                        ensure data is always synced.</li>
+                    <li>🔄<strong>Reliable Data Sync</strong> - Data is securely stored and synchronized across all your
+                        devices using Supabase realtime database.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="try-it-live">
+            <h2 data-aos="zoom-in" data-aos-duration="1500">Get The App!</h2>
+            <p data-aos="zoom-in" data-aos-duration="1500">The project is fully Open-Source. Check out the code, or
+                better
+                yet, try the app yourself!</p>
+            <div class="live-buttons" data-aos="fade-up" data-aos-duration="1500">
+
+                <a href="https://omarafifi-cse.github.io/FinFlow/" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-globe"></i> Try on the Web
+                </a>
+
+                <a href="https://github.com/OmarAfifi-CSE/FinFlow/releases" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-windows"></i><i class="fab fa-android"></i> Download for Desktop/Mobile
+                </a>
+
+                <a href="https://github.com/OmarAfifi-CSE/FinFlow" class="btn btn-dark" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+
+            </div>
+        </div>
+
+        <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
+            <video autoplay muted loop class="w-100 video-margin">
+                <source src="images/finflow/FinFlow-demo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="learning-experience">
+            <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
+            <p data-aos="fade-right" data-aos-duration="1500">This project was a deep dive into building a complete,
+                production-ready application from a single codebase. It was an incredible opportunity to develop
+                practical
+                skills in:</p>
+            <ul>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Cross-Platform Development:</strong>
+                    Mastering
+                    Flutter to effectively target Mobile, Web, and Desktop.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Backend as a Service (BaaS):</strong>
+                    Integrating
+                    Supabase for authentication, real-time databases, and APIs.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Advanced State Management:</strong>
+                    Implementing
+                    robust and scalable state management using the Provider package.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Responsive UI/UX Design:</strong> Crafting an
+                    adaptive interface for various screen sizes and implementing themes.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Declarative Routing:</strong> Managing
+                    complex
+                    navigation flows for web and mobile with GoRouter.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Database Schema Design:</strong> Creating and
+                    managing a PostgreSQL database schema for the application.</li>
+                <li data-aos="fade-right" data-aos-duration="1500"><strong>Full-Stack Application Development:</strong>
+                    Connecting a frontend application to a backend service seamlessly.</li>
+            </ul>
+            <p data-aos="fade-right" data-aos-duration="1500">
+                Building FinFlow solidified my understanding of the entire application lifecycle, from concept and
+                design to
+                multi-platform deployment. I'm excited to apply these skills to future projects. 🚀
+            </p>
+        </div>
+        <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Contact me
+                </h1>
+                <p class="contact email" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="mailto:omarafifi.cse@gmail.com" aria-label="mail" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact via Email
+                    </a>
+                </p>
+                <p class="contact whatsapp" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                    <a href="https://wa.me/201154403740" aria-label="whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Contact on WhatsApp
+                    </a>
+                </p>
+
+                <div class="social-icons" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                    <a href="https://www.linkedin.com/in/omarafifi-cse/" aria-label="linkedin" target="_blank"
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/OmarAfifi.CSE" aria-label="facebook" target="_blank"
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/OmarAfifi-CSE" aria-label="github" target="_blank" data-aos="fade-up"
+                        data-aos-duration="1000" data-aos-delay="600"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="images/Omar Afifi Resume.pdf" aria-label="resume" class="btn btn2" download>Download
+                        CV</a></div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="100">
+                    <input type="email" name="Email" placeholder="Your Email" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="200">
+                    <textarea name="Message" rows="6" placeholder="Your Message" required data-aos="fade-left"
+                        data-aos-duration="1000" data-aos-delay="300"></textarea>
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><button type="submit"
+                            class="btn btn2">
+                            Submit</button>
+                    </div>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <!-------------------------------------------------footer------------------------------------------------->
+    <footer class="copyright">
+    <p>&copy; <span id="year"></span> All rights reserved. Developed by Omar Afifi.</p>
+</footer>
+
+<script>
+    // Dynamically update the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+        <!-------------------------------------------------Bootstrap------------------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
+        <!-------------------------------------------------Script------------------------------------------------->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({ once: true, offset: 0 });
+        </script>
+        <script defer src="js/layout.js"></script>
+</body>
+
+</html>
