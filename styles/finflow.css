@@ -1,0 +1,20 @@
+@media only screen and (max-width: 820px) {
+    .carousel {
+        max-height: 210px;
+    }
+
+    .project-title h1 {
+        padding: -200px;
+    }
+
+    .carousel-indicators img {
+        overflow: hidden;
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+}
+
+.w-100.video-margin {
+    max-width: 500px;
+}
