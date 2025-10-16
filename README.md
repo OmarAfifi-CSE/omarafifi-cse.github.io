@@ -9,6 +9,7 @@ Welcome to my portfolio website! This site showcases my work, skills, and projec
 - **Portfolio**: Details of my notable projects with links to explore them further.
 - **Contact**: Ways to get in touch with me and download my CV.
 
+
 ## Technologies Used
 
 - **HTML5**: Structure and content.
