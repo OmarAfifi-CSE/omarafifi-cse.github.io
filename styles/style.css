@@ -1410,12 +1410,16 @@ section {
 }
 
 .btn.btn2 {
+    cursor: pointer;
     display: inline-block;
     background: var(--my-color);
     border: none;
     transition: 0.3s;
     margin: 20px auto;
     margin-bottom: 50px;
+}
+.btn.btn2:disabled {
+    cursor: not-allowed;
 }
 
 .btn.btn2:hover {

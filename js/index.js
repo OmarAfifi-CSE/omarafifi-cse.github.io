@@ -1,4 +1,3 @@
-
 //typewriter effect
 const texts = [
     "Software Engineer",
