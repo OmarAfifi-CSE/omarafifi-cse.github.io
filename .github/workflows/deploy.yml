@@ -21,7 +21,7 @@ jobs:
 
       # الخطوة 3: بيبني الموقع وبيطلع فولدر _site
       - name: Build Site 🏗️
-        run: npx @11ty/eleventy
+        run: npm run build
 
       # الخطوة 4: بينشر الموقع النهائي على برانش gh-pages
       - name: Deploy to gh-pages Branch 🚀
