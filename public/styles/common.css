@@ -508,6 +508,7 @@ nav .fa-regular.fa-circle-xmark,
 }
 
 .btn.btn2 {
+    cursor: pointer;
     display: inline-block;
     background: var(--my-color);
     border: none;
@@ -516,8 +517,11 @@ nav .fa-regular.fa-circle-xmark,
     margin-bottom: 50px;
 }
 
-.btn.btn2:hover {
+.btn.btn2:disabled {
+    cursor: not-allowed;
+}
 
+.btn.btn2:hover {
     background: linear-gradient(135deg, rgba(31, 53, 255, 0.3), rgba(31, 53, 255, 0.2));
     transform: translateY(-3px);
     box-shadow:
