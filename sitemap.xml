@@ -1,24 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  
   <url>
-    <loc>https://omar-afifi.com/</loc>
+    <loc>https://omar-afifi.com/batrina/</loc>
+    <lastmod>2026-01-20T15:22:36.015Z</lastmod>
   </url>
-  <url>
-    <loc>https://omar-afifi.com/projects-page/</loc>
-  </url>
-  <url>
-    <loc>https://omar-afifi.com/z-garden/</loc>
-  </url>
-   <url>
-    <loc>https://omar-afifi.com/finflow/</loc>
-  </url>
-  <url>
-    <loc>https://omar-afifi.com/omar-portfolio/</loc>
-  </url>
+  
+
+  
   <url>
     <loc>https://omar-afifi.com/digging-jim/</loc>
+    <lastmod>2026-01-20T15:22:36.015Z</lastmod>
   </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/finflow/</loc>
+    <lastmod>2026-01-20T15:22:36.015Z</lastmod>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/</loc>
+    <lastmod>2026-01-20T15:22:36.015Z</lastmod>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/omar-portfolio/</loc>
+    <lastmod>2026-01-20T15:22:36.015Z</lastmod>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/projects-page/</loc>
+    <lastmod>2026-01-20T15:22:36.016Z</lastmod>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/wizardly/</loc>
+    <lastmod>2026-01-20T15:22:36.016Z</lastmod>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://omar-afifi.com/z-garden/</loc>
+    <lastmod>2026-01-20T15:22:36.016Z</lastmod>
+  </url>
+  
+
+  
   <url>
     <loc>https://omar-afifi.com/zagsystems-website/</loc>
+    <lastmod>2026-01-20T15:22:36.016Z</lastmod>
   </url>
+  
+
 </urlset>
