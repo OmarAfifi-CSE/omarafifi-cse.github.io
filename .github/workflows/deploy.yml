@@ -2,7 +2,7 @@ name: Build and Deploy Website
 
 on:
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
     
 permissions:
   contents: write
@@ -11,7 +11,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # الخطوة 1: بينزل نسخة من كودك اللي في برانش development
+      # الخطوة 1: بينزل نسخة من كودك اللي في برانش main
       - name: Checkout Code 🛎️
         uses: actions/checkout@v4
 
