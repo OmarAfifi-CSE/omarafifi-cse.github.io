@@ -1,58 +1,148 @@
-# Omar Afifi's Portfolio Website
-
-Welcome to my portfolio website! This site showcases my work, skills, and projects as a Computer & Systems Engineering student.
-
-## Features
-
-- **Home Page**: Introduction and a brief overview of who I am.
-- **About**: Information about my background, skills, experience, and education.
-- **Portfolio**: Details of my notable projects with links to explore them further.
-- **Contact**: Ways to get in touch with me and download my CV.
+<div align="center">
 
 
-## Technologies Used
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&duration=2000&pause=1000&color=000000&center=true&vCenter=true&width=700&lines=OMAR+AFIFI" alt="Typing SVG" />
 
-- **HTML5**: Structure and content.
-- **CSS3**: Styling and layout.
-- **JavaScript**: Interactivity and dynamic content.
-- **AOS (Animate On Scroll)**: Scroll animations.
-- **Font Awesome**: Icons.
+### ✨ *Computer & Systems Engineering Student* ✨
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+</p>
 
-To view the website, follow these steps:
+<p align="center">
+  <a href="https://omar-afifi.com/"><img src="https://img.shields.io/badge/🌐_Live_Website-6366f1?style=for-the-badge" alt="Live Website"/></a>
+</p>
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/OmarAfifi-CSE/omar-afifi.git
-Navigate to the Project Directory
+---
+</div>
 
-bash
-Copy code
-cd omar-afifi
-Open the index.html File Simply open index.html in your web browser to view the site.
+## 🎯 Overview
 
-## How to Use
+> **A modern, animated portfolio website that brings my professional journey to life**
 
-- **Customize the Content**: Edit the HTML and CSS files to update the content or styling.
-- **Add New Projects**: Modify the portfolio section in the HTML to include your new projects.
-- **Update Contact Information**: Adjust contact details as needed.
+This portfolio is more than just a website—it's a digital experience showcasing my skills, projects, and passion for technology. Built with vanilla JavaScript and powered by beautiful animations, every scroll tells a story.
 
-## Get In Touch
-For inquiries or collaboration, please contact me:
 
-[![Email](https://img.shields.io/badge/-Email-1690DF?logo=gmail&logoColor=white)](mailto:omarafifi.cse@gmail.com)
-[![WhatsApp](https://img.shields.io/badge/-WhatsApp-25D366?logo=whatsapp&logoColor=white)](https://wa.me/201154403740)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/omarafifi-cse/)
+## ✨ What's Inside
 
-## Development Setup
+<table>
+<tr>
+<td width="50%" valign="top">
 
-For local development, you can use the following tools:
+### 🏠 **Home**
+Your first impression matters. The home section features:
+- ⚡ Dynamic typing animation
+- 🎨 Eye-catching hero design
+- 🔗 Quick access to social profiles
+- 📱 Smooth scroll navigation
 
-- **Code Editor**: Visual Studio Code or any preferred editor.
-- **Web Server**: For advanced features or dynamic content, you may need a local web server setup (e.g., using Node.js).
+<br/>
 
-## Acknowledgements
+### 💼 **Portfolio** 
+Where my work speaks for itself:
+- 🎯 Project showcases with live demos
+- 💻 Technology stack highlights
+- 🔗 GitHub repository links
+- 🖼️ Interactive hover effects
 
-- **AOS Library**: [Animate On Scroll](https://michalsnik.github.io/aos/)
-- **Font Awesome**: [Icons](https://fontawesome.com/)
+</td>
+<td width="50%" valign="top">
+
+### 👨‍💻 **About**
+Get to know me better:
+- 🛠️ Skills & expertise with proficiency bars
+- 📚 Educational background
+- 💼 Work experience timeline
+
+<br/>
+
+### 📬 **Contact**
+Let's connect:
+- 📧 Direct contact form
+- 💬 Social media integration
+- 🌐 Multiple ways to reach out
+
+</td>
+</tr>
+</table>
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/>
+<br/><b>HTML5</b>
+<br/><sub>Semantic markup</sub>
+</td>
+<td align="center" width="33%">
+<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/>
+<br/><b>CSS3</b>
+<br/><sub>Modern styling</sub>
+</td>
+<td align="center" width="33%">
+<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
+<br/><b>JavaScript</b>
+<br/><sub>Vanilla JS</sub>
+</td>
+</tr>
+</table>
+
+**Additional Libraries:**
+- 🎭 **AOS (Animate On Scroll)** - Beautiful scroll animations
+- 🎨 **Font Awesome** - Professional icons
+- ✍️ **Google Fonts** - Custom typography
+
+</div>
+
+## 🌟 Features Highlights
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/000000/speed.png" width="60"/>
+<br/><b>Lightning Fast</b>
+<br/>Optimized for performance
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/multiple-devices.png" width="60"/>
+<br/><b>Fully Responsive</b>
+<br/>Perfect on all devices
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/000000/rocket.png" width="60"/>
+<br/><b>Modern Design</b>
+<br/>Clean & professional
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 📧 Let's Connect
+
+<div align="center">
+
+### 🤝 **Get In Touch**
+I'm always open to interesting conversations and collaboration opportunities!
+
+<a href="https://www.linkedin.com/in/omar-a-afifi/">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+<a href="https://github.com/OmarAfifi-CSE">
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+
+</div>
+
+---
+
+<div align="center">
+   
+**Made with ❤️ by Omar Afifi**
+
+</div>
