@@ -1,6 +1,10 @@
 module.exports = async function () {
     try {
-        const response = await fetch('https://api.github.com/repos/OmarAfifi-CSE/daphq');
+        const response = await fetch('https://api.github.com/repos/OmarAfifi-CSE/daphq', {
+            headers: {
+                'User-Agent': 'OmarAfifi-Portfolio-Builder'
+            }
+        });
 
         if (!response.ok) {
             throw new Error('GitHub API response was not ok');
