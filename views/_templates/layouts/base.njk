@@ -6,6 +6,53 @@
   <title>{% if title %}{{ title }} — {% endif %}Omar Afifi</title>
   <meta name="description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
 
+  <!-- Open Graph / SEO -->
+  <meta name="theme-color" content="#fcfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <meta name="keywords" content="Omar Afifi, Software Engineer, Flutter Developer, IoT, Mobile Development, Zagazig University, Software Engineering">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}Omar Afifi">
+  <meta property="og:description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
+  <meta property="og:image" content="https://omar-afifi.com/images/Omar.webp">
+  <meta property="og:image:alt" content="Omar Afifi - Software Engineer">
+  <meta property="og:url" content="https://omar-afifi.com{{ page.url }}">
+  <meta property="og:site_name" content="Omar Afifi">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }} — {% endif %}Omar Afifi">
+  <meta name="twitter:description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
+  <meta name="twitter:image" content="https://omar-afifi.com/images/Omar.webp">
+  
+  <link rel="canonical" href="https://omar-afifi.com{{ page.url }}" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Omar Afifi",
+    "url": "https://omar-afifi.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/omar-a-afifi",
+      "https://github.com/omarafifi-cse",
+      "https://www.facebook.com/omar.a.afifi.cs/",
+      "https://www.instagram.com/omar.a.afifi/"
+    ],
+    "jobTitle": "Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelancer"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Zagazig University",
+      "sameAs": "https://www.zu.edu.eg/"
+    },
+    "image": "https://omar-afifi.com/images/Omar.webp"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
