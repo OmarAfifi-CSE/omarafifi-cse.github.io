@@ -141,7 +141,7 @@
 }
 
 .tech-stack__tag:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-adaptive);
   color: var(--color-text);
 }
 
@@ -251,7 +251,7 @@
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   background: var(--color-accent);
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-adaptive);
   color: var(--color-accent-text);
   --swiper-navigation-color: var(--color-accent-text);
 }
@@ -281,7 +281,7 @@
 .thumb:hover,
 .thumb.is-active {
   opacity: 1;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-adaptive);
 }
 
 .thumb img {
@@ -306,7 +306,7 @@
 .outcome-card__value {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-accent);
+  color: var(--color-accent-adaptive);
   line-height: 1;
   margin-bottom: var(--space-sm);
 }
@@ -344,7 +344,7 @@
 }
 
 .next-project__title a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-adaptive);
   transform: translateY(-4px);
 }
 

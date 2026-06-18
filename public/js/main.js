@@ -9,6 +9,10 @@
     const theme = saved || (prefersDark ? 'dark' : 'light');
     html.setAttribute('data-theme', theme);
     updateThemeIcon(theme);
+    
+    // Set default accent on load to ensure favicon gets generated
+    const currentAccent = html.style.getPropertyValue('--color-accent') || '#dbb778';
+    applyAccent(currentAccent);
   };
 
   const updateThemeIcon = (theme) => {
@@ -26,22 +30,20 @@
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     updateThemeIcon(next);
+    
+    const currentAccent = html.style.getPropertyValue('--color-accent');
+    if (currentAccent) {
+      applyAccent(currentAccent);
+    }
   };
 
   const initAccentDial = () => {
     const input = document.querySelector('.accent-dial input[type="color"]');
     if (!input) return;
 
-    const saved = localStorage.getItem('accent');
-    if (saved) {
-      input.value = saved;
-      applyAccent(saved);
-    }
-
     input.addEventListener('input', (e) => {
       const color = e.target.value;
       applyAccent(color);
-      localStorage.setItem('accent', color);
     });
   };
 
@@ -54,7 +56,67 @@
       const yiq = ((rgb.r * 299) + (rgb.g * 587) + (rgb.b * 114)) / 1000;
       const textColor = yiq >= 128 ? '#151E2B' : '#F2ECE4';
       html.style.setProperty('--color-accent-text', textColor);
+
+      const isLightMode = html.getAttribute('data-theme') === 'light';
+      let adaptiveColor = hex;
+      if (isLightMode && yiq >= 128) {
+        adaptiveColor = `color-mix(in srgb, ${hex}, black 35%)`;
+      } else if (!isLightMode && yiq < 128) {
+        adaptiveColor = `color-mix(in srgb, ${hex}, white 35%)`;
+      }
+      html.style.setProperty('--color-accent-adaptive', adaptiveColor);
+      
+      updateFavicon();
     }
+  };
+
+  const updateFavicon = () => {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const accentColor = rootStyles.getPropertyValue('--color-accent-adaptive').trim() || '#dbb778';
+    const textColor = rootStyles.getPropertyValue('--color-accent-text').trim() || '#151E2B';
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fillStyle = accentColor;
+    ctx.fill();
+
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => {
+      const size = 44;
+      const offset = (64 - size) / 2;
+
+      const tempCanvas = document.createElement('canvas');
+      tempCanvas.width = 64;
+      tempCanvas.height = 64;
+      const tCtx = tempCanvas.getContext('2d');
+      
+      tCtx.drawImage(img, offset, offset, size, size);
+      tCtx.globalCompositeOperation = 'source-in';
+      tCtx.fillStyle = textColor;
+      tCtx.fillRect(0, 0, 64, 64);
+
+      ctx.drawImage(tempCanvas, 0, 0);
+
+      const dataUrl = canvas.toDataURL('image/png');
+      
+      let link = document.querySelector('link[rel="icon"][id="dynamic-favicon"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.id = 'dynamic-favicon';
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.href = dataUrl;
+
+      document.querySelectorAll('link[rel="icon"]:not([id="dynamic-favicon"]), link[rel="apple-touch-icon"]').forEach(el => el.remove());
+    };
+    img.src = '/images/Logo-Without-Background.png';
   };
 
   const hexToRgb = (hex) => {
@@ -127,12 +189,36 @@
   const initCurrentNav = () => {
     const links = document.querySelectorAll('.nav__link');
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    
     links.forEach((link) => {
       const href = link.getAttribute('href') || '/';
       if (href === currentPath || (href !== '/' && currentPath.startsWith(href))) {
         link.setAttribute('aria-current', 'page');
       }
     });
+
+    if (currentPath === '/') {
+      const sections = document.querySelectorAll('section[id]');
+      if (!sections.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const activeId = entry.target.id;
+            links.forEach((link) => {
+              const href = link.getAttribute('href');
+              if (href === `/#${activeId}` || (activeId === 'home' && href === '/')) {
+                link.setAttribute('aria-current', 'page');
+              } else if (href === '/' || href.startsWith('/#')) {
+                link.removeAttribute('aria-current');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-50% 0px -50% 0px' });
+
+      sections.forEach(sec => observer.observe(sec));
+    }
   };
 
   document.addEventListener('DOMContentLoaded', () => {
