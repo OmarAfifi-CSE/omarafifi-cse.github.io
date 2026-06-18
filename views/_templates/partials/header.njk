@@ -1,6 +1,6 @@
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="Omar Afifi home">
+    <a href="{% if page.url == '/' %}#home{% else %}/#home{% endif %}" class="logo" aria-label="Omar Afifi home">
       <div class="logo__mark"></div>
       <span>Omar <span style="color: var(--color-accent-adaptive)">Afifi</span></span>
     </a>
@@ -12,7 +12,7 @@
 
     <nav class="nav" id="site-nav" aria-label="Main navigation">
       <ul class="nav__list">
-        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="{% if page.url == '/' %}#home{% else %}/#home{% endif %}" class="nav__link">Home</a></li>
         <li><a href="/#about" class="nav__link">About</a></li>
         <li><a href="/#projects" class="nav__link">Projects</a></li>
         <li><a href="/#contact" class="nav__link">Contact</a></li>

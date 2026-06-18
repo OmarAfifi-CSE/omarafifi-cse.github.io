@@ -12,46 +12,17 @@ links: []
 next: false
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} — Omar Afifi</title>
-  <meta name="description" content="{{ description | default(title + ' — a project by Omar Afifi.') }}">
+{% extends "layouts/base.njk" %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+{% block styles %}
   <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/projects.css">
+{% endblock %}
 
-  <script>
-    (function() {
-      try {
-        var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/images/favicon_io/site.webmanifest">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+{% block content %}
   <div class="grain-overlay"></div>
 
-  {% include "partials/header.njk" %}
-
-  <main id="main-content">
-    <!-- Project hero -->
+  <!-- Project hero -->
     <section class="project-hero">
       {% if hero_image %}
       <div class="project-hero__media">
@@ -217,11 +188,9 @@ next: false
     {% endif %}
 
     {% include "partials/contact.njk" %}
-  </main>
+{% endblock %}
 
-  {% include "partials/footer.njk" %}
-
-  <script src="/js/main.js" defer></script>
+{% block scripts %}
   <script src="/js/swiper-bundle.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -238,5 +207,4 @@ next: false
       }
     });
   </script>
-</body>
-</html>
+{% endblock %}
