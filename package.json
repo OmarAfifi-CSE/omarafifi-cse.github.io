@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "swiper": "^12.2.0"
   }
 }

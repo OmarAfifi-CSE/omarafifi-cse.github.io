@@ -1,151 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: Projects
+description: Selected work by Omar Afifi — Flutter apps, IoT systems, games, and web experiences.
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects - Omar Afifi</title>
-    <!-- Website Icon: Favicon and Touch Icons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
-    <!-- Preconnect and DNS Prefetch to Optimize Loading -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <!-- Preload AOS library (Animations) -->
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
-    <!-- Custom Stylesheet -->
-    <link rel="preload" href="/styles/style.css" as="style">
-    <link rel="stylesheet" href="/styles/style.css" defer>
-    <!-- Preload Images for Better Performance -->
-    <link rel="preload" href="/images/Logo.webp" as="image" type="image/webp">
-</head>
+{% extends "base.njk" %}
 
-<body>
-    <header>{% include "header.njk" %}</header>
-    <main>
-        <div id="projects">
-            <div class="container">
-                <h1 class="sub-title" style="text-align: center;" data-aos="fade-down" data-aos-duration="1500">Projects
-                </h1>
-                <div class="work-list">
+{% block content %}
+<div class="grain-overlay"></div>
 
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                        <img src="/images/Batrina.webp" alt="Batrina" loading="lazy">
-                        <div class="layer">
-                            <h3>Batrina<br>🛍️ Social E-Commerce 🛍️</h3>
-                            <p>A revolutionary social e-commerce platform built with Flutter & Firebase. Features
-                                real-time buyer chat, dynamic inventory matrix, and seamless deep linking. Where fashion
-                                meets community.</p>
-                            <a href="/batrina" aria-label="batrina"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
+<section class="section" id="projects" style="padding-top: calc(var(--header-height) + var(--space-4xl));">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Portfolio</span>
+      <h1 class="section-title">All projects.</h1>
+      <p class="section-subtitle">Eight projects spanning mobile, IoT, web, and game development — each one a deliberate step toward becoming a more complete engineer.</p>
+    </div>
 
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1500" data-aos-mirror="true">
-                        <img src="/images/Z-Garden.webp" alt="Z-Garden">
-                        <div class="layer">
-                            <h3>Z-Garden<br>🌱Smart Irrigation Project🌱</h3>
-                            <p>A smart irrigation system developed with ZagSystems. Key features include real-time
-                                monitoring, automated watering, and data visualization—powered by sustainable energy. A
-                                cornerstone of my learning in IoT and Embedded Systems.</p>
-                            <a href="/z-garden" aria-label="z-garden"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-                        <img src="/images/FinFlow.webp" alt="FinFlow" loading="lazy">
-                        <div class="layer">
-                            <h3>FinFlow<br>📱 Cross-Platform Finance Tracker 🖥️</h3>
-                            <p>A cross-platform finance tracker that helps users manage their expenses and income
-                                effectively. Built with Flutter, it offers a seamless experience on 4 different
-                                platforms:
-                                iOS, Android, Web, and Desktop.</p>
-                            <a href="/finflow" aria-label="finflow"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <!-- 2nd row -->
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
-                        <img src="/images/Daphq.webp" alt="Daphq" loading="lazy">
-                        <div class="layer">
-                            <h3>Daphq<br>⚡ Fast Cross-Platform File Sharing 📱</h3>
-                            <p>A blazing fast file transfer app built with Flutter for Android and Windows.
-                                Bypasses HTTP overhead using raw TCP sockets to reach speeds up to 100+ MB/s. Features
-                                an animated Orbital Radar for auto-discovery and system-wide file sharing.</p>
-                            <a href="/daphq/" aria-label="daphq"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="350">
-                        <img src="/images/Wizardly.webp" alt="Wizardly App" loading="lazy">
-                        <div class="layer">
-                            <h3>Wizardly<br>🪄 Magical Weather App 🪄</h3>
-                            <p>A beautiful, dynamic weather app built with Flutter that magically transforms its UI to
-                                match the current weather conditions, creating an immersive and delightful atmospheric
-                                experience.</p>
-                            <a href="/wizardly" aria-label="Wizardly"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-                        <img src="/images/Digging-Jim.webp" alt="Digging Jim" loading="lazy">
-                        <div class="layer">
-                            <h3>Digging Jim<br>🎮Dig Deep - Collect More🎮</h3>
-                            <p>Explore hidden treasures and tackle challenges in this Java and JavaFX game. Digging
-                                Jim
-                                combines intuitive controls with dynamic graphics, demonstrating my skills in game
-                                development and JavaFX.</p>
-                            <a href="/digging-jim" aria-label="digging-jim"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <!-- 3rd row -->
-                    <div class="work" data-aos="zoom-in" data-aos-duration="2000" data-aos-mirror="true">
-                        <img src="/images/Portfolio.webp" alt="Portfolio">
-                        <div class="layer">
-                            <h3>Omar Afifi<br>🌐 Portfolio Website 🌐</h3>
-                            <p>A professional portfolio showcasing my expertise in web development, featuring responsive
-                                designs, modern technologies, and innovative digital solutions to create seamless web
-                                experiences.</p>
-                            <a href="/omar-portfolio" aria-label="omar-portfolio"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="work" data-aos="zoom-in" data-aos-duration="2500" data-aos-mirror="true">
-                        <img src="/images/ZagSystems.webp" alt="ZagSystems-website">
-                        <div class="layer">
-                            <h3>ZagSystems Website<br>🌐Web Development🌐</h3>
-                            <p>Developed a services section with four detailed pages and created four product pages.
-                                Designed consistent headers for a seamless user experience across the site.</p>
-                            <a href="/zagsystems-website" aria-label="zagsystems-website"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="projects-bento">
+      <a href="/batrina" class="project-tile project-tile--large reveal">
+        <div class="project-tile__media"><img src="/images/Batrina.webp" alt="Batrina social e-commerce app" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Flutter · Firebase</div>
+          <h3 class="project-tile__title">Batrina</h3>
+          <p class="project-tile__desc">A social e-commerce platform with real-time buyer chat, dynamic inventory matrix, and deep linking. Where fashion meets community.</p>
         </div>
-        {% include "contact.njk" %}
-    </main>
-    <!------------------------------------------------footer------------------------------------------------->
-    {% include "footer.njk" %}
-    <!-------------------------------------------------Script------------------------------------------------->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 0 });
-    </script>
-    <script defer src="/js/layout.js"></script>
-</body>
+      </a>
 
-</html>
+      <a href="/z-garden" class="project-tile project-tile--medium reveal">
+        <div class="project-tile__media"><img src="/images/Z-Garden.webp" alt="Z-Garden smart irrigation" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">IoT · ESP32</div>
+          <h3 class="project-tile__title">Z-Garden</h3>
+          <p class="project-tile__desc">Smart irrigation with real-time monitoring and automated watering.</p>
+        </div>
+      </a>
+
+      <a href="/finflow" class="project-tile project-tile--medium reveal">
+        <div class="project-tile__media"><img src="/images/FinFlow.webp" alt="FinFlow finance tracker" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Flutter · 4 Platforms</div>
+          <h3 class="project-tile__title">FinFlow</h3>
+          <p class="project-tile__desc">Cross-platform finance tracker for iOS, Android, Web, and Desktop.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/OmarAfifi-CSE/daphq" target="_blank" rel="noopener noreferrer" class="project-tile project-tile--wide reveal">
+        <div class="project-tile__media"><img src="/images/Daphq.webp" alt="Daphq file sharing" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Flutter · TCP Sockets</div>
+          <h3 class="project-tile__title">Daphq</h3>
+          <p class="project-tile__desc">Blazing fast cross-platform file sharing — up to 100+ MB/s via raw TCP sockets.</p>
+        </div>
+      </a>
+
+      <a href="/wizardly" class="project-tile project-tile--wide reveal">
+        <div class="project-tile__media"><img src="/images/Wizardly.webp" alt="Wizardly weather app" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Flutter · Weather</div>
+          <h3 class="project-tile__title">Wizardly</h3>
+          <p class="project-tile__desc">A dynamic weather app that transforms its UI to match current conditions.</p>
+        </div>
+      </a>
+
+      <a href="/digging-jim" class="project-tile project-tile--medium reveal">
+        <div class="project-tile__media"><img src="/images/Digging-Jim.webp" alt="Digging Jim game" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Java · JavaFX</div>
+          <h3 class="project-tile__title">Digging Jim</h3>
+          <p class="project-tile__desc">A desktop game built with Java and JavaFX.</p>
+        </div>
+      </a>
+
+      <a href="/omar-portfolio" class="project-tile project-tile--medium reveal">
+        <div class="project-tile__media"><img src="/images/Portfolio.webp" alt="Portfolio website" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Web · Eleventy</div>
+          <h3 class="project-tile__title">Portfolio</h3>
+          <p class="project-tile__desc">A professional portfolio showcasing modern, responsive web design.</p>
+        </div>
+      </a>
+
+      <a href="/zagsystems-website" class="project-tile project-tile--large reveal">
+        <div class="project-tile__media"><img src="/images/ZagSystems.webp" alt="ZagSystems website" loading="lazy"></div>
+        <div class="project-tile__overlay"></div>
+        <div class="project-tile__content">
+          <div class="project-tile__category">Web · Corporate</div>
+          <h3 class="project-tile__title">ZagSystems Website</h3>
+          <p class="project-tile__desc">Built a services section with four detailed pages and four product pages, with consistent headers for a seamless user experience.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include "contact.njk" %}
+{% endblock %}

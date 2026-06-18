@@ -92,9 +92,10 @@ Let's connect:
 </tr>
 </table>
 
-**Additional Libraries:**
-- 🎭 **AOS (Animate On Scroll)** - Beautiful scroll animations
-- 🎨 **Font Awesome** - Professional icons
+**Additional Libraries & Tools:**
+- ⚙️ **Eleventy (11ty)** - Fast Static Site Generator
+- 📝 **Nunjucks** - Powerful templating engine
+- 📱 **Swiper.js** - Modern touch slider
 - ✍️ **Google Fonts** - Custom typography
 
 </div>

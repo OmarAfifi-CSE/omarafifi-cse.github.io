@@ -1,0 +1,230 @@
+---
+# Frontmatter defaults that can be overridden by each project page
+hero_image: false
+hero_video: false
+role: "Developer"
+year: ""
+tech: []
+gallery: []
+features: []
+outcomes: []
+links: []
+next: false
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Omar Afifi</title>
+  <meta name="description" content="{{ description | default(title + ' — a project by Omar Afifi.') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/projects.css">
+  <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="grain-overlay"></div>
+
+  {% include "header.njk" %}
+
+  <main id="main-content">
+    <!-- Project hero -->
+    <section class="project-hero">
+      {% if hero_image %}
+      <div class="project-hero__media">
+        <img src="{{ hero_image }}" alt="{{ title }} preview" fetchpriority="high">
+      </div>
+      {% elif hero_video %}
+      <div class="project-hero__media">
+        <video autoplay muted loop playsinline>
+          <source src="{{ hero_video }}" type="video/mp4">
+        </video>
+      </div>
+      {% endif %}
+
+      <div class="container project-hero__content">
+        <div class="project-hero__meta reveal">
+          {% if role %}<span>{{ role }}</span>{% endif %}
+          {% if year %}<span>·</span><span>{{ year }}</span>{% endif %}
+          {% if category %}<span>·</span><span>{{ category }}</span>{% endif %}
+        </div>
+        <h1 class="project-hero__title reveal">{{ title }}</h1>
+        {% if subtitle %}<p class="project-hero__subtitle reveal">{{ subtitle }}</p>{% endif %}
+
+        {% if links and links.length %}
+        <div class="project-toolbar reveal">
+          {% for link in links %}
+          <a href="{{ link.url }}" class="btn {% if loop.first %}btn--primary{% endif %}" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            {{ link.label }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <!-- Overview -->
+    {% if overview %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Overview</div>
+          <div class="project-section__content reveal">
+            {% if overview_lead %}<p class="project-overview__lead">{{ overview_lead }}</p>{% endif %}
+            {{ overview | safe }}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Tech stack -->
+    {% if tech and tech.length %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Tech Stack</div>
+          <div class="reveal">
+            <div class="tech-stack">
+              {% for item in tech %}
+              <span class="tech-stack__tag">{{ item }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Media gallery (Swiper) -->
+    {% if gallery and gallery.length %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Gallery</div>
+          <div class="media-gallery reveal">
+            <div class="swiper project-swiper">
+              <div class="swiper-wrapper">
+                {% for item in gallery %}
+                <div class="swiper-slide">
+                  {% if item.type == "video" %}
+                  <video controls preload="none" poster="{{ item.poster | default('') }}">
+                    <source src="{{ item.src }}" type="video/mp4">
+                  </video>
+                  {% else %}
+                  <img src="{{ item.src }}" alt="{{ item.alt | default(title + ' screenshot ' + loop.index) }}" loading="lazy">
+                  {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Features -->
+    {% if features and features.length %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Key Features</div>
+          <div class="feature-list reveal">
+            {% for feature in features %}
+            <div class="feature-list__item">
+              <div class="feature-list__icon">{{ feature.icon | default('◆') }}</div>
+              <div class="feature-list__text">
+                <h4>{{ feature.title }}</h4>
+                <p>{{ feature.desc }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Outcomes -->
+    {% if outcomes and outcomes.length %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Outcomes</div>
+          <div class="outcome-grid reveal">
+            {% for outcome in outcomes %}
+            <div class="outcome-card">
+              <div class="outcome-card__value">{{ outcome.value }}</div>
+              <div class="outcome-card__label">{{ outcome.label }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Learning / deep dive -->
+    {% if learning %}
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Deep Dive</div>
+          <div class="project-section__content reveal">
+            {{ learning | safe }}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Next project -->
+    {% if next %}
+    <section class="next-project">
+      <div class="container">
+        <p class="next-project__label reveal">Next Project</p>
+        <h2 class="next-project__title reveal"><a href="{{ next.url }}" style="color: var(--color-accent)">{{ next.title }}</a></h2>
+        <a href="{{ next.url }}" class="btn btn--primary reveal">View project</a>
+      </div>
+    </section>
+    {% endif %}
+
+    {% include "contact.njk" %}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/swiper-bundle.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('.project-swiper', {
+          loop: true,
+          grabCursor: true,
+          keyboard: { enabled: true },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          lazy: { loadPrevNext: true }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
