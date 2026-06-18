@@ -59,13 +59,24 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const btn = form.querySelector('button[type="submit"]');
     const originalLabel = btn.textContent;
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
     try {
-      await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+      const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+      
+      if (!response.ok) {
+        throw new Error(`Server returned status ${response.status}`);
+      }
+
       form.reset();
       if (msg) {
         msg.textContent = 'Thanks! Your message has been sent.';

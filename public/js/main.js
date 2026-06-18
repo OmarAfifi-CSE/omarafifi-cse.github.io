@@ -137,14 +137,12 @@
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', !isOpen);
       nav.classList.toggle('nav--open', !isOpen);
-      document.body.style.overflow = !isOpen ? 'hidden' : '';
     });
 
     nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
         nav.classList.remove('nav--open');
-        document.body.style.overflow = '';
       });
     });
   };
