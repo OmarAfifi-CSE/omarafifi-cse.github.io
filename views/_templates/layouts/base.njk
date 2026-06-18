@@ -21,13 +21,13 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  {% include "header.njk" %}
+  {% include "partials/header.njk" %}
 
   <main id="main-content">
     {% block content %}{% endblock %}
   </main>
 
-  {% include "footer.njk" %}
+  {% include "partials/footer.njk" %}
 
   <script src="/js/main.js" defer></script>
   {% block scripts %}{% endblock %}

@@ -346,7 +346,7 @@ ul, ol {
   height: 28px;
   border-radius: 50%;
   border: 2px solid var(--color-border-strong);
-  background: conic-gradient(from 180deg, var(--color-accent), var(--color-accent-2), var(--color-accent));
+  background: var(--color-accent);
   cursor: pointer;
   transition: transform 0.3s var(--ease-out-expo), border-color 0.3s var(--ease-out-expo);
 }
@@ -750,7 +750,7 @@ ul, ol {
   max-width: 600px;
   max-height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--color-accent-2-rgb), 0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.12), transparent 70%);
   filter: blur(50px);
 }
 
