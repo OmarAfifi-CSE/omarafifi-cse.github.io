@@ -33,6 +33,7 @@
   --header-height: 80px;
 
   --color-bg: #0A1628;
+  --color-bg-rgb: 10, 22, 40;
   --color-bg-elevated: #111E32;
   --color-bg-soft: #152238;
   --color-surface: #1A2A40;
@@ -43,6 +44,7 @@
   --color-text-muted: #A8B0B9;
   --color-text-dim: #6D7885;
   --color-accent: #C8A464;
+  --color-accent-text: #151E2B;
   --color-accent-rgb: 200, 164, 100;
   --color-accent-2: #4ECDC4;
   --color-accent-2-rgb: 78, 205, 196;
@@ -269,13 +271,26 @@ ul, ol {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background-color: var(--color-accent);
+  position: relative;
   display: grid;
   place-items: center;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 700;
+}
+
+.logo__mark::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent-text);
+  -webkit-mask-image: url('/images/Logo-Without-Background.png');
+  mask-image: url('/images/Logo-Without-Background.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .nav {
@@ -467,7 +482,7 @@ ul, ol {
   position: absolute;
   inset: 0;
   background: var(--color-accent);
-  transform: translateY(100%);
+  transform: translateY(105%);
   transition: transform 0.4s var(--ease-out-expo);
   z-index: -1;
 }
@@ -486,7 +501,7 @@ ul, ol {
 .btn--primary {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-accent-text);
 }
 
 .btn--primary::before {
@@ -851,7 +866,7 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 22, 40, 0.4), transparent 50%);
+  background: linear-gradient(to top, rgba(var(--color-bg-rgb), 0.4), transparent 50%);
 }
 
 .hero__scroll {
@@ -1081,7 +1096,7 @@ ul, ol {
 .project-tile__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.3) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(var(--color-bg-rgb), 0.95) 0%, rgba(var(--color-bg-rgb), 0.3) 60%, transparent 100%);
   z-index: 1;
 }
 
