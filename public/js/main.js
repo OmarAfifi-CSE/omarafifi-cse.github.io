@@ -3,38 +3,80 @@
 
   const html = document.documentElement;
 
-  const initTheme = () => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved || (prefersDark ? 'dark' : 'light');
-    html.setAttribute('data-theme', theme);
-    updateThemeIcon(theme);
-    
-    // Set default accent on load to ensure favicon gets generated
-    const currentAccent = html.style.getPropertyValue('--color-accent') || '#dbb778';
-    applyAccent(currentAccent);
-  };
+  const initThemeDropdown = () => {
+    const dropdown = document.querySelector('.theme-dropdown');
+    const toggle = document.querySelector('.theme-dropdown__toggle');
+    const buttons = document.querySelectorAll('.theme-btn');
 
-  const updateThemeIcon = (theme) => {
-    const btn = document.querySelector('.theme-toggle');
-    if (!btn) return;
-    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    btn.innerHTML = theme === 'dark'
-      ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
-      : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
-  };
+    if (!dropdown || !toggle) return;
 
-  const toggleTheme = () => {
-    const current = html.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    updateThemeIcon(next);
-    
-    const currentAccent = html.style.getPropertyValue('--color-accent');
-    if (currentAccent) {
-      applyAccent(currentAccent);
-    }
+    // Set initial active state
+    const savedTheme = localStorage.getItem('site-theme') || '';
+    buttons.forEach(b => {
+      if (b.getAttribute('data-theme-value') === savedTheme) {
+        b.classList.add('is-active');
+      } else {
+        b.classList.remove('is-active');
+      }
+    });
+
+    // Initialize favicon and color picker to match the current theme
+    setTimeout(() => {
+      const themeAccent = getComputedStyle(html).getPropertyValue('--color-accent').trim();
+      const colorInput = document.querySelector('.accent-dial input[type="color"]');
+      if (colorInput && themeAccent.startsWith('#')) {
+        colorInput.value = themeAccent.substring(0, 7);
+      }
+      updateFavicon(themeAccent);
+    }, 10);
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('is-open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+      }
+    });
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-theme-value');
+        if (theme) {
+          html.setAttribute('data-theme', theme);
+        } else {
+          html.removeAttribute('data-theme');
+        }
+        localStorage.setItem('site-theme', theme);
+        dropdown.classList.remove('is-open');
+
+        // Update active class
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        // Remove any custom inline accent so theme's default takes over
+        html.style.removeProperty('--color-accent');
+        html.style.removeProperty('--color-accent-rgb');
+        html.style.removeProperty('--color-accent-adaptive');
+        html.style.removeProperty('--color-accent-text');
+
+        // Let CSS apply, then get the new theme's accent color
+        setTimeout(() => {
+          const themeAccent = getComputedStyle(html).getPropertyValue('--color-accent').trim();
+          
+          // Update the color picker dial to match the theme
+          const colorInput = document.querySelector('.accent-dial input[type="color"]');
+          if (colorInput && themeAccent.startsWith('#')) {
+            colorInput.value = themeAccent.substring(0, 7);
+          }
+          
+          // Update favicon
+          updateFavicon(themeAccent);
+        }, 10);
+      });
+    });
   };
 
   const initAccentDial = () => {
@@ -220,14 +262,11 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
+    initThemeDropdown();
     initAccentDial();
     initMobileMenu();
     initScrollReveals();
     initHeaderScroll();
     initCurrentNav();
-
-    const themeBtn = document.querySelector('.theme-toggle');
-    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
   });
 })();

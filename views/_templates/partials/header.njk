@@ -22,7 +22,22 @@
         <label class="accent-dial" aria-label="Accent color" title="Accent color">
           <input type="color" value="#C8A464" aria-label="Choose accent color">
         </label>
-        <button class="theme-toggle" aria-label="Switch to light mode" type="button"></button>
+        <div class="theme-dropdown">
+          <button class="theme-dropdown__toggle" aria-label="Select Theme" title="Theme Settings" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          </button>
+          <ul class="theme-dropdown__menu">
+            <li><button class="theme-btn" data-theme-value="light">Classic Light</button></li>
+            <li><button class="theme-btn" data-theme-value="">Classic Dark</button></li>
+            <li><button class="theme-btn" data-theme-value="obsidian">Obsidian & Gold</button></li>
+            <li><button class="theme-btn" data-theme-value="cyber">Cyber Brutalism</button></li>
+            <li><button class="theme-btn" data-theme-value="nordic">Nordic Earth</button></li>
+            <li><button class="theme-btn" data-theme-value="crimson">Crimson Edge</button></li>
+            <li><button class="theme-btn" data-theme-value="neobrutalism">Neobrutalism</button></li>
+            <li><button class="theme-btn" data-theme-value="midnight">Midnight Glass</button></li>
+            <li><button class="theme-btn" data-theme-value="sepia">Vintage Sepia</button></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
