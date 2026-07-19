@@ -283,14 +283,14 @@
     if (sessionStorage.getItem('theme-intro-played') && !isReload) {
       const savedTheme = localStorage.getItem('site-theme');
       if (!savedTheme) {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('site-theme', 'dark');
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('site-theme', 'light');
       }
       return;
     }
     
     const toggleBtn = document.querySelector('.theme-dropdown__toggle');
-    const originalTheme = localStorage.getItem('site-theme') || 'dark';
+    const originalTheme = localStorage.getItem('site-theme') || 'light';
     
     const playSpotlight = async (theme, x, y, duration = 800) => {
       // Strip custom accents during showcase
