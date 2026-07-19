@@ -5,11 +5,6 @@
       <span>Omar <span style="color: var(--color-accent-adaptive)">Afifi</span></span>
     </a>
 
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-    </button>
-
     <nav class="nav" id="site-nav" aria-label="Main navigation">
       <ul class="nav__list">
         <li><a href="{% if page.url == '/' %}#home{% else %}/#home{% endif %}" class="nav__link">Home</a></li>
@@ -17,7 +12,9 @@
         <li><a href="/#projects" class="nav__link">Projects</a></li>
         <li><a href="/#contact" class="nav__link">Contact</a></li>
       </ul>
+    </nav>
 
+    <div class="header__actions">
       <div class="nav__controls">
         <label class="accent-dial" aria-label="Accent color" title="Accent color">
           <input type="color" value="#C8A464" aria-label="Choose accent color">
@@ -27,18 +24,22 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
           </button>
           <ul class="theme-dropdown__menu">
-            <li><button class="theme-btn" data-theme-value="light">Classic Light</button></li>
-            <li><button class="theme-btn" data-theme-value="">Classic Dark</button></li>
-            <li><button class="theme-btn" data-theme-value="obsidian">Obsidian & Gold</button></li>
-            <li><button class="theme-btn" data-theme-value="cyber">Cyber Brutalism</button></li>
-            <li><button class="theme-btn" data-theme-value="nordic">Nordic Earth</button></li>
-            <li><button class="theme-btn" data-theme-value="crimson">Crimson Edge</button></li>
-            <li><button class="theme-btn" data-theme-value="neobrutalism">Neobrutalism</button></li>
-            <li><button class="theme-btn" data-theme-value="midnight">Midnight Glass</button></li>
-            <li><button class="theme-btn" data-theme-value="sepia">Vintage Sepia</button></li>
+            <li><button class="theme-btn" data-theme-value="light"><span class="theme-dot" style="background: linear-gradient(135deg, #F2ECE4 50%, #A6823E 50%);"></span> <span class="theme-name">Classic Light</span></button></li>
+            <li><button class="theme-btn" data-theme-value="dark"><span class="theme-dot" style="background: linear-gradient(135deg, #0A1628 50%, #C8A464 50%);"></span> <span class="theme-name">Classic Dark</span></button></li>
+            <li><button class="theme-btn" data-theme-value="obsidian"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #E5B842 50%);"></span> <span class="theme-name">Obsidian & Gold</span></button></li>
+            <li><button class="theme-btn" data-theme-value="cyber"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #00FF41 50%);"></span> <span class="theme-name">Cyber Brutalism</span></button></li>
+            <li><button class="theme-btn" data-theme-value="nordic"><span class="theme-dot" style="background: linear-gradient(135deg, #EAE6D7 50%, #2C4C3B 50%);"></span> <span class="theme-name">Nordic Earth</span></button></li>
+            <li><button class="theme-btn" data-theme-value="crimson"><span class="theme-dot" style="background: linear-gradient(135deg, #1A0F14 50%, #E63946 50%);"></span> <span class="theme-name">Crimson Night</span></button></li>
+            <li><button class="theme-btn" data-theme-value="neobrutalism"><span class="theme-dot" style="background: linear-gradient(135deg, #FFFDF9 50%, #FFD500 50%);"></span> <span class="theme-name">Neo Brutalism</span></button></li>
+            <li><button class="theme-btn" data-theme-value="midnight"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #00E5FF 50%);"></span> <span class="theme-name">Midnight Glass</span></button></li>
+            <li><button class="theme-btn" data-theme-value="sepia"><span class="theme-dot" style="background: linear-gradient(135deg, #F4EEDD 50%, #C85A17 50%);"></span> <span class="theme-name">Vintage Sepia</span></button></li>
           </ul>
         </div>
       </div>
-    </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
