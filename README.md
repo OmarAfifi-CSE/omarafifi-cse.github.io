@@ -7,7 +7,7 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=40&duration=3000&pause=1000&color=C8A464&center=true&vCenter=true&width=800&lines=Software+Engineer;Computer+%26+Systems+Engineering;Creating+Premium+Digital+Experiences" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=35&duration=3000&pause=1000&color=C8A464&center=true&vCenter=true&width=1000&lines=Software+Engineer;Computer+%26+Systems+Engineering;Creating+Premium+Digital+Experiences" alt="Typing SVG" />
 
 *A next-generation personal portfolio built with a focus on cutting-edge UX, extreme performance, and an innovative dynamic theming engine.*
 
