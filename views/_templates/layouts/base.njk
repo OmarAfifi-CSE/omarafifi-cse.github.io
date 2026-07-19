@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} — {% endif %}Omar Afifi</title>
+  <title>{% if seo_title %}{{ seo_title }}{% elif title and title != 'Omar Afifi' %}{{ title }} — Omar Afifi{% else %}Omar Afifi - Software Engineer{% endif %}</title>
   <meta name="description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
 
   <!-- Open Graph / SEO -->
@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <meta name="keywords" content="Omar Afifi, Software Engineer, Flutter Developer, IoT, Mobile Development, Zagazig University, Software Engineering">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}Omar Afifi">
+  <meta property="og:title" content="{% if seo_title %}{{ seo_title }}{% elif title and title != 'Omar Afifi' %}{{ title }} — Omar Afifi{% else %}Omar Afifi - Software Engineer{% endif %}">
   <meta property="og:description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
   <meta property="og:image" content="https://omar-afifi.com/images/Omar.webp">
   <meta property="og:image:alt" content="Omar Afifi - Software Engineer">
@@ -21,7 +21,7 @@
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if title %}{{ title }} — {% endif %}Omar Afifi">
+  <meta name="twitter:title" content="{% if seo_title %}{{ seo_title }}{% elif title and title != 'Omar Afifi' %}{{ title }} — Omar Afifi{% else %}Omar Afifi - Software Engineer{% endif %}">
   <meta name="twitter:description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
   <meta name="twitter:image" content="https://omar-afifi.com/images/Omar.webp">
   
