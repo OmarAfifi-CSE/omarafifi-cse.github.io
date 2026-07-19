@@ -13,8 +13,10 @@ eleventyExcludeFromCollections: true
   {% endif %}
   {% endfor %}
 
+  {% for repo, data in externalProjects %}
   <url>
-    <loc>https://omar-afifi.com/daphq/</loc>
-    <lastmod>{{ daphq.lastmod }}</lastmod>
+    <loc>https://omar-afifi.com/{{ repo }}/</loc>
+    <lastmod>{{ data.lastmod }}</lastmod>
   </url>
+  {% endfor %}
 </urlset>
