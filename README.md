@@ -1,149 +1,108 @@
 <div align="center">
 
+# 🌟 Omar Afifi - Digital Portfolio
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&duration=2000&pause=1000&color=000000&center=true&vCenter=true&width=700&lines=OMAR+AFIFI" alt="Typing SVG" />
+<a href="https://omar-afifi.com/"><img src="https://img.shields.io/badge/🌐_Visit_Live_Experience-111E32?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Website"/></a>
+<a href="https://github.com/OmarAfifi-CSE"><img src="https://img.shields.io/badge/GitHub-Profile-1A2A40?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
 
-### ✨ *Computer & Systems Engineering Student* ✨
+<br/>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-</p>
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=40&duration=3000&pause=1000&color=C8A464&center=true&vCenter=true&width=800&lines=Software+Engineer;Computer+%26+Systems+Engineering;Creating+Premium+Digital+Experiences" alt="Typing SVG" />
 
-<p align="center">
-  <a href="https://omar-afifi.com/"><img src="https://img.shields.io/badge/🌐_Live_Website-6366f1?style=for-the-badge" alt="Live Website"/></a>
-</p>
+*A next-generation personal portfolio built with a focus on cutting-edge UX, extreme performance, and an innovative dynamic theming engine.*
+
+</div>
 
 ---
+
+## ✨ The Awwwards Experience
+
+This is not just a portfolio—it's a showcase of what modern web APIs can do when combined with meticulous design. Built completely without heavy client-side frameworks, it delivers a premium "native-app-like" experience running at a buttery 60 FPS.
+
+### 🎨 Theming Engine V2.0
+The crown jewel of this portfolio is a custom-built, ultra-smooth theming architecture:
+- **9 Curated Themes:** Ranging from *Cyber Brutalism* and *Midnight Glass* to *Nordic Earth* and *Vintage Sepia*.
+- **Infinite Accent Color Dial:** A custom-built color picker that recalculates and injects complementary UI text colors (`color-mix` blending) in real-time based on YIQ contrast ratios.
+- **Dynamic Canvas Favicon:** The browser tab's favicon is generated on-the-fly using HTML5 `<canvas>` to perfectly match your currently selected theme and accent color without any network requests! 
+- **View Transitions API:** Changing themes triggers a smooth "Spotlight" circular expansion animation utilizing the native browser View Transitions API, mathematically calculated to cover any screen size seamlessly.
+
+---
+
+## 🛠️ Tech Architecture
+
+Despite its complex interactive features, the site remains incredibly lightweight.
+
+<div align="center">
+
+| Core | Generation | Tooling |
+| :---: | :---: | :---: |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40"/><br/>**Vanilla JS** | <img src="https://11ty.dev/img/logo-github.svg" width="40"/><br/>**Eleventy (11ty)** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/><br/>**Native CSS3** |
+| Zero UI frameworks.<br/>Maximum performance. | Blazing fast Static<br/>Site Generation. | CSS Variables &<br/>Modern APIs. |
+
 </div>
 
-## 🎯 Overview
+<br/>
 
-> **A modern, animated portfolio website that brings my professional journey to life**
-
-This portfolio is more than just a website—it's a digital experience showcasing my skills, projects, and passion for technology. Built with vanilla JavaScript and powered by beautiful animations, every scroll tells a story.
-
-
-## ✨ What's Inside
+## 🚀 Key Features
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🏠 **Home**
-Your first impression matters. The home section features:
-- ⚡ Dynamic typing animation
-- 🎨 Eye-catching hero design
-- 🔗 Quick access to social profiles
-- 📱 Smooth scroll navigation
+### 📱 Perfect Responsive Design
+- Intelligent fluid typography (`clamp()`).
+- Custom mobile layouts with integrated header controls.
+- iOS/Android PWA-like tap highlight optimizations.
+- Responsive CSS Grid Bento-box layouts.
 
-<br/>
-
-### 💼 **Portfolio** 
-Where my work speaks for itself:
-- 🎯 Project showcases with live demos
-- 💻 Technology stack highlights
-- 🔗 GitHub repository links
-- 🖼️ Interactive hover effects
+### ⚡ Performance Obsessed
+- Generated strictly as static HTML via **Nunjucks**.
+- No React, Vue, or heavy framework overhead.
+- Base64 encoded assets to eliminate network roundtrips.
 
 </td>
 <td width="50%" valign="top">
 
-### 👨‍💻 **About**
-Get to know me better:
-- 🛠️ Skills & expertise with proficiency bars
-- 📚 Educational background
-- 💼 Work experience timeline
+### 🎬 Micro-Interactions
+- Custom scrollbar styling that adapts to themes.
+- Hover-scale cards, glow effects, and dynamic shadows.
+- Smart Intersection Observers for scroll-reveals.
+- Infinite CSS Marquee integrations.
 
-<br/>
-
-### 📬 **Contact**
-Let's connect:
-- 📧 Direct contact form
-- 💬 Social media integration
-- 🌐 Multiple ways to reach out
+### 🧠 Smart Logic
+- Auto-detects user's system dark/light preference.
+- Saves all theme configurations in `localStorage`.
+- Zero-FOUC (Flash of Unstyled Content) implementation via `<noscript>` fallbacks.
 
 </td>
 </tr>
 </table>
 
-## 🛠️ Tech Stack
+---
+
+## 📸 Sections
+
+1. **Hero**: Impactful entrance with dynamic typography and quick links.
+2. **Projects**: A Bento-grid style layout showcasing major works with live links and repo sources.
+3. **About & Skills**: Visual representation of tech stack and an interactive experience timeline.
+4. **Contact**: Sleek, direct communication forms.
+
+---
 
 <div align="center">
 
-<table>
-<tr>
-<td align="center" width="33%">
-<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/>
-<br/><b>HTML5</b>
-<br/><sub>Semantic markup</sub>
-</td>
-<td align="center" width="33%">
-<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/>
-<br/><b>CSS3</b>
-<br/><sub>Modern styling</sub>
-</td>
-<td align="center" width="33%">
-<img width="65" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
-<br/><b>JavaScript</b>
-<br/><sub>Vanilla JS</sub>
-</td>
-</tr>
-</table>
+### 🤝 Let's Collaborate!
 
-**Additional Libraries & Tools:**
-- ⚙️ **Eleventy (11ty)** - Fast Static Site Generator
-- 📝 **Nunjucks** - Powerful templating engine
-- 📱 **Swiper.js** - Modern touch slider
-- ✍️ **Google Fonts** - Custom typography
-
-</div>
-
-## 🌟 Features Highlights
-
-<table>
-<tr>
-<td width="33%" align="center">
-<img src="https://img.icons8.com/fluency/96/000000/speed.png" width="60"/>
-<br/><b>Lightning Fast</b>
-<br/>Optimized for performance
-</td>
-<td width="33%" align="center">
-<img src="https://img.icons8.com/fluency/96/multiple-devices.png" width="60"/>
-<br/><b>Fully Responsive</b>
-<br/>Perfect on all devices
-</td>
-<td width="33%" align="center">
-<img src="https://img.icons8.com/fluency/96/000000/rocket.png" width="60"/>
-<br/><b>Modern Design</b>
-<br/>Clean & professional
-</td>
-</tr>
-</table>
-
-<br/>
-
-## 📧 Let's Connect
-
-<div align="center">
-
-### 🤝 **Get In Touch**
-I'm always open to interesting conversations and collaboration opportunities!
+I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
 
 <a href="https://www.linkedin.com/in/omar-a-afifi/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 <a href="https://github.com/OmarAfifi-CSE">
   <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 
-</div>
-
----
-
-<div align="center">
-   
-**Made with ❤️ by Omar Afifi**
+<br/><br/>
+*Designed & Developed with ❤️ by Omar Afifi*
 
 </div>
