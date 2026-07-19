@@ -1,63 +1,98 @@
-//typewriter effect
-const texts = [
-    "Software Engineer",
-    "Flutter Developer"
-]
+// Hero typewriter effect
+(() => {
+  'use strict';
 
-let speed = 100;
-const textElements = document.querySelector(".typewriter-text");
-let textIndex = 0;
-let characterIndex = 0;
+  const texts = [
+    'Software Engineer',
+    'Flutter Developer',
+    'IoT Systems Builder',
+    'Cross-Platform Developer'
+  ];
 
-function typeWriter() {
-    if (characterIndex < texts[textIndex].length) {
-        textElements.innerHTML += texts[textIndex].charAt(characterIndex);
-        characterIndex++;
-        setTimeout(typeWriter, speed);
-    }
-    else {
-        setTimeout(eraseText, 1000);
-    }
-}
-function eraseText() {
-    if (textElements.innerHTML.length > 0) {
-        textElements.innerHTML = textElements.innerHTML.slice(0, -1);
-        setTimeout(eraseText, 50);
-    } else {
+  const target = document.querySelector('.typewriter');
+  if (!target) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    target.textContent = texts[0];
+    return;
+  }
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const tick = () => {
+    const current = texts[textIndex];
+    if (isDeleting) {
+      target.textContent = current.slice(0, --charIndex);
+      if (charIndex === 0) {
+        isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
-        characterIndex = 0;
-        setTimeout(typeWriter, 500);
+        setTimeout(tick, 400);
+        return;
+      }
+      setTimeout(tick, 40);
+    } else {
+      target.textContent = current.slice(0, ++charIndex);
+      if (charIndex === current.length) {
+        isDeleting = true;
+        setTimeout(tick, 1800);
+        return;
+      }
+      setTimeout(tick, 90);
     }
-}
-window.onload = typeWriter
+  };
 
-//tablinks (About Me)
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
+  setTimeout(tick, 800);
+})();
 
-function opentab(tabname) {
-    for (tablink of tablinks)
-        tablink.classList.remove("active-link");
+// Contact form (Google Sheets submission)
+(() => {
+  'use strict';
 
-    for (tabcontent of tabcontents)
-        tabcontent.classList.remove("active-tab");
+  const form = document.forms['submit-to-google-sheet'];
+  if (!form) return;
 
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
+  const msg = document.getElementById('msg');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6Iy37SouYu_YjHu0gdn-CnQ7thOhj3rnX8KFspXF2e2PWXEY9rsINdN90A7fdoztDHA/exec';
 
-//Script to handle collapsible sections with arrows (Skills)
-document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', function () {
-        const content = this.nextElementSibling;
-        const isActive = this.classList.toggle('active');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        if (isActive) {
-            // Set max-height to the scrollHeight of the content
-            content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-            // Collapse the content
-            content.style.maxHeight = '0';
-        }
-    });
-});
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const btn = form.querySelector('button[type="submit"]');
+    const originalLabel = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+      
+      if (!response.ok) {
+        throw new Error(`Server returned status ${response.status}`);
+      }
+
+      form.reset();
+      if (msg) {
+        msg.textContent = 'Thanks! Your message has been sent.';
+        msg.classList.remove('is-error');
+      }
+    } catch (err) {
+      if (msg) {
+        msg.textContent = 'Something went wrong. Please try again or email me directly.';
+        msg.classList.add('is-error');
+      }
+    } finally {
+      btn.textContent = originalLabel;
+      btn.disabled = false;
+      if (msg) {
+        setTimeout(() => { msg.textContent = ''; }, 5000);
+      }
+    }
+  });
+})();

@@ -1,309 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Discover Wizardly, a beautiful Flutter weather app that magically transforms its UI to match the current weather conditions. Features dynamic theming, global forecasts, and stunning animations.">
-    <title>Wizardly: Magical Weather App - Omar Afifi</title>
-    <link rel="canonical" href="https://omar-afifi.com/wizardly" />
-    <!-- Website Icon: Favicon and Touch Icons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizardly: Dynamic Weather App | Omar Afifi</title>
+  <meta name="description" content="A beautiful, dynamic weather app built with Flutter that transforms its UI to match the current weather conditions, creating an immersive atmospheric experience.">
+
+  <!-- Open Graph / SEO -->
+  <meta name="theme-color" content="#fcfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <meta name="keywords" content="Omar Afifi, Software Engineer, Flutter Developer, IoT, Mobile Development, Zagazig University, Software Engineering">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Wizardly: Dynamic Weather App | Omar Afifi">
+  <meta property="og:description" content="A beautiful, dynamic weather app built with Flutter that transforms its UI to match the current weather conditions, creating an immersive atmospheric experience.">
+  <meta property="og:image" content="https://omar-afifi.com/images/Omar.webp">
+  <meta property="og:image:alt" content="Omar Afifi - Software Engineer">
+  <meta property="og:url" content="https://omar-afifi.com/wizardly/">
+  <meta property="og:site_name" content="Omar Afifi">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wizardly: Dynamic Weather App | Omar Afifi">
+  <meta name="twitter:description" content="A beautiful, dynamic weather app built with Flutter that transforms its UI to match the current weather conditions, creating an immersive atmospheric experience.">
+  <meta name="twitter:image" content="https://omar-afifi.com/images/Omar.webp">
+  
+  <link rel="canonical" href="https://omar-afifi.com/wizardly/" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Omar Afifi",
+    "url": "https://omar-afifi.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/omar-a-afifi",
+      "https://github.com/omarafifi-cse",
+      "https://www.facebook.com/omar.a.afifi.cs/",
+      "https://www.instagram.com/omar.a.afifi/"
+    ],
+    "jobTitle": "Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelancer"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Zagazig University",
+      "sameAs": "https://www.zu.edu.eg/"
+    },
+    "image": "https://omar-afifi.com/images/Omar.webp"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <script>
+    // FOUC prevention for Theme Switcher
+    try {
+      const savedTheme = localStorage.getItem('site-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    } catch (e) {}
+  </script>
+  
+  <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/styles/projects.css">
+
+
+  <noscript>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/cdd671888d.js" crossorigin="anonymous" defer></script>
-    <!-- Bootstrap CSS -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" defer>
-    <!-- Preconnect and DNS Prefetch to Optimize Loading -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <!-- Preload AOS library (Animations) -->
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.js" as="script">
-    <!-- Custom Stylesheet -->
-    <link rel="preload" href="/styles/common.css" as="style">
-    <link rel="stylesheet" href="/styles/common.css" defer>
-    <link rel="preload" href="/styles/layout.css" as="style">
-    <link rel="stylesheet" href="/styles/layout.css" defer>
-    <link rel="preload" href="/styles/finflow.css" as="style">
-    <link rel="stylesheet" href="/styles/finflow.css" defer>
-    <!-- Preload Images for Better Performance -->
-    <link rel="preload" href="/images/Logo.webp" as="image" type="image/webp">
-    <link rel="preload" fetchpriority="high" href="/images/wizardly/Wizardly App Demo.webp" as="image" type="image/webp">
+  </noscript>
 </head>
-
 <body>
-    <header>
-        <nav id="main-navigation">
-    <div class="nav-container" id="home">
-        <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-            <img src="/images/Logo.webp" alt="Logo">
-            Omar <span>Afifi</span>
-        </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <ul id="sidemenu">
-            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="/" aria-label="Home">Home</a>
-            </li>
-            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="/#about"
-                    aria-label="About">About</a></li>
-            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="/#projects"
-                    aria-label="Projects">Projects</a>
-            </li>
-            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#contact"
-                    aria-label="Contact">Contact</a>
-            </li>
-            <li><i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i></li>
-        </ul>
-        <i class="fa-solid fa-bars" onclick="openmenu()" data-aos="fade-right" data-aos-duration="1000"></i>
-        <div class="color-picker" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="400">
-            <input type="color" id="colorPicker" aria-label="Color-Picker" value="#1F35FF">
+  <header class="site-header" role="banner">
+  <div class="container">
+    <a href="/#home" class="logo" aria-label="Omar Afifi home">
+      <div class="logo__mark"></div>
+      <span>Omar <span style="color: var(--color-accent-adaptive)">Afifi</span></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        <li><a href="/#home" class="nav__link">Home</a></li>
+        <li><a href="/#about" class="nav__link">About</a></li>
+        <li><a href="/#projects" class="nav__link">Projects</a></li>
+        <li><a href="/#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <div class="nav__controls">
+        <label class="accent-dial" aria-label="Accent color" title="Accent color">
+          <input type="color" value="#C8A464" aria-label="Choose accent color">
+        </label>
+        <div class="theme-dropdown">
+          <button class="theme-dropdown__toggle" aria-label="Select Theme" title="Theme Settings" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          </button>
+          <ul class="theme-dropdown__menu">
+            <li><button class="theme-btn" data-theme-value="light"><span class="theme-dot" style="background: linear-gradient(135deg, #F2ECE4 50%, #A6823E 50%);"></span> <span class="theme-name">Classic Light</span></button></li>
+            <li><button class="theme-btn" data-theme-value="dark"><span class="theme-dot" style="background: linear-gradient(135deg, #0A1628 50%, #C8A464 50%);"></span> <span class="theme-name">Classic Dark</span></button></li>
+            <li><button class="theme-btn" data-theme-value="obsidian"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #E5B842 50%);"></span> <span class="theme-name">Obsidian & Gold</span></button></li>
+            <li><button class="theme-btn" data-theme-value="cyber"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #00FF41 50%);"></span> <span class="theme-name">Cyber Brutalism</span></button></li>
+            <li><button class="theme-btn" data-theme-value="nordic"><span class="theme-dot" style="background: linear-gradient(135deg, #EAE6D7 50%, #2C4C3B 50%);"></span> <span class="theme-name">Nordic Earth</span></button></li>
+            <li><button class="theme-btn" data-theme-value="crimson"><span class="theme-dot" style="background: linear-gradient(135deg, #1A0F14 50%, #E63946 50%);"></span> <span class="theme-name">Crimson Night</span></button></li>
+            <li><button class="theme-btn" data-theme-value="neobrutalism"><span class="theme-dot" style="background: linear-gradient(135deg, #FFFDF9 50%, #FFD500 50%);"></span> <span class="theme-name">Neo Brutalism</span></button></li>
+            <li><button class="theme-btn" data-theme-value="midnight"><span class="theme-dot" style="background: linear-gradient(135deg, #000000 50%, #00E5FF 50%);"></span> <span class="theme-name">Midnight Glass</span></button></li>
+            <li><button class="theme-btn" data-theme-value="sepia"><span class="theme-dot" style="background: linear-gradient(135deg, #F4EEDD 50%, #C85A17 50%);"></span> <span class="theme-name">Vintage Sepia</span></button></li>
+          </ul>
         </div>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-</nav>
-    </header>
-    <!-------------------------------------------------Wizardly------------------------------------------------->
-    <main>
-        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="/images/wizardly/Wizardly App Demo.webp" alt="Wizardly App Demo"
-                        class="w-100 max-width-1200">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/1- Sunny Weather.webp" loading="lazy" alt="Sunny Weather Theme"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/2- Search Screen.webp" loading="lazy" alt="Intuitive City Search"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/3- Cloudy Weather.webp" loading="lazy" alt="Cloudy Weather Theme"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/4- Rainy Weather.webp" loading="lazy" alt="Rainy Weather Theme"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/5- Snowy Weather.webp" loading="lazy" alt="Snowy Weather Theme"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="/images/wizardly/6- Night Weather.webp" loading="lazy" alt="Clear Night Theme"
-                        class="w-100 blynk-mobile">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" aria-label="Previous Slide"
-                data-bs-target="#carouselDemo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" aria-label="Next Slide" data-bs-target="#carouselDemo"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-
-            <div class="carousel-indicators">
-                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"
-                    aria-label="Swap"><img src="/images/wizardly/Wizardly App Demo.webp"
-                        alt="Wizardly App Demo" /></button>
-
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1" aria-label="Swap"><img
-                        src="/images/wizardly/1- Sunny Weather.webp" loading="lazy"
-                        alt="Sunny Theme Thumbnail" /></button>
-
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2" aria-label="Swap"><img
-                        src="/images/wizardly/2- Search Screen.webp" loading="lazy"
-                        alt="Search Screen Thumbnail" /></button>
-
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3" aria-label="Swap"><img
-                        src="/images/wizardly/3- Cloudy Weather.webp" loading="lazy"
-                        alt="Cloudy Theme Thumbnail" /></button>
+  </div>
+</header>
 
 
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4" aria-label="Swap"><img
-                        src="/images/wizardly/4- Rainy Weather.webp" loading="lazy"
-                        alt="Rainy Theme Thumbnail" /></button>
+  <main id="main-content">
+    
+  <div class="grain-overlay"></div>
 
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="5" aria-label="Swap"><img
-                        src="/images/wizardly/5- Snowy Weather.webp" loading="lazy"
-                        alt="Snowy Theme Thumbnail" /></button>
+  <!-- Project hero -->
+    <section class="project-hero">
+      
+      <div class="project-hero__media">
+        <img src="/images/wizardly/Wizardly App Demo.webp" alt="Wizardly preview" fetchpriority="high">
+      </div>
+      
 
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="6" aria-label="Swap"><img
-                        src="/images/wizardly/6- Night Weather.webp" loading="lazy"
-                        alt="Night Theme Thumbnail" /></button>
-
-            </div>
+      <div class="container project-hero__content">
+        <div class="project-hero__meta reveal">
+          <span>Flutter Developer</span>
+          <span>·</span><span>2025</span>
+          <span>·</span><span>Weather · Mobile</span>
         </div>
-        <br>
-        <div class="project-title">
-            <h1 data-aos="fade-in" data-aos-duration="1600">Wizardly</h1>
-            <h2 data-aos="fade-in" data-aos-duration="1700">🪄 Magical Weather App 🪄</h2>
-        </div>
+        <h1 class="project-hero__title reveal">Wizardly</h1>
+        <p class="project-hero__subtitle reveal">A dynamic weather app that magically transforms its UI to match the current conditions.</p>
 
-        <div class="body-container">
-            <div class="project-overview">
-                <h1 data-aos="fade-right" data-aos-duration="1500">Overview</h1>
-                <p class="overview-description" data-aos="flip-up" data-aos-duration="1500">
-                    Wizardly is an atmospheric experience, not just another weather app. It delivers accurate, real-time
-                    forecasts through a beautiful and fully immersive interface. The entire application theme, from
-                    colors to animated backgrounds, <strong>dynamically transforms to match the live weather</strong>,
-                    creating a unique and delightful experience with every launch.
-                </p>
+        
+        <div class="project-toolbar reveal">
+          
+          <a href="https://github.com/OmarAfifi-CSE/Wizardly/releases" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            Download for Android
+          </a>
+          
+          <a href="https://github.com/OmarAfifi-CSE/Wizardly" class="btn " target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Overview -->
+    
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Overview</div>
+          <div class="project-section__content reveal">
+            <p class="project-overview__lead">An atmospheric experience, not just another weather app.</p>
+            <p>Wizardly delivers accurate, real-time forecasts through a beautiful and fully immersive interface. The entire application theme — from colors to animated backgrounds — <strong>dynamically transforms to match the live weather</strong>, creating a unique and delightful experience with every launch.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Tech stack -->
+    
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Tech Stack</div>
+          <div class="reveal">
+            <div class="tech-stack">
+              
+              <span class="tech-stack__tag">Flutter</span>
+              
+              <span class="tech-stack__tag">Dart</span>
+              
+              <span class="tech-stack__tag">WeatherAPI</span>
+              
+              <span class="tech-stack__tag">Dio</span>
+              
+              <span class="tech-stack__tag">Provider</span>
+              
+              <span class="tech-stack__tag">flutter_animate</span>
+              
             </div>
-            <div class="project-features">
-                <h2 data-aos="fade-right" data-aos-duration="1500">Key Features:</h2>
-                <ol class="features" data-aos="fade-right" data-aos-duration="1500">
-                    <li>🪄<strong>Dynamic Theming</strong> - The star of the show. The entire UI automatically adapts to
-                        the current weather conditions and time of day.</li>
-                    <li>🌍<strong>Global Weather Data</strong> - Get detailed weather information for any city in the
-                        world using the WeatherAPI.</li>
-                    <li>📍<strong>Automatic Location Detection</strong> - On startup, the app instantly finds and
-                        displays the weather for your current location.</li>
-                    <li>📊<strong>Comprehensive Details</strong> - Access all the info you need: "Feels Like"
-                        temperature, humidity, wind speed, pressure, and visibility.</li>
-                    <li>🗓️<strong>Hourly & Daily Forecasts</strong> - Plan ahead with a 24-hour hourly forecast and a
-                        7-day outlook.</li>
-                    <li>💎<strong>Modern Glassy UI</strong> - Frosted-glass components and clean design create a sleek
-                        and elegant look.</li>
-                    <li>🎬<strong>Stunning Animations</strong> - Powered by `flutter_animate`, fluid transitions and
-                        effects bring the UI to life, while `shimmer` provides an elegant loading experience.</li>
-                </ol>
-            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    
 
-        <div class="try-it-live">
-            <h2 data-aos="zoom-in" data-aos-duration="1500">Check it Out!</h2>
-            <p data-aos="zoom-in" data-aos-duration="1500">The project is fully Open-Source. Feel free to explore the
-                code, or better yet, try the app yourself!</p>
-            <div class="live-buttons" data-aos="fade-up" data-aos-duration="1500">
-                <a href="https://github.com/OmarAfifi-CSE/Wizardly/releases" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-android"></i> Download for Android
-                </a>
-                <a href="https://github.com/OmarAfifi-CSE/Wizardly" class="btn btn-dark" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-            </div>
-        </div>
-
-        <div class="video-container" aria-label="video" data-aos="zoom-in" data-aos-duration="1500">
-            <video autoplay muted loop class="w-100 video-margin">
-                <source src="/images/wizardly/Wizardly-video.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="learning-experience">
-            <h2 data-aos="fade-right" data-aos-duration="1500">Learning Experience</h2>
-            <p data-aos="fade-right" data-aos-duration="1500">Building Wizardly was a fantastic opportunity to focus on
-                creating a polished, visually engaging user interface in Flutter. The key skills I developed during this
-                project include:</p>
-            <ul>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>Data-Driven UI Design:</strong> Implementing
-                    a dynamic theming system where the entire app's appearance changes based on API data.</li>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>Advanced Animations:</strong> Using packages
-                    like `flutter_animate` and `weather_animation` to build a fluid, beautiful, and responsive user
-                    experience.</li>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>Third-Party API Integration:</strong>
-                    Handling network requests with Dio, parsing complex JSON data, and managing API keys securely.</li>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>State Management:</strong> Utilizing Provider
-                    for efficient and straightforward state management to update the UI with new weather data.</li>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>Responsive UI Development:</strong> Using
-                    `flutter_screenutil` to ensure the app looks great on a wide range of device sizes and densities.
-                </li>
-                <li data-aos="fade-right" data-aos-duration="1500"><strong>Device Feature Integration:</strong>
-                    Accessing native device capabilities like GPS for location detection with the `geolocator` package.
-                </li>
-            </ul>
-            <p data-aos="fade-right" data-aos-duration="1500">
-                This project reinforced my passion for end-to-end application development, showcasing Flutter's power to
-                connect robust back-end services with beautiful, high-performance user interfaces. 🚀
-            </p>
-        </div>
-        <div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h2 class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Contact me
-                </h2>
-                <p class="contact email" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                    <a href="mailto:contact@omar-afifi.com" aria-label="mail" target="_blank">
-                        <i class="fa-solid fa-envelope"></i>
-                        Contact via Email
-                    </a>
-                </p>
-                <p class="contact whatsapp" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-                    <a href="https://wa.me/201154403740" aria-label="whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Contact on WhatsApp
-                    </a>
-                </p>
-
-                <div class="social-icons" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-                    <a href="https://www.linkedin.com/in/omar-a-afifi/" aria-label="linkedin" target="_blank"
-                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/omar.a.afifi.cs/" aria-label="facebook" target="_blank"
-                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><i
-                            class="fa-brands fa-facebook"></i></a>
-                    <a href="https://github.com/omarafifi-cse/" aria-label="github" target="_blank" data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="600"><i class="fa-brands fa-github"></i></a>
+    <!-- Media gallery (Swiper) -->
+    
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Gallery</div>
+          <div class="media-gallery reveal">
+            <div class="swiper project-swiper">
+              <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/Wizardly App Demo.webp" alt="Wizardly app demo" loading="lazy">
+                  
                 </div>
-
-                <!-- <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
-                        href="/images/Omar Afifi Resume.pdf" aria-label="resume" class="btn btn2" download>Download
-                        CV</a></div> -->
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/1- Sunny Weather.webp" alt="Sunny weather theme" loading="lazy">
+                  
+                </div>
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/2- Search Screen.webp" alt="City search screen" loading="lazy">
+                  
+                </div>
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/3- Cloudy Weather.webp" alt="Cloudy weather theme" loading="lazy">
+                  
+                </div>
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/4- Rainy Weather.webp" alt="Rainy weather theme" loading="lazy">
+                  
+                </div>
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/5- Snowy Weather.webp" alt="Snowy weather theme" loading="lazy">
+                  
+                </div>
+                
+                <div class="swiper-slide">
+                  
+                  <img src="/images/wizardly/6- Night Weather.webp" alt="Clear night theme" loading="lazy">
+                  
+                </div>
+                
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required data-aos="fade-left"
-                        data-aos-duration="1000" data-aos-delay="100">
-                    <input type="email" name="Email" placeholder="Your Email" required data-aos="fade-left"
-                        data-aos-duration="1000" data-aos-delay="200">
-                    <textarea name="Message" rows="6" placeholder="Your Message" required data-aos="fade-left"
-                        data-aos-duration="1000" data-aos-delay="300"></textarea>
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><button type="submit"
-                            class="btn btn2">
-                            Submit</button>
-                    </div>
-                </form>
-                <span id="msg"></span>
-            </div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
+      </div>
+    </section>
+    
+
+    <!-- Features -->
+    
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Key Features</div>
+          <div class="feature-list reveal">
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">🪄</div>
+              <div class="feature-list__text">
+                <h4>Dynamic Theming</h4>
+                <p>The entire UI automatically adapts to the current weather conditions and time of day.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">🌍</div>
+              <div class="feature-list__text">
+                <h4>Global Weather Data</h4>
+                <p>Detailed weather information for any city in the world via WeatherAPI.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">📍</div>
+              <div class="feature-list__text">
+                <h4>Auto Location Detection</h4>
+                <p>Instantly finds and displays the weather for your current location on startup.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">📊</div>
+              <div class="feature-list__text">
+                <h4>Comprehensive Details</h4>
+                <p>Feels Like temperature, humidity, wind speed, pressure, and visibility.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">🗓️</div>
+              <div class="feature-list__text">
+                <h4>Hourly &amp; Daily Forecasts</h4>
+                <p>A 24-hour hourly forecast and a 7-day outlook.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">💎</div>
+              <div class="feature-list__text">
+                <h4>Modern Glassy UI</h4>
+                <p>Frosted-glass components and clean design create a sleek, elegant look.</p>
+              </div>
+            </div>
+            
+            <div class="feature-list__item">
+              <div class="feature-list__icon">🎬</div>
+              <div class="feature-list__text">
+                <h4>Stunning Animations</h4>
+                <p>Fluid transitions via flutter_animate, with shimmer loading states.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Outcomes -->
+    
+
+    <!-- Learning / deep dive -->
+    
+    <section class="project-section">
+      <div class="container">
+        <div class="project-section__grid">
+          <div class="project-section__label reveal">Deep Dive</div>
+          <div class="project-section__content reveal">
+            <p>Building Wizardly was a fantastic opportunity to focus on creating a polished, visually engaging UI in Flutter. Key skills developed: data-driven UI design, advanced animations (flutter_animate, weather_animation), third-party API integration with Dio, state management with Provider, responsive UI with flutter_screenutil, and native device features like GPS via geolocator.</p>
+<p>This project reinforced my passion for end-to-end application development, showcasing Flutter's power to connect robust back-end services with beautiful, high-performance interfaces. 🚀</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Next project -->
+    
+    <section class="next-project">
+      <div class="container">
+        <p class="next-project__label reveal">Next Project</p>
+        <h2 class="next-project__title reveal"><a href="/digging-jim">Digging Jim</a></h2>
+        <a href="/digging-jim" class="btn btn--primary reveal">View project</a>
+      </div>
+    </section>
+    
+
+    <section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let’s build something remarkable.</h2>
+        <p class="section-subtitle">Whether you have a project, a role, or just want to talk about Flutter, software architecture, or design — I’m always open to meaningful conversations.</p>
+
+        <div class="contact-links">
+          <a href="mailto:contact@omar-afifi.com" class="contact-link">
+            <span class="contact-link__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">Email</span>
+              <span class="contact-link__value">Send a message</span>
+            </span>
+          </a>
+
+          <a href="https://wa.me/201154403740" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="contact-link__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">WhatsApp</span>
+              <span class="contact-link__value">Start a chat</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/omarafifi-cse" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/omar-a-afifi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper reveal">
+        <form name="submit-to-google-sheet" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="Name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="Email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send message</button>
+          <span id="msg" class="form-message" role="status" aria-live="polite"></span>
+        </form>
+      </div>
     </div>
-</div>
-    </main>
+  </div>
+</section>
 
-    <!-------------------------------------------------footer------------------------------------------------->
-    <footer class="copyright">
-    <p>&copy; <span id="year"></span> All rights reserved. Developed by Omar Afifi.</p>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <p class="footer-cta__title">Have a project in mind?<br><a href="mailto:contact@omar-afifi.com">Let’s create something extraordinary.</a></p>
+      <a href="/#contact" class="btn btn--primary">Start a conversation</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Omar Afifi. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/omarafifi-cse" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/omar-a-afifi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<script>
-    // Dynamically update the year
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-        <!-------------------------------------------------Bootstrap------------------------------------------------->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
-        <!-------------------------------------------------Script------------------------------------------------->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({ once: true, offset: 0 });
-        </script>
-        <script defer src="/js/layout.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
+
+  <script src="/js/main.js" defer></script>
+  
+  <script src="/js/swiper-bundle.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('.project-swiper', {
+          loop: true,
+          grabCursor: true,
+          autoHeight: true,
+          keyboard: { enabled: true },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          lazy: { loadPrevNext: true }
+        });
+      }
+    });
+  </script>
+
+</body>
 </html>
