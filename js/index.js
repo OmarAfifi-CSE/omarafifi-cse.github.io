@@ -47,15 +47,14 @@
   setTimeout(tick, 800);
 })();
 
-// Contact form (Google Sheets submission)
+// Contact form (Web3Forms submission)
 (() => {
   'use strict';
 
-  const form = document.forms['submit-to-google-sheet'];
+  const form = document.getElementById('contact-form');
   if (!form) return;
 
   const msg = document.getElementById('msg');
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6Iy37SouYu_YjHu0gdn-CnQ7thOhj3rnX8KFspXF2e2PWXEY9rsINdN90A7fdoztDHA/exec';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -71,7 +70,7 @@
     btn.disabled = true;
 
     try {
-      const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+      const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
       
       if (!response.ok) {
         throw new Error(`Server returned status ${response.status}`);

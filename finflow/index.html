@@ -417,7 +417,9 @@
       </div>
 
       <div class="contact-form-wrapper reveal">
-        <form name="submit-to-google-sheet" class="contact-form" novalidate>
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="206e071b-28ed-472c-b501-c201f7fb4abf">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <div class="form-group">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="Name" placeholder="Your name" required>
