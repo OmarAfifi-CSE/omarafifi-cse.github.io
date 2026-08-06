@@ -1445,8 +1445,6 @@ ul, ol {
   
   /* Projects */
   .projects-grid {
-    max-width: 960px;
-    margin-inline: auto;
     gap: var(--space-xl);
   }
   .project-tile__content {
