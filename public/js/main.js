@@ -275,7 +275,7 @@
     // Only run on homepage
     const path = window.location.pathname.replace(/\/$/, '');
     if (path !== '' && path !== '/index.html') return;
-
+    
     // Play once per session OR on manual refresh
     const navEntries = performance.getEntriesByType('navigation');
     const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
@@ -291,52 +291,82 @@
     
     const toggleBtn = document.querySelector('.theme-dropdown__toggle');
     const originalTheme = localStorage.getItem('site-theme') || 'light';
-    
+    let isCancelled = false;
+
+    // If user switches tabs, cancel the showcase immediately
+    const handleVisibility = () => {
+      if (document.hidden) {
+        isCancelled = true;
+        html.setAttribute('data-theme', originalTheme);
+        localStorage.setItem('site-theme', originalTheme);
+        sessionStorage.setItem('theme-intro-played', 'true');
+        document.removeEventListener('visibilitychange', handleVisibility);
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
     const playSpotlight = async (theme, x, y, duration = 800) => {
+      if (isCancelled) return;
+      
       // Strip custom accents during showcase
       html.style.removeProperty('--color-accent');
       html.style.removeProperty('--color-accent-rgb');
       html.style.removeProperty('--color-accent-adaptive');
       html.style.removeProperty('--color-accent-text');
 
+      // Fallback for browsers that don't support View Transitions
       if (!document.startViewTransition) {
         html.setAttribute('data-theme', theme);
         return new Promise(resolve => setTimeout(resolve, duration));
       }
 
       return new Promise(resolve => {
-        const transition = document.startViewTransition(() => {
-          html.setAttribute('data-theme', theme);
-        });
+        try {
+          const transition = document.startViewTransition(() => {
+            if (!isCancelled) html.setAttribute('data-theme', theme);
+          });
 
-        transition.ready.then(() => {
-          const maxW = Math.max(window.innerWidth, window.screen ? window.screen.width : 0);
-          const maxH = Math.max(window.innerHeight, window.screen ? window.screen.height : 0) + 150;
-          const radius = Math.hypot(
-            Math.max(x, maxW - x),
-            Math.max(y, maxH - y)
-          );
+          // If the transition is skipped/aborted by the browser (e.g., background tab), resolve immediately
+          transition.ready.then(() => {
+            if (isCancelled) return resolve();
+            
+            const maxW = Math.max(window.innerWidth, window.screen ? window.screen.width : 0);
+            const maxH = Math.max(window.innerHeight, window.screen ? window.screen.height : 0) + 150;
+            const radius = Math.hypot(
+              Math.max(x, maxW - x),
+              Math.max(y, maxH - y)
+            );
 
-          const animation = document.documentElement.animate(
-            {
-              clipPath: [
-                `circle(0px at ${x}px ${y}px)`,
-                `circle(${radius}px at ${x}px ${y}px)`
-              ]
-            },
-            {
-              duration: duration,
-              easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-              pseudoElement: '::view-transition-new(root)'
-            }
-          );
-          
-          animation.onfinish = resolve;
-        });
+            const animation = document.documentElement.animate(
+              {
+                clipPath: [
+                  `circle(0px at ${x}px ${y}px)`,
+                  `circle(${radius}px at ${x}px ${y}px)`
+                ]
+              },
+              {
+                duration: duration,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                pseudoElement: '::view-transition-new(root)'
+              }
+            );
+            
+            animation.onfinish = resolve;
+            animation.oncancel = resolve;
+          }).catch(() => {
+            // Transition was aborted (e.g., page hidden)
+            resolve();
+          });
+        } catch (error) {
+          // Fallback if startViewTransition throws an exception
+          if (!isCancelled) html.setAttribute('data-theme', theme);
+          setTimeout(resolve, duration);
+        }
       });
     };
 
     const runSequence = async () => {
+      if (isCancelled) return;
+
       // 1. Pick a random theme of the opposite brightness
       const lightThemes = ['light', 'nordic', 'neobrutalism', 'sepia'];
       const darkThemes = ['dark', 'obsidian', 'cyber', 'crimson', 'midnight'];
@@ -352,11 +382,13 @@
       
       // Start from bottom-left corner so it contrasts with the top-right header button
       await playSpotlight(randomTheme, 0, window.innerHeight, 800);
+      if (isCancelled) return;
       
       // 2. Return to Original Theme from the toggle button
       let btnX = window.innerWidth / 2;
       let btnY = window.innerHeight / 2;
       
+    
       if (toggleBtn) {
         const rect = toggleBtn.getBoundingClientRect();
         btnX = rect.left + rect.width / 2;
@@ -364,6 +396,7 @@
       }
       
       await playSpotlight(originalTheme, btnX, btnY, 900);
+      if (isCancelled) return;
       
       // Save and show tooltip
       localStorage.setItem('site-theme', originalTheme);
@@ -390,10 +423,11 @@
       }
       
       sessionStorage.setItem('theme-intro-played', 'true');
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
 
     setTimeout(() => {
-      runSequence();
+      if (!isCancelled) runSequence();
     }, 200);
   };
 
