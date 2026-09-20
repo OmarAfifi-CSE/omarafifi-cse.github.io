@@ -19,6 +19,25 @@ next: false
   <link rel="stylesheet" href="/styles/projects.css">
 {% endblock %}
 
+{% block structuredData %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{ title }}",
+    "description": "{{ description | escape }}",
+    "applicationCategory": "{{ category }}",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Omar Afifi",
+      "url": "https://omar-afifi.com/"
+    },
+    "url": "https://omar-afifi.com{{ page.url }}"
+  }
+  </script>
+{% endblock %}
+
 {% block content %}
   <div class="grain-overlay"></div>
 

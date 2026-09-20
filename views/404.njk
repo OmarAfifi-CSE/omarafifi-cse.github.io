@@ -1,0 +1,30 @@
+---
+permalink: 404.html
+eleventyExcludeFromCollections: true
+title: 404 — Page Not Found
+seo_title: "404 — Page Not Found | Omar Afifi"
+description: "The requested page could not be found."
+robots: noindex, follow
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="grain-overlay"></div>
+
+<section class="section" style="min-height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: calc(var(--header-height) + var(--space-2xl));">
+  <div class="container">
+    <span class="section-label reveal" style="font-size: 1.125rem; letter-spacing: 0.15em;">404 Error</span>
+    <h1 class="section-title reveal" style="margin-top: var(--space-md); font-size: clamp(2.5rem, 6vw, 4.5rem);">Page not found.</h1>
+    <p class="section-subtitle reveal" style="max-width: 540px; margin: var(--space-md) auto var(--space-2xl);">
+      The page you’re looking for doesn’t exist or may have been moved. Let's get you back on track.
+    </p>
+    <div class="reveal" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+      <a href="/" class="btn btn--primary">Back to Home</a>
+      <a href="/projects-page/" class="btn">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/contact.njk" %}
+{% endblock %}

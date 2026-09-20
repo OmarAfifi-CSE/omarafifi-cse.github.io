@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if seo_title %}{{ seo_title }}{% elif title and title != 'Omar Afifi' %}{{ title }} — Omar Afifi{% else %}Omar Afifi - Software Engineer{% endif %}</title>
   <meta name="description" content="{{ description | default('Omar Afifi — Software Engineer & Flutter Developer crafting premium digital experiences.') }}">
+  {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
 
   <!-- Open Graph / SEO -->
   <meta name="theme-color" content="#fcfaf8" media="(prefers-color-scheme: light)">
@@ -53,6 +54,7 @@
     "image": "https://omar-afifi.com/images/Omar.webp"
   }
   </script>
+  {% block structuredData %}{% endblock %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

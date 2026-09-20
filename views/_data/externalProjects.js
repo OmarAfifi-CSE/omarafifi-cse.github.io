@@ -1,6 +1,6 @@
 module.exports = async function () {
-    // Add any new GitHub repos here to automatically include them in the sitemap!
-    const repos = ['daphq', 'shrinkeo', 'tabattal'];
+    // Only include repos hosted directly under omar-afifi.com/<repo>/
+    const repos = ['daphq'];
     const results = {};
 
     await Promise.all(repos.map(async (repo) => {
